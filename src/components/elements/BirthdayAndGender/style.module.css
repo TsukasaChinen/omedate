@@ -1,0 +1,19 @@
+.wrapper {
+  --inputMargin: 10px;
+  --inputHeight: 44px;
+  width: min(100%, 322px);
+  margin-inline: auto;
+}
+.wrapper label {
+  display: flex;
+  align-items: center;
+}
+.wrapper input,
+.wrapper select {
+  width: calc(100% - (var(--inputMargin) + 4em));
+  height: var(--inputHeight);
+  margin-left: var(--inputMargin);
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+}

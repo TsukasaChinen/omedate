@@ -1,0 +1,27 @@
+.description {
+  font-size: clamp(14px, 4.357vw, 16px);
+  line-height: 1.8;
+}
+.description br {
+  display: none;
+}
+.red {
+  color: var(--red);
+}
+.birthday {
+  color: var(--green);
+}
+.male {
+  color: var(--blue);
+}
+.female {
+  color: var(--red);
+}
+@media (min-width: 550px) {
+  .description {
+    text-align: center;
+  }
+  .description br {
+    display: block;
+  }
+}
