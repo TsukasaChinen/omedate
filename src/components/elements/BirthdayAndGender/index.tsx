@@ -36,7 +36,7 @@ export const BirthdayAndGender: React.FC = () => {
         />
       </Label>
       <Spacer height={{ s: 20 }} />
-      <Label text="性　　別">
+      <Label text="性　　別" className={`${style.label}, ${style.labelSelect}`}>
         <Select
           className={style.select}
           values={selectValues}

@@ -14,13 +14,13 @@
   align-items: center;
   width: min(90%, 300px);
   font-size: 18px;
-  background: var(--red);
+  background: var(--buttonPrimary);
   color: var(--white);
   padding: var(--buttonPadding) 0;
   border-radius: 50px;
-  box-shadow: 0 4px 0 0 #be7c82;
+  box-shadow: 0 4px 0 0 #c4686d;
   cursor: pointer;
-  transition: color 0.1s linear;
+  transition: opacity 0.2s linear;
 }
 .button:active {
   transform: translateY(4px);
@@ -28,10 +28,7 @@
 }
 @media (hover: hover) {
   .button:hover {
-    color: #ffe2e4;
-  }
-  .button:hover .icon {
-    fill: #ffe2e4;
+    opacity: 0.8;
   }
 }
 .icon {

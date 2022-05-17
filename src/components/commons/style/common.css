@@ -163,6 +163,7 @@ input[type="number"] {
   --white: #fff;
   --gray: #aaa;
   --lightBrown: #f9e1cd;
+  --buttonPrimary: #e2767c;
 }
 
 body {
@@ -183,7 +184,10 @@ a:focus {
 input,
 select {
   font-size: 18px;
+  background: #fff;
+  appearance: none;
 }
+
 .wrapper {
   display: flex;
   height: 100vh;
