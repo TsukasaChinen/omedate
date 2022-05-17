@@ -1,13 +1,13 @@
 type Props = {
-  hidden?: boolean;
+  visible?: boolean;
   width?: number;
   height?: number;
 };
 
-export const Spacer: React.FC<Props> = ({ hidden, width, height }) => {
+export const Spacer: React.FC<Props> = ({ visible, width, height }) => {
   const styles = {
-    backgroundColor: hidden ? "" : "cyan",
-    marginInline: hidden ? "" : "calc(50% - 50vw)",
+    backgroundColor: visible ? "cyan" : "",
+    marginInline: visible ? "calc(50% - 50vw)" : "",
     width: width ? width : "",
     height: height ? height : "",
     transition: "width .4s, height .4s",

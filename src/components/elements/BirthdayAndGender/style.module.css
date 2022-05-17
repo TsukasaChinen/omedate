@@ -4,12 +4,12 @@
   width: min(100%, 322px);
   margin-inline: auto;
 }
-.wrapper label {
+.label {
   display: flex;
   align-items: center;
 }
-.wrapper input,
-.wrapper select {
+.input,
+.select {
   width: calc(100% - (var(--inputMargin) + 4em));
   height: var(--inputHeight);
   margin-left: var(--inputMargin);

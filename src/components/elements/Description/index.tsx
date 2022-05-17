@@ -11,7 +11,7 @@ export const Description: React.FC = () => {
 
   return (
     <div className={style.description}>
-      <Spacer height={isWide ? 40 : 20} hidden={true} />
+      <Spacer height={isWide ? 40 : 20} />
       <DefaultText />
       {/* <ResultText gender="female" year={2022} month={3} day={14} /> */}
     </div>
