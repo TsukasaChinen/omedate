@@ -6,11 +6,16 @@ type Props = React.ComponentPropsWithoutRef<"select"> & {
   }[];
 };
 
-export const Select: React.FC<Props> = ({ values, className, onChange }) => {
+export const Select: React.FC<Props> = ({
+  values,
+  value,
+  className,
+  onChange,
+}) => {
   return (
     <select className={className} onChange={onChange}>
       {values.map((v, i) => (
-        <option key={i} value={v.value}>
+        <option key={i} value={v.value} selected={value === v.value}>
           {v.text}
         </option>
       ))}

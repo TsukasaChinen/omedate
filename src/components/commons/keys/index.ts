@@ -6,14 +6,14 @@ const { persistAtom } = recoilPersist({
   storage: localStorage,
 });
 
-export const birthday = atom<string>({
-  key: "birthday",
+export const birthdayState = atom<string>({
+  key: "birthdayState",
   default: "2022-05-17",
   effects_UNSTABLE: [persistAtom],
 });
 
-export const gender = atom<string>({
-  key: "gender",
+export const genderState = atom<string>({
+  key: "genderState",
   default: "none",
   effects_UNSTABLE: [persistAtom],
 });

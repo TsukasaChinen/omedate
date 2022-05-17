@@ -1,16 +1,23 @@
+import { useRecoilState } from "recoil";
+
 import style from "./style.module.css";
 
+import { birthdayState, genderState } from "../../commons/keys";
 import { Spacer } from "../../commons/atoms/Spacer";
 import { Label } from "../../commons/atoms/Label";
 import { InputDate } from "../../commons/atoms/InputDate";
 import { Select } from "../../commons/atoms/Select";
 
 export const BirthdayAndGender: React.FC = () => {
+  const [birthday, setBirthday] = useRecoilState(birthdayState);
+
   const onChangeDate = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value);
+    setBirthday(e.target.value);
   };
 
-  const selectValues = [
+  const [gender, setGender] = useRecoilState(genderState);
+
+  const genders = [
     {
       value: "male",
       text: "男の子",
@@ -22,7 +29,7 @@ export const BirthdayAndGender: React.FC = () => {
   ];
 
   const onChangeGender = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    console.log(e.target.value);
+    setGender(e.target.value);
   };
 
   return (
@@ -31,7 +38,7 @@ export const BirthdayAndGender: React.FC = () => {
       <Label text="生年月日" className={style.label}>
         <InputDate
           className={style.input}
-          value="2022-05-01"
+          value={birthday}
           onChange={onChangeDate}
         />
       </Label>
@@ -39,7 +46,8 @@ export const BirthdayAndGender: React.FC = () => {
       <Label text="性　　別" className={`${style.label}, ${style.labelSelect}`}>
         <Select
           className={style.select}
-          values={selectValues}
+          values={genders}
+          value={gender}
           onChange={onChangeGender}
         />
       </Label>
