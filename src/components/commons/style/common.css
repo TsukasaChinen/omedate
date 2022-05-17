@@ -187,6 +187,9 @@ select {
   background: #fff;
   appearance: none;
 }
+/* input::-webkit-calendar-picker-indicator {
+  display: none;
+} */
 
 .wrapper {
   display: flex;
