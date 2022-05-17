@@ -5,6 +5,7 @@ import "./components/commons/style/common.css";
 import { Header } from "./components/elements/Header";
 import { Description } from "./components/elements/Description";
 import { BirthdayAndGender } from "./components/elements/BirthdayAndGender";
+import { Buttons } from "./components/elements/Buttons";
 
 const App: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ const App: React.FC = () => {
         <main className="main">
           <Description />
           <BirthdayAndGender />
+          <Buttons />
         </main>
       </div>
     </RecoilRoot>

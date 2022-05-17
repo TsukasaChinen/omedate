@@ -1,7 +1,7 @@
 .wrapper {
   --inputMargin: 10px;
   --inputHeight: 44px;
-  width: min(100%, 322px);
+  width: min(100%, 320px);
   margin-inline: auto;
 }
 .label {
@@ -16,4 +16,10 @@
   border: 1px solid #ddd;
   padding: 10px;
   border-radius: 5px;
+}
+@media (min-width: 550px) {
+  .wrapper {
+    --inputMargin: 14px;
+    transform: translateX(-4px);
+  }
 }
