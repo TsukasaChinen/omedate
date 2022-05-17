@@ -13,9 +13,9 @@ export const Select: React.FC<Props> = ({
   onChange,
 }) => {
   return (
-    <select className={className} onChange={onChange}>
+    <select className={className} onChange={onChange} defaultValue={value}>
       {values.map((v, i) => (
-        <option key={i} value={v.value} selected={value === v.value}>
+        <option key={i} value={v.value}>
           {v.text}
         </option>
       ))}

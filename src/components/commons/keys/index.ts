@@ -14,6 +14,11 @@ export const birthdayState = atom<string>({
 
 export const genderState = atom<string>({
   key: "genderState",
-  default: "none",
+  default: "",
   effects_UNSTABLE: [persistAtom],
+});
+
+export const genderQuery = atom<string>({
+  key: "genderQuery",
+  default: "",
 });

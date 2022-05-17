@@ -1,25 +1,18 @@
 import { RecoilRoot } from "recoil";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "./components/commons/style/common.css";
 
-import { Header } from "./components/elements/Header";
-import { Description } from "./components/elements/Description";
-import { BirthdayAndGender } from "./components/elements/BirthdayAndGender";
-import { Buttons } from "./components/elements/Buttons";
-import { Footer } from "./components/elements/Footer";
+import { Home } from "./components/pages/Home";
 
 const App: React.FC = () => {
   return (
     <RecoilRoot>
-      <div className="wrapper">
-        <Header />
-        <main className="main">
-          <Description />
-          <BirthdayAndGender />
-          <Buttons />
-        </main>
-        <Footer />
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path={`/`} element={<Home />} />
+        </Routes>
+      </BrowserRouter>
     </RecoilRoot>
   );
 };

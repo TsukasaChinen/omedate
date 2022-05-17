@@ -1,8 +1,9 @@
-import { useRecoilState } from "recoil";
+import { useEffect } from "react";
+import { useRecoilState, useRecoilValue } from "recoil";
 
 import style from "./style.module.css";
 
-import { birthdayState, genderState } from "../../commons/keys";
+import { birthdayState, genderState, genderQuery } from "../../commons/keys";
 import { Spacer } from "../../commons/atoms/Spacer";
 import { Label } from "../../commons/atoms/Label";
 import { InputDate } from "../../commons/atoms/InputDate";
@@ -16,6 +17,13 @@ export const BirthdayAndGender: React.FC = () => {
   };
 
   const [gender, setGender] = useRecoilState(genderState);
+  const queryGender = useRecoilValue(genderQuery);
+
+  useEffect(() => {
+    if (gender !== queryGender) {
+      setGender(queryGender);
+    }
+  }, [gender, queryGender, setGender]);
 
   const genders = [
     {
