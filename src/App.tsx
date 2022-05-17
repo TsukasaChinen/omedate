@@ -6,6 +6,7 @@ import { Header } from "./components/elements/Header";
 import { Description } from "./components/elements/Description";
 import { BirthdayAndGender } from "./components/elements/BirthdayAndGender";
 import { Buttons } from "./components/elements/Buttons";
+import { Footer } from "./components/elements/Footer";
 
 const App: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ const App: React.FC = () => {
           <BirthdayAndGender />
           <Buttons />
         </main>
+        <Footer />
       </div>
     </RecoilRoot>
   );
