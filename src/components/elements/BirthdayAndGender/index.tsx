@@ -1,5 +1,3 @@
-import useMedia from "use-media";
-
 import style from "./style.module.css";
 
 import { Spacer } from "../../commons/atoms/Spacer";
@@ -8,8 +6,6 @@ import { InputDate } from "../../commons/atoms/InputDate";
 import { Select } from "../../commons/atoms/Select";
 
 export const BirthdayAndGender: React.FC = () => {
-  const isWide = useMedia({ minWidth: "768px" });
-
   const onChangeDate = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log(e.target.value);
   };
@@ -31,7 +27,7 @@ export const BirthdayAndGender: React.FC = () => {
 
   return (
     <div className={style.wrapper}>
-      <Spacer height={isWide ? 40 : 20} />
+      <Spacer height={{ s: 20, m: 40 }} />
       <Label text="生年月日" className={style.label}>
         <InputDate
           className={style.input}
@@ -39,7 +35,7 @@ export const BirthdayAndGender: React.FC = () => {
           onChange={onChangeDate}
         />
       </Label>
-      <Spacer height={20} />
+      <Spacer height={{ s: 20 }} />
       <Label text="性　　別">
         <Select
           className={style.select}

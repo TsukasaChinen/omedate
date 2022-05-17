@@ -20,6 +20,6 @@
 @media (min-width: 550px) {
   .wrapper {
     --inputMargin: 14px;
-    transform: translateX(-4px);
+    transform: translateX(-2px);
   }
 }

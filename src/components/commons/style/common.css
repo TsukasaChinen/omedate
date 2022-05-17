@@ -5,6 +5,7 @@
   box-sizing: border-box;
 }
 html {
+  height: 100%;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
 }
@@ -165,7 +166,7 @@ input[type="number"] {
 }
 
 body {
-  font-size: 14px;
+  font-size: clamp(14px, 4.357vw, 16px);
   font-family: "ヒラギノ丸ゴ Pro W4", "ヒラギノ丸ゴ Pro",
     "Hiragino Maru Gothic Pro", "ヒラギノ角ゴ Pro W3",
     "Hiragino Kaku Gothic Pro", "HG丸ｺﾞｼｯｸM-PRO", "HGMaruGothicMPRO";
@@ -181,9 +182,12 @@ a:focus {
 }
 input,
 select {
-  font-size: 16px;
+  font-size: 18px;
 }
 .wrapper {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
   width: min(100%, 1000px);
   margin-inline: auto;
   padding: 0 20px;

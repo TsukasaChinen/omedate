@@ -1,5 +1,8 @@
 .footer {
+  position: sticky;
   font-size: 10px;
+  top: 100vh;
   text-align: center;
   color: var(--gray);
+  padding-bottom: 20px;
 }
