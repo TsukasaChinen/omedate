@@ -1,18 +1,10 @@
-export const currentDate = (str: string) => {
+export const currentDate = () => {
   const currentDate = new Date();
   const year = currentDate.getFullYear();
   const month = currentDate.getMonth() + 1;
   const day = currentDate.getDate();
 
-  if (str === "year") {
-    return year;
-  } else if (str === "month") {
-    return month;
-  } else if (str === "day") {
-    return day;
-  } else if (str === "full") {
-    return `${year}-${("00" + month).slice(-2)}-${day}`;
-  }
+  return `${year}-${("00" + month).slice(-2)}-${day}`;
 };
 
 export const splitDate = (date: string) => {

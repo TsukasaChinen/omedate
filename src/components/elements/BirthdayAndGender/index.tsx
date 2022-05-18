@@ -25,7 +25,7 @@ export const BirthdayAndGender: React.FC = () => {
     if (queryBirthday) {
       setBirthday(joinDateHyphen(queryBirthday));
     } else {
-      const _currentDate = String(currentDate("full"));
+      const _currentDate = String(currentDate());
       _currentDate && setBirthday(_currentDate);
     }
   }, [birthday, queryBirthday, setBirthday]);
