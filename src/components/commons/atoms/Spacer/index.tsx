@@ -15,7 +15,6 @@ export const Spacer: React.FC<Props> = ({ visible, height }) => {
     backgroundColor: visible ? "cyan" : "",
     marginInline: visible ? "calc(50% - 50vw)" : "",
     width: "100%",
-    transition: "width .4s, height .4s",
   };
 
   const heights = !isWide
