@@ -10,11 +10,15 @@ export const Result: React.FC = () => {
   const query = new URLSearchParams(useLocation().search);
 
   const queryBirthday = query.get("birthday");
-  const year = queryBirthday ? queryBirthday?.slice(0, 4) : currentDate("year");
-  const month = queryBirthday
-    ? queryBirthday?.slice(4, 6)
-    : currentDate("month");
-  const day = queryBirthday ? queryBirthday?.slice(6, 8) : currentDate("day");
+  const year = Number(
+    queryBirthday ? queryBirthday?.slice(0, 4) : currentDate("year")
+  );
+  const month = Number(
+    queryBirthday ? queryBirthday?.slice(4, 6) : currentDate("month")
+  );
+  const day = Number(
+    queryBirthday ? queryBirthday?.slice(6, 8) : currentDate("day")
+  );
 
   const queryGender = query.get("gender");
 
@@ -25,9 +29,9 @@ export const Result: React.FC = () => {
     <main className="main">
       <ResultText
         gender={queryGender || ""}
-        year={Number(year)}
-        month={Number(month)}
-        day={Number(day)}
+        year={year}
+        month={month}
+        day={day}
       />
     </main>
   );
