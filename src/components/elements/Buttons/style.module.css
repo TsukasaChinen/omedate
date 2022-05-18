@@ -18,6 +18,7 @@
   background: var(--buttonPrimary);
   padding: var(--buttonPadding) 0;
   border-radius: 50px;
+  color: var(--white);
   box-shadow: 0 4px 0 0 #c4686d;
   cursor: pointer;
   transition: opacity 0.2s linear;
@@ -44,7 +45,7 @@
 }
 @media (min-width: 768px) {
   .wrapper {
-    --iconWidth: 34px;
-    --iconMargin: 10px;
+    --iconWidth: 36px;
+    --iconMargin: 8px;
   }
 }

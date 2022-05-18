@@ -1,4 +1,5 @@
 import { QuiriesTypes } from "../../commons/types";
+
 import { Spacer } from "../../commons/atoms/Spacer";
 import { DefaultText } from "./DefaultText";
 import { ResultText } from "./ResultText";

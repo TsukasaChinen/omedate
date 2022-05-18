@@ -11,11 +11,12 @@ export const Home: React.FC = () => {
     birthday: query.get("birthday"),
     gender: query.get("gender"),
   };
+
   return (
     <main className="main">
       <Description queries={queries} />
       <BirthdayAndGender />
-      <Buttons />
+      <Buttons queries={queries} />
     </main>
   );
 };
