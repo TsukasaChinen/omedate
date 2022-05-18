@@ -1,16 +1,17 @@
-import style from "./style.module.css";
-
+import { QuiriesTypes } from "../../commons/types";
 import { Spacer } from "../../commons/atoms/Spacer";
+import { DefaultText } from "./DefaultText";
+import { ResultText } from "./ResultText";
 
-export const Description: React.FC = () => {
+export const Description: React.FC<QuiriesTypes> = ({ queries }) => {
   return (
-    <div className={style.description}>
+    <>
       <Spacer height={{ s: 20, m: 60 }} />
-      <p>
-        生年月日と性別を入力するとお子さまの
-        <span className={style.red}>「誕生から成人まで」</span>の<br />
-        お祝い事の日付を表示します。
-      </p>
-    </div>
+      {!queries.birthday && !queries.gender ? (
+        <DefaultText />
+      ) : (
+        <ResultText queries={queries} />
+      )}
+    </>
   );
 };

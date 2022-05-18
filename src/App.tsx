@@ -1,11 +1,11 @@
 import { RecoilRoot } from "recoil";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "./components/commons/style/common.css";
 
-import { Router } from "./components/router/";
 import { Header } from "./components/elements/Header";
 import { Footer } from "./components/elements/Footer";
+import { Home } from "./components/pages/Home";
 
 const App: React.FC = () => {
   return (
@@ -13,7 +13,9 @@ const App: React.FC = () => {
       <div className="wrapper">
         <Header />
         <BrowserRouter>
-          <Router />
+          <Routes>
+            <Route path={`/`} element={<Home />} />
+          </Routes>
         </BrowserRouter>
         <Footer />
       </div>
