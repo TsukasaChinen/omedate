@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useRecoilState } from "recoil";
+import { useLocation } from "react-router-dom";
 
 import style from "./style.module.css";
 
@@ -11,13 +12,26 @@ import { InputDate } from "../../commons/atoms/InputDate";
 import { Select } from "../../commons/atoms/Select";
 
 export const BirthdayAndGender: React.FC = () => {
+  const query = new URLSearchParams(useLocation().search);
+
+  const queryBirthday = query.get("birthday");
+
+  const queryGender = query.get("gender");
+
   const [birthday, setBirthday] = useRecoilState(birthdayState);
 
   useEffect(() => {
     if (birthday) return;
-    const _currentDate = String(currentDate("full"));
-    _currentDate && setBirthday(_currentDate);
-  }, [birthday, setBirthday]);
+    if (queryBirthday) {
+      const _year = queryBirthday.slice(0, 4);
+      const _month = queryBirthday.slice(4, 6);
+      const _day = queryBirthday.slice(6, 8);
+      setBirthday(`${_year}-${_month}-${_day}`);
+    } else {
+      const _currentDate = String(currentDate("full"));
+      _currentDate && setBirthday(_currentDate);
+    }
+  }, [birthday, queryBirthday, setBirthday]);
 
   const onChangeDate = (e: React.ChangeEvent<HTMLInputElement>) => {
     setBirthday(e.target.value);
@@ -27,8 +41,12 @@ export const BirthdayAndGender: React.FC = () => {
 
   useEffect(() => {
     if (gender) return;
-    setGender("male");
-  }, [gender, setGender]);
+    if (queryGender) {
+      setGender(queryGender);
+    } else {
+      setGender("male");
+    }
+  }, [gender, queryGender, setGender]);
 
   const genders = [
     {

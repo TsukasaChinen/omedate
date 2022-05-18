@@ -15,10 +15,7 @@ export const Buttons: React.FC = () => {
     <div className={style.wrapper}>
       <Spacer height={{ s: 40 }} />
       <LinkButton
-        href={`/result/?birthday=${birthday.replace(
-          /-/g,
-          ""
-        )}&gender=${gender}`}
+        href={`/?birthday=${birthday.replace(/-/g, "")}&gender=${gender}`}
         text="お祝い事をみる"
         className={style.button}
       >
