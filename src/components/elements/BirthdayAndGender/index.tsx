@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom";
 import style from "./style.module.css";
 
 import { birthdayState, genderState } from "../../commons/keys";
-import { currentDate } from "../../commons/utilities/";
+import { currentDate, joinDateHyphen } from "../../commons/utilities/";
 import { Spacer } from "../../commons/atoms/Spacer";
 import { Label } from "../../commons/atoms/Label";
 import { InputDate } from "../../commons/atoms/InputDate";
@@ -23,10 +23,7 @@ export const BirthdayAndGender: React.FC = () => {
   useEffect(() => {
     if (birthday) return;
     if (queryBirthday) {
-      const _year = queryBirthday.slice(0, 4);
-      const _month = queryBirthday.slice(4, 6);
-      const _day = queryBirthday.slice(6, 8);
-      setBirthday(`${_year}-${_month}-${_day}`);
+      setBirthday(joinDateHyphen(queryBirthday));
     } else {
       const _currentDate = String(currentDate("full"));
       _currentDate && setBirthday(_currentDate);
