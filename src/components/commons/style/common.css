@@ -204,8 +204,6 @@ select {
     --fontSize: 16px;
   }
 }
-@media (min-width: 840px) {
-}
 @media (min-width: 1040px) {
   .wrapper {
     padding: 0;
