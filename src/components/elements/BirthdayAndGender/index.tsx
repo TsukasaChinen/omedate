@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
 import { useRecoilState } from "recoil";
 
 import style from "./style.module.css";
@@ -12,21 +11,24 @@ import { InputDate } from "../../commons/atoms/InputDate";
 import { Select } from "../../commons/atoms/Select";
 
 export const BirthdayAndGender: React.FC = () => {
-  const search = useLocation().search;
-  const query = new URLSearchParams(search);
-
   const [birthday, setBirthday] = useRecoilState(birthdayState);
+
+  useEffect(() => {
+    if (birthday) return;
+    const _currentDate = String(currentDate("full"));
+    _currentDate && setBirthday(_currentDate);
+  }, [birthday, setBirthday]);
 
   const onChangeDate = (e: React.ChangeEvent<HTMLInputElement>) => {
     setBirthday(e.target.value);
   };
 
-  const queryGender = query.get("gender");
   const [gender, setGender] = useRecoilState(genderState);
 
   useEffect(() => {
-    queryGender && setGender(queryGender);
-  }, [queryGender, setGender]);
+    if (gender) return;
+    setGender("male");
+  }, [gender, setGender]);
 
   const genders = [
     {
@@ -49,7 +51,7 @@ export const BirthdayAndGender: React.FC = () => {
       <Label text="生年月日" className={style.label}>
         <InputDate
           className={style.input}
-          value={currentDate("full") || birthday}
+          value={birthday}
           onChange={onChangeDate}
         />
       </Label>
@@ -58,7 +60,7 @@ export const BirthdayAndGender: React.FC = () => {
         <Select
           className={style.select}
           values={genders}
-          value={queryGender || gender}
+          value={gender}
           onChange={onChangeGender}
         />
       </Label>

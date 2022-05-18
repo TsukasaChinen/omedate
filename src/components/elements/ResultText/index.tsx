@@ -1,7 +1,5 @@
 import style from "./style.module.css";
 
-import { Spacer } from "../../commons/atoms/Spacer";
-
 type Props = {
   gender: string;
   year: number;
@@ -11,7 +9,6 @@ type Props = {
 
 export const ResultText: React.FC<Props> = ({ gender, year, month, day }) => (
   <div className={style.description}>
-    <Spacer height={{ s: 20, m: 60 }} />
     <p>
       <span className={style.birthday}>
         「{year}年{month}月{day}日」
