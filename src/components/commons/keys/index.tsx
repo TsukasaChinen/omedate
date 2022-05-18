@@ -9,3 +9,7 @@ export const genderState = atom<string>({
   key: "genderState",
   default: "",
 });
+export const modalState = atom<boolean>({
+  key: "modalState",
+  default: false,
+});

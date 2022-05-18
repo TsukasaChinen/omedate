@@ -6,8 +6,13 @@ type Props = React.ComponentPropsWithoutRef<"button"> & {
   children?: ReactNode;
 };
 
-export const ShareButton: React.FC<Props> = ({ text, className, children }) => (
-  <button type="button" className={className}>
+export const ShareButton: React.FC<Props> = ({
+  text,
+  className,
+  children,
+  onClick,
+}) => (
+  <button type="button" className={className} onClick={onClick}>
     {children}
     {text}
   </button>

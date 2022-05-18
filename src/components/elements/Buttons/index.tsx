@@ -15,6 +15,9 @@ export const Buttons: React.FC<QuiriesTypes> = ({ queries }) => {
   const birthday = useRecoilValue(birthdayState);
   const gender = useRecoilValue(genderState);
 
+  const handleIsModal = () => {
+    console.log("もーだるが開く");
+  };
   return (
     <div className={style.wrapper}>
       <Spacer height={{ s: 40 }} />
@@ -27,7 +30,11 @@ export const Buttons: React.FC<QuiriesTypes> = ({ queries }) => {
           <IconBabyNomal className={style.icon} />
         </LinkButton>
       ) : (
-        <ShareButton text="この結果をシェアする" className={style.button}>
+        <ShareButton
+          text="この結果をシェアする"
+          className={style.button}
+          onClick={handleIsModal}
+        >
           <IconBabySmile className={style.icon} />
         </ShareButton>
       )}
