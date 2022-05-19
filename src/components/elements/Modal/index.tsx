@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useRecoilState } from "recoil";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
@@ -19,6 +20,23 @@ export const Modal: React.FC = () => {
     setIsModal(false);
   };
 
+  const [copyLabel, setCopyLabel] = useState<string>("copy");
+
+  const handleClickCopyUrl = () => {
+    if (!navigator.clipboard) return;
+    const copyEle = document.getElementById("copyUrl");
+    copyEle &&
+      navigator.clipboard
+        .writeText(copyEle?.innerText)
+        .then(() => {
+          console.log(copyEle?.innerText);
+          setCopyLabel("copied");
+        })
+        .catch((err) => {
+          setCopyLabel("failed");
+        });
+  };
+
   return (
     <div className={style.wrapper} data-show={isModal}>
       <ModalClose className={style.close} onClick={handleClickCloseModal} />
@@ -37,7 +55,11 @@ export const Modal: React.FC = () => {
             className={style.url}
           />
 
-          <CopyButton text="copy" className={`primaryButton ${style.button}`} />
+          <CopyButton
+            text={copyLabel}
+            className={`primaryButton ${style.button}`}
+            onClick={handleClickCopyUrl}
+          />
         </div>
       </ModalContent>
     </div>

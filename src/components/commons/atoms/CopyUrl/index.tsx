@@ -3,5 +3,9 @@ type Props = {
   className?: string;
 };
 export const CopyUrl: React.FC<Props> = ({ url, className }) => {
-  return <p className={className}>{url}</p>;
+  return (
+    <p id="copyUrl" className={className}>
+      {url}
+    </p>
+  );
 };
