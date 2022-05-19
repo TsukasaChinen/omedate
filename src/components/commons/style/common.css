@@ -163,6 +163,7 @@ input[type="number"] {
   --white: #fff;
   --yellow: #fccf00;
   --gray: #aaa;
+  --black: #000;
   --lightBrown: #f9e1cd;
   --buttonPrimary: #e2767c;
 }
@@ -173,6 +174,7 @@ body {
     "Hiragino Maru Gothic Pro", "ヒラギノ角ゴ Pro W3",
     "Hiragino Kaku Gothic Pro", "HG丸ｺﾞｼｯｸM-PRO", "HGMaruGothicMPRO";
   line-height: 1;
+  color: var(--black);
   letter-spacing: 0.05em;
 }
 a,

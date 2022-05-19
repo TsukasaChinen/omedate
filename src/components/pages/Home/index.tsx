@@ -1,13 +1,12 @@
+import { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import { useLocation } from "react-router-dom";
 
 import { queryState } from "../../commons/keys";
-import { Button } from "../../elements/Button";
 import { Description } from "../../elements/Description";
 import { Modals } from "../../elements/Modal";
 import { Setting } from "../../elements/Setting";
 import { Table } from "../../elements/Table";
-import { useEffect } from "react";
 
 export const Home: React.FC = () => {
   const location = useLocation().search;
@@ -39,7 +38,6 @@ export const Home: React.FC = () => {
     <main className="main">
       <Description />
       <Setting />
-      <Button />
       {queries.birthday && queries.gender && (
         <>
           <Table />

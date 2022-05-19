@@ -1,34 +1,28 @@
 import { useEffect } from "react";
-import { useRecoilState } from "recoil";
-import { useLocation } from "react-router-dom";
+import { useRecoilValue, useRecoilState } from "recoil";
 
 import style from "./style.module.css";
 
-import { birthdayState, genderState } from "../../commons/keys";
+import { birthdayState, genderState, queryState } from "../../commons/keys";
 import { currentDate, joinDateHyphen } from "../../commons/utilities";
 import { Spacer } from "../../commons/atoms/Spacer";
-import { Label } from "../../commons/atoms/Label";
-import { InputDate } from "../../commons/atoms/InputDate";
-import { Select } from "../../commons/atoms/Select";
+import { SettingBirthday } from "./SettingBirthday";
+import { SettingGender } from "./SettingGender";
+import { SettingButton } from "./SettingButton";
 
 export const Setting: React.FC = () => {
-  const query = new URLSearchParams(useLocation().search);
-
-  const queryBirthday = query.get("birthday");
-
-  const queryGender = query.get("gender");
+  const queries = useRecoilValue(queryState);
 
   const [birthday, setBirthday] = useRecoilState(birthdayState);
 
   useEffect(() => {
-    if (birthday) return;
-    if (queryBirthday) {
-      setBirthday(joinDateHyphen(queryBirthday));
+    if (queries.birthday) {
+      setBirthday(joinDateHyphen(queries.birthday));
     } else {
       const _currentDate = String(currentDate());
       _currentDate && setBirthday(_currentDate);
     }
-  }, [birthday, queryBirthday, setBirthday]);
+  }, [queries.birthday, setBirthday]);
 
   const onChangeDate = (e: React.ChangeEvent<HTMLInputElement>) => {
     setBirthday(e.target.value);
@@ -37,13 +31,12 @@ export const Setting: React.FC = () => {
   const [gender, setGender] = useRecoilState(genderState);
 
   useEffect(() => {
-    if (gender) return;
-    if (queryGender) {
-      setGender(queryGender);
+    if (queries.gender) {
+      setGender(queries.gender);
     } else {
       setGender("male");
     }
-  }, [gender, queryGender, setGender]);
+  }, [queries.gender, setGender]);
 
   const genders = [
     {
@@ -63,22 +56,27 @@ export const Setting: React.FC = () => {
   return (
     <div className={style.wrapper}>
       <Spacer height={{ s: 20, m: 40 }} />
-      <Label text="生年月日" className={style.label}>
-        <InputDate
-          className={style.input}
-          value={birthday}
-          onChange={onChangeDate}
-        />
-      </Label>
+      <SettingBirthday
+        value={birthday}
+        onChange={onChangeDate}
+        text="生年月日"
+        className={style.label}
+      />
       <Spacer height={{ s: 20 }} />
-      <Label text="性　　別" className={`${style.label}, ${style.labelSelect}`}>
-        <Select
-          className={style.select}
-          values={genders}
-          value={gender}
-          onChange={onChangeGender}
-        />
-      </Label>
+      <SettingGender
+        values={genders}
+        value={gender}
+        className={`${style.label} ${style.labelSelect}`}
+        onChange={onChangeGender}
+        text="性　　別"
+      />
+      <Spacer height={{ s: 40 }} />
+      <SettingButton
+        birthday={birthday}
+        gender={gender}
+        className={style.button}
+        queries={queries}
+      />
     </div>
   );
 };
