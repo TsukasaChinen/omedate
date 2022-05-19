@@ -5,6 +5,7 @@ import style from "./style.module.css";
 import { QuiriesTypes } from "../../commons/types";
 
 import { birthdayState, genderState, modalState } from "../../commons/keys";
+import { replaceDateHyphen } from "../../commons/utilities";
 import { LinkButton } from "../../commons/atoms/LinkButton";
 import { ShareButton } from "../../commons/atoms/ShareButton";
 import { IconBabyNomal } from "../../commons/atoms/Icons";
@@ -25,7 +26,7 @@ export const Buttons: React.FC<QuiriesTypes> = ({ queries }) => {
       <Spacer height={{ s: 40 }} />
       {!queries.birthday && !queries.gender ? (
         <LinkButton
-          href={`/?birthday=${birthday.replace(/-/g, "")}&gender=${gender}`}
+          href={`/?birthday=${replaceDateHyphen(birthday)}&gender=${gender}`}
           text="お祝い事をみる"
           className={`primaryButton ${style.button}`}
         >

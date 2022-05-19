@@ -1,11 +1,12 @@
 import { useState, useRef } from "react";
-import { useRecoilState } from "recoil";
+import { useRecoilValue, useRecoilState } from "recoil";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 
 import style from "./style.module.css";
 
-import { modalState } from "../../commons/keys";
+import { birthdayState, genderState, modalState } from "../../commons/keys";
+import { replaceDateHyphen } from "../../commons/utilities";
 import { Spacer } from "../../commons/atoms/Spacer";
 import { CloseButton } from "../../commons/atoms/CloseButton";
 import { CopyButton } from "../../commons/atoms/CopyButton";
@@ -14,6 +15,9 @@ import { ModalClose } from "./ModalClose";
 import { ModalContent } from "./ModalContent";
 
 export const Modal: React.FC = () => {
+  const birthday = useRecoilValue(birthdayState);
+  const gender = useRecoilValue(genderState);
+
   const [isModal, setIsModal] = useRecoilState(modalState);
 
   const handleClickCloseModal = () => {
@@ -38,6 +42,7 @@ export const Modal: React.FC = () => {
         });
   };
 
+  const fullUrl = window.location.href.split("?");
   return (
     <div className={style.wrapper} data-show={isModal}>
       <ModalClose className={style.close} onClick={handleClickCloseModal} />
@@ -53,7 +58,9 @@ export const Modal: React.FC = () => {
         <div className={style.copy}>
           <CopyUrl
             ref={copyUrlEle}
-            url="https://trylight.net/omedate?birthday=20220314&gender=male"
+            url={`${fullUrl[0]}?birthday=${replaceDateHyphen(
+              birthday
+            )}&gender=${gender}`}
             className={style.url}
           />
 
