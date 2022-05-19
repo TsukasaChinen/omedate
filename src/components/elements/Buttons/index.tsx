@@ -24,7 +24,16 @@ export const Buttons: React.FC<QuiriesTypes> = ({ queries }) => {
   return (
     <div className={style.wrapper}>
       <Spacer height={{ s: 40 }} />
-      {!queries.birthday && !queries.gender ? (
+      <LinkButton
+        href={`/?birthday=${replaceDateHyphen(birthday)}&gender=${gender}`}
+        text={`${
+          !queries.birthday && !queries.gender ? "お祝い事をみる" : "更新する"
+        }`}
+        className={`primaryButton ${style.button}`}
+      >
+        <IconBabyNomal className={style.icon} />
+      </LinkButton>
+      {/* {!queries.birthday && !queries.gender ? (
         <LinkButton
           href={`/?birthday=${replaceDateHyphen(birthday)}&gender=${gender}`}
           text="お祝い事をみる"
@@ -40,7 +49,7 @@ export const Buttons: React.FC<QuiriesTypes> = ({ queries }) => {
         >
           <IconBabySmile className={style.icon} />
         </ShareButton>
-      )}
+      )} */}
     </div>
   );
 };
