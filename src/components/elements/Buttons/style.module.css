@@ -8,29 +8,11 @@
   color: var(--white);
 }
 .button {
-  appearance: none;
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: min(90%, 300px);
   font-size: 18px;
-  background: var(--buttonPrimary);
   padding: var(--buttonPadding) 0;
   border-radius: 50px;
-  color: var(--white);
-  box-shadow: 0 4px 0 0 #c4686d;
-  cursor: pointer;
   transition: opacity 0.2s linear;
-}
-.button:active {
-  transform: translateY(4px);
-  box-shadow: none;
-}
-@media (hover: hover) {
-  .button:hover {
-    opacity: 0.8;
-  }
 }
 .icon {
   width: var(--iconWidth);

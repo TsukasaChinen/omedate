@@ -161,6 +161,7 @@ input[type="number"] {
   --green: #aacc03;
   --blue: #1dade5;
   --white: #fff;
+  --yellow: #fccf00;
   --gray: #aaa;
   --lightBrown: #f9e1cd;
   --buttonPrimary: #e2767c;
@@ -199,6 +200,23 @@ select {
   margin-inline: auto;
   padding: 0 20px;
 }
+.primaryButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--red);
+  color: var(--white);
+  appearance: none;
+  border: none;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  box-shadow: 0 4px 0 0 #c4686d;
+}
+.primaryButton:active {
+  transform: translateY(4px);
+  box-shadow: none;
+}
+
 @media (min-width: 768px) {
   :root {
     --fontSize: 16px;
@@ -207,5 +225,13 @@ select {
 @media (min-width: 1040px) {
   .wrapper {
     padding: 0;
+  }
+}
+@media (hover: hover) {
+  .primaryButton {
+    transition: opacity 0.2s;
+  }
+  .primaryButton:hover {
+    opacity: 0.8;
   }
 }

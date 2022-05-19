@@ -27,14 +27,14 @@ export const Buttons: React.FC<QuiriesTypes> = ({ queries }) => {
         <LinkButton
           href={`/?birthday=${birthday.replace(/-/g, "")}&gender=${gender}`}
           text="お祝い事をみる"
-          className={style.button}
+          className={`primaryButton ${style.button}`}
         >
           <IconBabyNomal className={style.icon} />
         </LinkButton>
       ) : (
         <ShareButton
           text="この結果をシェアする"
-          className={style.button}
+          className={`primaryButton ${style.button}`}
           onClick={handleCliclShowModal}
         >
           <IconBabySmile className={style.icon} />
