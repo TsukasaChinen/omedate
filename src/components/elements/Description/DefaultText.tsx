@@ -1,11 +1,15 @@
-import style from "./style.module.css";
+type Props = {
+  className?: string;
+};
 
-export const DefaultText: React.FC = () => (
-  <div className={style.description}>
-    <p>
-      生年月日と性別を入力するとお子さまの
-      <span className={style.red}>「誕生から成人まで」</span>の<br />
-      お祝い事の日付を表示します。
-    </p>
-  </div>
-);
+export const DefaultText: React.FC<Props> = ({ className }) => {
+  return (
+    <div className={className}>
+      <p>
+        生年月日と性別を入力するとお子さまの
+        <span className="red">「誕生から成人まで」</span>の<br />
+        お祝い事の日付を表示します。
+      </p>
+    </div>
+  );
+};

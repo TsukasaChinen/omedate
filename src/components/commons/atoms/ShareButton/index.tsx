@@ -11,9 +11,11 @@ export const ShareButton: React.FC<Props> = ({
   className,
   children,
   onClick,
-}) => (
-  <button type="button" className={className} onClick={onClick}>
-    {children}
-    {text}
-  </button>
-);
+}) => {
+  return (
+    <button type="button" className={className} onClick={onClick}>
+      {children}
+      {text}
+    </button>
+  );
+};

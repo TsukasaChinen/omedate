@@ -12,9 +12,11 @@ export const LinkButton: React.FC<Props> = ({
   href,
   className,
   children,
-}) => (
-  <a href={href} className={className}>
-    {children}
-    {text}
-  </a>
-);
+}) => {
+  return (
+    <a href={href} className={className}>
+      {children}
+      {text}
+    </a>
+  );
+};

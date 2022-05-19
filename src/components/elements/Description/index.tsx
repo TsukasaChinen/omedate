@@ -1,5 +1,7 @@
 import { useRecoilValue } from "recoil";
 
+import style from "./style.module.css";
+
 import { queryState } from "../../commons/keys";
 
 import { Spacer } from "../../commons/atoms/Spacer";
@@ -12,7 +14,11 @@ export const Description: React.FC = () => {
   return (
     <>
       <Spacer height={{ s: 20, m: 60 }} />
-      {!queries.birthday && !queries.gender ? <DefaultText /> : <ResultText />}
+      {!queries.birthday && !queries.gender ? (
+        <DefaultText className={style.description} />
+      ) : (
+        <ResultText className={style.description} queries={queries} />
+      )}
     </>
   );
 };

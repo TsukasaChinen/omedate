@@ -6,9 +6,11 @@ type Props = {
   className?: string;
 };
 
-export const Label: React.FC<Props> = ({ text, children, className }) => (
-  <label className={className}>
-    <span>{text}</span>
-    {children}
-  </label>
-);
+export const Label: React.FC<Props> = ({ text, children, className }) => {
+  return (
+    <label className={className}>
+      <span>{text}</span>
+      {children}
+    </label>
+  );
+};
