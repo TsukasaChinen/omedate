@@ -2,9 +2,12 @@ import { useRecoilValue, useSetRecoilState } from "recoil";
 
 import style from "./style.module.css";
 
-import { QuiriesTypes } from "../../commons/types";
-
-import { birthdayState, genderState, modalState } from "../../commons/keys";
+import {
+  birthdayState,
+  genderState,
+  modalState,
+  queryState,
+} from "../../commons/keys";
 import { replaceDateHyphen } from "../../commons/utilities";
 import { LinkButton } from "../../commons/atoms/LinkButton";
 import { ShareButton } from "../../commons/atoms/ShareButton";
@@ -12,7 +15,8 @@ import { IconBabyNomal } from "../../commons/atoms/Icons";
 import { IconBabySmile } from "../../commons/atoms/Icons";
 import { Spacer } from "../../commons/atoms/Spacer";
 
-export const Button: React.FC<QuiriesTypes> = ({ queries }) => {
+export const Button: React.FC = () => {
+  const queries = useRecoilValue(queryState);
   const birthday = useRecoilValue(birthdayState);
   const gender = useRecoilValue(genderState);
 

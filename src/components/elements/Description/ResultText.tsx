@@ -1,9 +1,13 @@
+import { useRecoilValue } from "recoil";
+
 import style from "./style.module.css";
 
 import { splitDate } from "../../commons/utilities";
-import { QuiriesTypes } from "../../commons/types";
+import { queryState } from "../../commons/keys";
 
-export const ResultText: React.FC<QuiriesTypes> = ({ queries }) => {
+export const ResultText: React.FC = () => {
+  const queries = useRecoilValue(queryState);
+
   const birthday = queries.birthday && splitDate(queries.birthday);
   const birthdayStr =
     birthday &&
