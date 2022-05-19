@@ -1,11 +1,15 @@
+import React from "react";
+
 type Props = {
   url: string;
   className?: string;
 };
-export const CopyUrl: React.FC<Props> = ({ url, className }) => {
+
+export const CopyUrl = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+  const { className, url } = props;
   return (
-    <p id="copyUrl" className={className}>
+    <div id="copyUrl" className={className} ref={ref}>
       {url}
-    </p>
+    </div>
   );
-};
+});

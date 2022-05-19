@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useRecoilState } from "recoil";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
@@ -20,19 +20,20 @@ export const Modal: React.FC = () => {
     setIsModal(false);
   };
 
+  const copyUrlEle = useRef<HTMLDivElement>(null);
+
   const [copyLabel, setCopyLabel] = useState<string>("copy");
 
   const handleClickCopyUrl = () => {
     if (!navigator.clipboard) return;
-    const copyEle = document.getElementById("copyUrl");
+    const copyEle = copyUrlEle.current;
     copyEle &&
       navigator.clipboard
-        .writeText(copyEle?.innerText)
+        .writeText(copyEle.innerText)
         .then(() => {
-          console.log(copyEle?.innerText);
           setCopyLabel("copied");
         })
-        .catch((err) => {
+        .catch(() => {
           setCopyLabel("failed");
         });
   };
@@ -51,6 +52,7 @@ export const Modal: React.FC = () => {
         <Spacer height={{ s: 10 }} />
         <div className={style.copy}>
           <CopyUrl
+            ref={copyUrlEle}
             url="https://trylight.net/omedate?birthday=20220314&gender=male"
             className={style.url}
           />
