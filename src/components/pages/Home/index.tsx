@@ -1,9 +1,9 @@
 import { useLocation } from "react-router-dom";
 
 import { Description } from "../../elements/Description";
-import { BirthdayAndGender } from "../../elements/BirthdayAndGender";
-import { Buttons } from "../../elements/Buttons";
-import { Modal } from "../../elements/Modal";
+import { Setting } from "../../elements/Setting";
+import { Button } from "../../elements/Button";
+import { Modals } from "../../elements/Modal";
 
 export const Home: React.FC = () => {
   const query = new URLSearchParams(useLocation().search);
@@ -16,9 +16,9 @@ export const Home: React.FC = () => {
   return (
     <main className="main">
       <Description queries={queries} />
-      <BirthdayAndGender />
-      <Buttons queries={queries} />
-      <Modal />
+      <Setting />
+      <Button queries={queries} />
+      <Modals />
     </main>
   );
 };

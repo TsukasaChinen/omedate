@@ -12,7 +12,7 @@ import { IconBabyNomal } from "../../commons/atoms/Icons";
 import { IconBabySmile } from "../../commons/atoms/Icons";
 import { Spacer } from "../../commons/atoms/Spacer";
 
-export const Buttons: React.FC<QuiriesTypes> = ({ queries }) => {
+export const Button: React.FC<QuiriesTypes> = ({ queries }) => {
   const birthday = useRecoilValue(birthdayState);
   const gender = useRecoilValue(genderState);
 

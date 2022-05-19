@@ -5,13 +5,13 @@ import { useLocation } from "react-router-dom";
 import style from "./style.module.css";
 
 import { birthdayState, genderState } from "../../commons/keys";
-import { currentDate, joinDateHyphen } from "../../commons/utilities/";
+import { currentDate, joinDateHyphen } from "../../commons/utilities";
 import { Spacer } from "../../commons/atoms/Spacer";
 import { Label } from "../../commons/atoms/Label";
 import { InputDate } from "../../commons/atoms/InputDate";
 import { Select } from "../../commons/atoms/Select";
 
-export const BirthdayAndGender: React.FC = () => {
+export const Setting: React.FC = () => {
   const query = new URLSearchParams(useLocation().search);
 
   const queryBirthday = query.get("birthday");

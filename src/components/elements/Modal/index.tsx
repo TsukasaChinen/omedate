@@ -14,7 +14,7 @@ import { CopyUrl } from "../../commons/atoms/CopyUrl";
 import { ModalClose } from "./ModalClose";
 import { ModalContent } from "./ModalContent";
 
-export const Modal: React.FC = () => {
+export const Modals: React.FC = () => {
   const birthday = useRecoilValue(birthdayState);
   const gender = useRecoilValue(genderState);
 
