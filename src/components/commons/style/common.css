@@ -203,8 +203,7 @@ select {
   margin-inline: auto;
   padding: 0 20px;
 }
-.primaryButton,
-.secondaryButton {
+.button {
   display: flex;
   margin-inline: auto;
   width: var(--buttonWidth);
@@ -222,22 +221,21 @@ select {
   border-radius: 50px;
   transition: opacity 0.2s linear;
 }
-.primaryButton:active,
-.secondaryButton:active {
+
+.button:active {
   transform: translateY(4px);
   box-shadow: none;
 }
-.primaryButton svg,
-.secondaryButton svg {
+.button svg {
   width: var(--iconWidth);
   margin-right: var(--iconMargin);
   transform: translateY(-1px);
 }
-.primaryButton {
+.button {
   background: var(--red);
   box-shadow: 0 4px 0 0 #c4686d;
 }
-.secondaryButton {
+.button.-blue {
   background: var(--blue);
   box-shadow: 0 4px 0 0 #128cbc;
 }
@@ -274,12 +272,10 @@ select {
   }
 }
 @media (hover: hover) {
-  .primaryButton,
-  .secondaryButton {
+  .button {
     transition: opacity 0.2s;
   }
-  .primaryButton:hover,
-  .secondaryButton:hover {
+  .button:hover {
     opacity: 0.8;
   }
 }

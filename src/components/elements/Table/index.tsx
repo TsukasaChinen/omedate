@@ -1,13 +1,18 @@
+import { useRecoilValue } from "recoil";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
 import style from "./style.module.css";
 
+import { queryState } from "../../commons/keys";
 import { Spacer } from "../../commons/atoms/Spacer";
 import { TableShareButton } from "./TableShareButton";
 import { IconNoshi, IconTorii, IconKabuto } from "../../commons/atoms/Icons";
 
 export const Table: React.FC = () => {
+  const queries = useRecoilValue(queryState);
+  const gender = queries.gender;
+
   return (
     <>
       <Spacer height={{ s: 40 }} />
@@ -99,7 +104,7 @@ export const Table: React.FC = () => {
         </tbody>
       </table>
       <Spacer height={{ s: 40 }} />
-      <TableShareButton />
+      <TableShareButton gender={gender} />
     </>
   );
 };

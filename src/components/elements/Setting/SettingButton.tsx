@@ -18,7 +18,7 @@ export const SettingButton: React.FC<Props> = ({
     <LinkButton
       href={`/?birthday=${replaceDateHyphen(birthday)}&gender=${gender}`}
       text="お祝い事をみる"
-      className={`primaryButton ${className}`}
+      className={`button ${className}`}
     >
       <IconBabyNomal />
     </LinkButton>
