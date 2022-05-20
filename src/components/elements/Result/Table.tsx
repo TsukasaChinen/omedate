@@ -35,9 +35,7 @@ export const Table: React.FC = () => {
               <i className={style.nameIcon}>
                 <IconNoshi className={style.iconNoshi} />
               </i>
-              <b className={style.name}>
-                お七夜<span className={style.kana}>（オシチヤ）</span>
-              </b>
+              <b className={style.name}>お七夜</b>
             </span>
           </td>
           <td className={style.dateTd}>
@@ -61,9 +59,7 @@ export const Table: React.FC = () => {
               <i className={style.nameIcon}>
                 <IconTorii className={style.iconTorii} />
               </i>
-              <b className={style.name}>
-                お宮参り<span className={style.kana}>（オミヤマイリ）</span>
-              </b>
+              <b className={style.name}>お宮参り</b>
             </span>
           </td>
           <td className={style.dateTd}>
@@ -87,10 +83,7 @@ export const Table: React.FC = () => {
               <i className={style.nameIcon}>
                 <IconKabuto className={style.iconKabuto} />
               </i>
-              <b className={style.name}>
-                端午の節句
-                <span className={style.kana}>（タンゴノセック）</span>
-              </b>
+              <b className={style.name}>端午の節句</b>
             </span>
           </td>
           <td className={style.dateTd}>
@@ -116,10 +109,7 @@ export const Table: React.FC = () => {
               <i className={style.nameIcon}>
                 <IconCake className={style.iconCake} />
               </i>
-              <b className={style.name}>
-                端午の節句
-                <span className={style.kana}>（タンゴノセック）</span>
-              </b>
+              <b className={style.name}>端午の節句</b>
             </span>
           </td>
           <td className={style.dateTd}>
@@ -145,10 +135,7 @@ export const Table: React.FC = () => {
               <i className={style.nameIcon}>
                 <IconTokkuri className={style.iconTokkuri} />
               </i>
-              <b className={style.name}>
-                端午の節句
-                <span className={style.kana}>（タンゴノセック）</span>
-              </b>
+              <b className={style.name}>端午の節句</b>
             </span>
           </td>
           <td className={style.dateTd}>
@@ -174,10 +161,7 @@ export const Table: React.FC = () => {
               <i className={style.nameIcon}>
                 <IconSchoolBag className={style.iconSchoolBag} />
               </i>
-              <b className={style.name}>
-                端午の節句
-                <span className={style.kana}>（タンゴノセック）</span>
-              </b>
+              <b className={style.name}>端午の節句</b>
             </span>
           </td>
           <td className={style.dateTd}>
@@ -203,10 +187,7 @@ export const Table: React.FC = () => {
               <i className={style.nameIcon}>
                 <IconKimono02 className={style.iconKimono02} />
               </i>
-              <b className={style.name}>
-                端午の節句
-                <span className={style.kana}>（タンゴノセック）</span>
-              </b>
+              <b className={style.name}>端午の節句</b>
             </span>
           </td>
           <td className={style.dateTd}>
@@ -232,10 +213,7 @@ export const Table: React.FC = () => {
               <i className={style.nameIcon}>
                 <IconKimono01 className={style.iconKimono01} />
               </i>
-              <b className={style.name}>
-                端午の節句
-                <span className={style.kana}>（タンゴノセック）</span>
-              </b>
+              <b className={style.name}>端午の節句</b>
             </span>
           </td>
           <td className={style.dateTd}>
@@ -261,10 +239,7 @@ export const Table: React.FC = () => {
               <i className={style.nameIcon}>
                 <IconHoleCake className={style.iconHoleCake} />
               </i>
-              <b className={style.name}>
-                端午の節句
-                <span className={style.kana}>（タンゴノセック）</span>
-              </b>
+              <b className={style.name}>端午の節句</b>
             </span>
           </td>
           <td className={style.dateTd}>
@@ -290,10 +265,7 @@ export const Table: React.FC = () => {
               <i className={style.nameIcon}>
                 <IconGohan className={style.iconGohan} />
               </i>
-              <b className={style.name}>
-                端午の節句
-                <span className={style.kana}>（タンゴノセック）</span>
-              </b>
+              <b className={style.name}>端午の節句</b>
             </span>
           </td>
           <td className={style.dateTd}>
@@ -319,10 +291,7 @@ export const Table: React.FC = () => {
               <i className={style.nameIcon}>
                 <IconGakuran className={style.iconGakuran} />
               </i>
-              <b className={style.name}>
-                端午の節句
-                <span className={style.kana}>（タンゴノセック）</span>
-              </b>
+              <b className={style.name}>端午の節句</b>
             </span>
           </td>
           <td className={style.dateTd}>
@@ -348,10 +317,7 @@ export const Table: React.FC = () => {
               <i className={style.nameIcon}>
                 <IconSailor className={style.iconSailor} />
               </i>
-              <b className={style.name}>
-                端午の節句
-                <span className={style.kana}>（タンゴノセック）</span>
-              </b>
+              <b className={style.name}>端午の節句</b>
             </span>
           </td>
           <td className={style.dateTd}>
@@ -364,6 +330,11 @@ export const Table: React.FC = () => {
             男の子は5月5日の端午の節句を祝います。
             <br />
             無病息災と出世の願いを込めて、鯉のぼり。
+          </td>
+        </tr>
+        <tr className={style.arrowTr}>
+          <td>
+            <FontAwesomeIcon icon={faCaretDown} />
           </td>
         </tr>
       </tbody>

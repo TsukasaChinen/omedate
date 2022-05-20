@@ -11,9 +11,9 @@ export const Result: React.FC = () => {
 
   return (
     <>
-      <Spacer height={{ s: 40 }} />
+      <Spacer height={{ s: 40, m: 50 }} />
       <Table />
-      <Spacer height={{ s: 40 }} />
+      <Spacer height={{ s: 0, m: 40 }} />
       <TableShareButton gender={gender} />
     </>
   );

@@ -29,6 +29,8 @@
 }
 .nameTd {
   display: flex;
+  border-bottom: 1px solid var(--borderGray);
+  padding-bottom: 10px;
 }
 .nameInner {
   display: flex;
@@ -70,14 +72,8 @@
 .iconSailor {
   transform: translateX(-1px);
 }
-.kana {
-  display: inline-block;
-  font-size: 14px;
-  color: var(--gray);
-  transform: translateY(-1px);
-}
 .dateTd {
-  margin-top: 10px;
+  margin-top: 14px;
 }
 .descriptionTd {
   margin-top: 9px;
@@ -92,15 +88,18 @@
   .table {
     --iconSize: 32px;
   }
-
   .content {
     padding: 20px;
   }
+  .nameTd {
+    padding-bottom: 16px;
+  }
   .name {
+    font-size: 20px;
     margin-left: 10px;
   }
   .dateTd {
-    margin-top: 16px;
+    margin-top: 20px;
   }
   .descriptionTd {
     margin-top: 16px;
@@ -168,14 +167,10 @@
     flex-wrap: wrap;
   }
   .name {
+    white-space: nowrap;
     font-size: 16px;
     margin-left: 12px;
     padding-top: 0;
-  }
-  .kana {
-    width: 100%;
-    font-size: 10px;
-    transform: translate(-0.5em, 0);
   }
   .dateTd {
     white-space: nowrap;
