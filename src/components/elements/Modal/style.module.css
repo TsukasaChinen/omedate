@@ -64,6 +64,7 @@
 .button {
   margin: 14px auto 0;
   width: 90px;
+  height: auto;
   font-size: 16px;
   padding: 8px 0 12px;
   letter-spacing: 0.1em;
@@ -76,16 +77,16 @@
   .wrapper {
     --innerPadding: 40px;
     --innerRadius: 10px;
-    --urlPadding: 16px 14px;
+    --urlPadding: 16px 8px;
     --closeButtonSize: 32px;
   }
   .button {
     position: absolute;
-    right: 14px;
+    right: 8px;
     top: 50%;
     width: 82px;
     transform: translateY(-50%);
-    margin-top: 0;
+    margin-top: -2px;
   }
 }
 @media (hover: hover) {

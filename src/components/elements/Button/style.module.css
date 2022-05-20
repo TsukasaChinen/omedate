@@ -1,33 +1,6 @@
 .wrapper {
-  --iconWidth: 30px;
-  --iconMargin: 4px;
-  --buttonPadding: 14px;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: var(--white);
-}
-.button {
-  width: min(90%, 300px);
-  font-size: 18px;
-  padding: var(--buttonPadding) 0;
-  border-radius: 50px;
-  transition: opacity 0.2s linear;
-}
-.icon {
-  width: var(--iconWidth);
-  margin-right: var(--iconMargin);
-  transform: translateY(-1px);
-}
-@media (min-width: 550px) {
-  .wrapper {
-    --iconWidth: 32px;
-    --iconMargin: 6px;
-  }
-}
-@media (min-width: 768px) {
-  .wrapper {
-    --iconWidth: 36px;
-    --iconMargin: 8px;
-  }
 }

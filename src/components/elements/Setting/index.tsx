@@ -70,13 +70,12 @@ export const Setting: React.FC = () => {
         onChange={onChangeGender}
         text="性　　別"
       />
-      <Spacer height={{ s: 40 }} />
-      <SettingButton
-        birthday={birthday}
-        gender={gender}
-        className={style.button}
-        queries={queries}
-      />
+      {!queries.birthday && !queries.gender && (
+        <>
+          <Spacer height={{ s: 40 }} />
+          <SettingButton birthday={birthday} gender={gender} />
+        </>
+      )}
     </div>
   );
 };

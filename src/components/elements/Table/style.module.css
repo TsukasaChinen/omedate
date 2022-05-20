@@ -1,0 +1,165 @@
+.table {
+  --iconSize: 28px;
+  --nameTextMargin: 6px;
+}
+.table,
+.table tbody,
+.table tr,
+.table th,
+.table td {
+  display: block;
+}
+.table thead,
+.table br {
+  display: none;
+}
+.content {
+  border: 1px solid var(--borderGray);
+  border-radius: 6px;
+  padding: 10px 14px;
+}
+.table .arrowTr td {
+  display: flex;
+  font-size: 32px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  color: var(--red);
+  padding-bottom: 4px;
+}
+.nameTd {
+  display: flex;
+}
+.nameInner {
+  display: flex;
+  align-items: center;
+}
+.name {
+  width: calc(100% - (var(--iconSize) + var(--nameTextMargin)));
+  font-size: 18px;
+  margin-left: var(--nameTextMargin);
+}
+.nameIcon {
+  display: flex;
+  width: var(--iconSize);
+  height: var(--iconSize);
+  justify-content: center;
+}
+.iconNoshi,
+.iconKabuto {
+  width: 100%;
+}
+.IconTorii {
+  width: 22px;
+}
+.kana {
+  display: inline-block;
+  font-size: 14px;
+  color: var(--gray);
+  transform: translateY(-1px);
+}
+.dateTd {
+  margin-top: 10px;
+}
+.descriptionTd {
+  margin-top: 9px;
+  line-height: 1.6;
+}
+@media (min-width: 414px) {
+  .content {
+    padding: 14px;
+  }
+}
+@media (min-width: 768px) {
+  .table {
+    --iconSize: 32px;
+  }
+
+  .content {
+    padding: 20px;
+  }
+  .name {
+    margin-left: 10px;
+  }
+  .dateTd {
+    margin-top: 16px;
+  }
+  .descriptionTd {
+    margin-top: 16px;
+  }
+  .table .arrowTr td {
+    height: 50px;
+  }
+  .IconTorii {
+    width: 26px;
+  }
+}
+@media (min-width: 1000px) {
+  .table {
+    display: table;
+    width: 860px;
+    margin-inline: auto;
+    border-spacing: 0;
+    border: 1px solid var(--lightYellow);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .table thead {
+    display: table-header-group;
+    background: #f9e595;
+    height: 42px;
+  }
+  .table thead th + th {
+    border-left: 1px solid var(--lightYellow);
+  }
+  .table tbody {
+    display: table-row-group;
+  }
+  .table tr {
+    display: table-row;
+  }
+  .table th,
+  .table td {
+    display: table-cell;
+  }
+  .table td {
+    padding: 14px;
+    border-bottom: 1px solid var(--lightYellow);
+  }
+  .table tr:last-of-type td {
+    border-bottom: none;
+  }
+  .table br {
+    display: block;
+  }
+  .table .arrowTr td {
+    display: none;
+  }
+  .nameTd {
+    flex-wrap: wrap;
+  }
+  .name {
+    font-size: 16px;
+    margin-left: 12px;
+  }
+  .kana {
+    width: 100%;
+    font-size: 10px;
+    margin-top: 4px;
+    transform: translate(-0.5em, 0);
+  }
+  .dateTd {
+    white-space: nowrap;
+    border-left: 1px solid var(--lightYellow);
+    border-right: 1px solid var(--lightYellow);
+  }
+  .dateTd > span {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media (hover: hover) {
+  .table tbody tr:hover {
+    background: #fff9e8;
+  }
+}
