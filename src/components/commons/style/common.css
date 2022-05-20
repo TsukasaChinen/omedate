@@ -181,6 +181,7 @@ body {
   line-height: 1;
   color: var(--black);
   letter-spacing: 0.05em;
+  position: relative;
 }
 a,
 a:link,
@@ -194,6 +195,17 @@ select {
   font-size: 18px;
   background: #fff;
   appearance: none;
+}
+.fixed {
+  display: none;
+  position: fixed;
+  top: 348px;
+  left: 420px;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 1px;
+  background: cyan;
 }
 .wrapper {
   display: flex;

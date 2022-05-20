@@ -6,7 +6,7 @@ import { queryState } from "../../commons/keys";
 import { Description } from "../../elements/Description";
 import { Modals } from "../../elements/Modal";
 import { Setting } from "../../elements/Setting";
-import { Table } from "../../elements/Table";
+import { Result } from "../../elements/Result";
 
 export const Home: React.FC = () => {
   const location = useLocation().search;
@@ -40,7 +40,7 @@ export const Home: React.FC = () => {
       <Setting />
       {queries.birthday && queries.gender && (
         <>
-          <Table />
+          <Result />
           <Modals />
         </>
       )}

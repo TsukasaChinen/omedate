@@ -38,6 +38,7 @@
   width: calc(100% - (var(--iconSize) + var(--nameTextMargin)));
   font-size: 18px;
   margin-left: var(--nameTextMargin);
+  padding-top: 1px;
 }
 .nameIcon {
   display: flex;
@@ -49,8 +50,25 @@
 .iconKabuto {
   width: 100%;
 }
-.IconTorii {
+.iconTorii {
   width: 22px;
+}
+.iconTokkuri,
+.iconKimono01,
+.iconKimono02,
+.iconHoleCake {
+  width: 24px;
+}
+.iconTokkuri,
+.iconSchoolBag {
+  transform: translateX(1px);
+}
+.iconGohan {
+  transform: translate(-1px, -2px);
+}
+.iconGakuran,
+.iconSailor {
+  transform: translateX(-1px);
 }
 .kana {
   display: inline-block;
@@ -90,8 +108,19 @@
   .table .arrowTr td {
     height: 50px;
   }
-  .IconTorii {
+  .iconTorii {
     width: 25px;
+  }
+  .iconTokkuri {
+    width: 26px;
+  }
+  .iconSchoolBag {
+    width: 30px;
+  }
+  .iconKimono01,
+  .iconKimono02,
+  .iconHoleCake {
+    width: 26px;
   }
 }
 @media (min-width: 1000px) {
@@ -141,11 +170,11 @@
   .name {
     font-size: 16px;
     margin-left: 12px;
+    padding-top: 0;
   }
   .kana {
     width: 100%;
     font-size: 10px;
-    margin-top: 4px;
     transform: translate(-0.5em, 0);
   }
   .dateTd {
@@ -156,6 +185,9 @@
   .dateTd > span {
     display: flex;
     justify-content: space-between;
+  }
+  .iconGohan {
+    transform: translate(-2px, -2px);
   }
 }
 @media (hover: hover) {
