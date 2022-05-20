@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRecoilValue, useRecoilState } from "recoil";
 
 import style from "./style.module.css";
@@ -13,15 +13,18 @@ import { SettingButton } from "./SettingButton";
 export const Setting: React.FC = () => {
   const queries = useRecoilValue(queryState);
 
+  const [isQuery, setIsQuery] = useState<boolean>(false);
+
+  useEffect(() => {
+    queries.birthday && queries.gender && setIsQuery(true);
+  }, [queries.birthday, queries.gender]);
+
   const [birthday, setBirthday] = useRecoilState(birthdayState);
 
   useEffect(() => {
-    if (queries.birthday) {
-      setBirthday(joinDateHyphen(queries.birthday));
-    } else {
-      const _currentDate = String(currentDate());
-      _currentDate && setBirthday(_currentDate);
-    }
+    queries.birthday
+      ? setBirthday(joinDateHyphen(queries.birthday))
+      : setBirthday(String(currentDate()));
   }, [queries.birthday, setBirthday]);
 
   const onChangeDate = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -31,11 +34,7 @@ export const Setting: React.FC = () => {
   const [gender, setGender] = useRecoilState(genderState);
 
   useEffect(() => {
-    if (queries.gender) {
-      setGender(queries.gender);
-    } else {
-      setGender("male");
-    }
+    queries.gender ? setGender(queries.gender) : setGender("");
   }, [queries.gender, setGender]);
 
   const genders = [
@@ -70,7 +69,7 @@ export const Setting: React.FC = () => {
         onChange={onChangeGender}
         text="性　　別"
       />
-      {!queries.birthday && !queries.gender && (
+      {!isQuery && (
         <>
           <Spacer height={{ s: 40 }} />
           <SettingButton birthday={birthday} gender={gender} />
