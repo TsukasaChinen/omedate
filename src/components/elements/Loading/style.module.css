@@ -1,12 +1,14 @@
 .wrapper {
   display: flex;
+  height: 140px;
   justify-content: center;
   pointer-events: none;
-  transition: opacity 0.4s ease-out;
+  transition: height 0.28s linear, opacity 0.28s linear;
   opacity: 1;
 }
 .wrapper[data-show="false"] {
   opacity: 0;
+  height: 0;
 }
 .contents {
   position: relative;
@@ -22,24 +24,24 @@
 .icon[data-show="true"] {
   display: block;
 }
-.svgNormal,
-.svgSmile {
+.normal svg,
+.smile svg {
   position: absolute;
   width: 90px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.svgEffect {
-  position: absolute;
+.smile svg:nth-of-type(1),
+.smile svg:nth-of-type(2) {
   width: 44px;
 }
-.svgEffect.effect01 {
+.smile svg:nth-of-type(1) {
   top: 14px;
   left: 20px;
   transform: rotate(-32deg);
 }
-.svgEffect.effect02 {
+.smile svg:nth-of-type(2) {
   top: 9px;
   left: 77px;
   transform: rotate(32deg);

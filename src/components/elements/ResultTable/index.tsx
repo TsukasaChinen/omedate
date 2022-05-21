@@ -1,5 +1,7 @@
 import { useRecoilValue } from "recoil";
 
+import style from "./style.module.css";
+
 import { queryState, loadingState } from "../../commons/keys";
 import { Spacer } from "../../commons/atoms/Spacer";
 import { Loading } from "../../elements/Loading";
@@ -13,19 +15,13 @@ export const ResultTable: React.FC = () => {
 
   return (
     <>
-      {isLoading ? (
-        <>
-          <Spacer height={{ s: 20 }} />
-          <Loading interVal={1500} />
-        </>
-      ) : (
-        <>
-          <Spacer height={{ s: 40, m: 50 }} />
-          <Table />
-          <Spacer height={{ s: 0, m: 40 }} />
-          <TableShareButton gender={gender} />
-        </>
-      )}
+      <Spacer height={{ s: isLoading ? 20 : 40, m: 50 }} />
+      <Loading interVal={1500} />
+      <div className={style.wrapper} data-show={isLoading}>
+        <Table />
+        <Spacer height={{ s: 0, m: 40 }} />
+        <TableShareButton gender={gender} />
+      </div>
     </>
   );
 };
