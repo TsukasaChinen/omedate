@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useSetRecoilState } from "recoil";
+import { useRecoilState } from "recoil";
 
 import style from "./style.module.css";
 
@@ -25,9 +25,8 @@ const SmileEffect: React.FC<{ className?: string; fill?: string }> = ({
 
 export const Loading: React.FC<{
   interVal?: number;
-  isLoading: boolean;
-}> = ({ interVal, isLoading }) => {
-  const setIsLoading = useSetRecoilState(loadingState);
+}> = ({ interVal }) => {
+  const [isLoading, setIsLoading] = useRecoilState(loadingState);
 
   const [isShowIconNormal, setIsShowIconNormal] = useState<boolean>(true);
 

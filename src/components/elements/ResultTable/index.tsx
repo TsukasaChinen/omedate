@@ -16,7 +16,7 @@ export const ResultTable: React.FC = () => {
       {isLoading ? (
         <>
           <Spacer height={{ s: 20 }} />
-          <Loading interVal={1500} isLoading={isLoading} />
+          <Loading interVal={1500} />
         </>
       ) : (
         <>
