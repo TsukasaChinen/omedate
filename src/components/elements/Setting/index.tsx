@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRecoilValue, useRecoilState } from "recoil";
 import { useNavigate } from "react-router-dom";
 
@@ -21,7 +21,11 @@ export const Setting: React.FC = () => {
 
   const queries = useRecoilValue(queryState);
 
-  const isQuery = queries.birthday && queries.gender ? true : false;
+  const [isQuery, setIsQuery] = useState<boolean>(false);
+
+  useEffect(() => {
+    queries.birthday && queries.gender ? setIsQuery(true) : setIsQuery(false);
+  }, [queries.birthday, queries.gender]);
 
   const [birthday, setBirthday] = useRecoilState(birthdayState);
 
