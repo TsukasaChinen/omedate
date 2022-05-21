@@ -57,6 +57,11 @@
   height: var(--iconSize);
   justify-content: center;
 }
+.nameIcon > svg {
+  display: block;
+  width: 30px;
+  height: 30px;
+}
 .iconNoshi,
 .iconKabuto {
   width: 100%;

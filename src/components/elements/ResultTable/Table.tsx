@@ -1,7 +1,12 @@
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
 import style from "./style.module.css";
+
+import CommonEvents from "../../commons/data/common.json";
+import MaleEvents from "../../commons/data/male.json";
+import FemaleEvents from "../../commons/data/female.json";
 
 import {
   IconNoshi,
@@ -19,7 +24,32 @@ import {
   IconHakama,
 } from "../../commons/atoms/Icons";
 
+type iconComponentsProps = {
+  [key: string]: any;
+};
+const iconComponents: iconComponentsProps = {
+  IconNoshi: IconNoshi,
+  IconTorii: IconTorii,
+  IconKabuto: IconKabuto,
+  IconCake: IconCake,
+  IconTokkuri: IconTokkuri,
+  IconSchoolBag: IconSchoolBag,
+  IconKimono01: IconKimono01,
+  IconKimono02: IconKimono02,
+  IconHoleCake: IconHoleCake,
+  IconGakuran: IconGakuran,
+  IconGohan: IconGohan,
+  IconSailor: IconSailor,
+  IconHakama: IconHakama,
+};
+
 export const Table: React.FC = () => {
+  const events = [
+    ...CommonEvents.events,
+    ...MaleEvents.events,
+    ...FemaleEvents.events,
+  ];
+
   return (
     <table className={style.table}>
       <thead>
@@ -29,342 +59,30 @@ export const Table: React.FC = () => {
           <th>説　明</th>
         </tr>
       </thead>
-      <tbody>
-        <tr className={style.content}>
-          <td className={style.nameTd}>
-            <span className={style.nameInner}>
-              <i className={style.nameIcon}>
-                <IconNoshi className={style.iconNoshi} />
-              </i>
-              <b className={style.name}>お七夜</b>
-            </span>
-          </td>
-          <td className={style.dateTd}>
-            <span>
-              <span>2022/3/20</span>
-              <span className="red">（日）</span>
-            </span>
-          </td>
-          <td className={style.descriptionTd}>
-            生まれて7日目のお祝い。赤ちゃんの名前を決め、お披露目する「命名式」を行ないます。
-          </td>
-        </tr>
-        <tr className={style.arrowTr}>
-          <td>
-            <FontAwesomeIcon icon={faCaretDown} />
-          </td>
-        </tr>
-        <tr className={style.content}>
-          <td className={style.nameTd}>
-            <span className={style.nameInner}>
-              <i className={style.nameIcon}>
-                <IconTorii className={style.iconTorii} />
-              </i>
-              <b className={style.name}>お宮参り</b>
-            </span>
-          </td>
-          <td className={style.dateTd}>
-            <span>
-              <span>2022/4/14</span>
-              <span className="blue">（土）</span>
-            </span>
-          </td>
-          <td className={style.descriptionTd}>
-            自分の生まれた土地の守り神に、初めてお参りすること。
-          </td>
-        </tr>
-        <tr className={style.arrowTr}>
-          <td>
-            <FontAwesomeIcon icon={faCaretDown} />
-          </td>
-        </tr>
-        <tr className={style.content}>
-          <td className={style.nameTd}>
-            <span className={style.nameInner}>
-              <i className={style.nameIcon}>
-                <IconKabuto className={style.iconKabuto} />
-              </i>
-              <b className={style.name}>端午の節句</b>
-            </span>
-          </td>
-          <td className={style.dateTd}>
-            <span>
-              <span>2022/5/5</span>
-              <span>（水）</span>
-            </span>
-          </td>
-          <td className={style.descriptionTd}>
-            男の子は5月5日の端午の節句を祝います。
-            <br />
-            無病息災と出世の願いを込めて、鯉のぼり。
-          </td>
-        </tr>
-        <tr className={style.arrowTr}>
-          <td>
-            <FontAwesomeIcon icon={faCaretDown} />
-          </td>
-        </tr>
-        <tr className={style.content}>
-          <td className={style.nameTd}>
-            <span className={style.nameInner}>
-              <i className={style.nameIcon}>
-                <IconCake className={style.iconCake} />
-              </i>
-              <b className={style.name}>端午の節句</b>
-            </span>
-          </td>
-          <td className={style.dateTd}>
-            <span>
-              <span>2022/5/5</span>
-              <span>（水）</span>
-            </span>
-          </td>
-          <td className={style.descriptionTd}>
-            男の子は5月5日の端午の節句を祝います。
-            <br />
-            無病息災と出世の願いを込めて、鯉のぼり。
-          </td>
-        </tr>
-        <tr className={style.arrowTr}>
-          <td>
-            <FontAwesomeIcon icon={faCaretDown} />
-          </td>
-        </tr>
-        <tr className={style.content}>
-          <td className={style.nameTd}>
-            <span className={style.nameInner}>
-              <i className={style.nameIcon}>
-                <IconTokkuri className={style.iconTokkuri} />
-              </i>
-              <b className={style.name}>端午の節句</b>
-            </span>
-          </td>
-          <td className={style.dateTd}>
-            <span>
-              <span>2022/5/5</span>
-              <span>（水）</span>
-            </span>
-          </td>
-          <td className={style.descriptionTd}>
-            男の子は5月5日の端午の節句を祝います。
-            <br />
-            無病息災と出世の願いを込めて、鯉のぼり。
-          </td>
-        </tr>
-        <tr className={style.arrowTr}>
-          <td>
-            <FontAwesomeIcon icon={faCaretDown} />
-          </td>
-        </tr>
-        <tr className={style.content}>
-          <td className={style.nameTd}>
-            <span className={style.nameInner}>
-              <i className={style.nameIcon}>
-                <IconSchoolBag className={style.iconSchoolBag} />
-              </i>
-              <b className={style.name}>端午の節句</b>
-            </span>
-          </td>
-          <td className={style.dateTd}>
-            <span>
-              <span>2022/5/5</span>
-              <span>（水）</span>
-            </span>
-          </td>
-          <td className={style.descriptionTd}>
-            男の子は5月5日の端午の節句を祝います。
-            <br />
-            無病息災と出世の願いを込めて、鯉のぼり。
-          </td>
-        </tr>
-        <tr className={style.arrowTr}>
-          <td>
-            <FontAwesomeIcon icon={faCaretDown} />
-          </td>
-        </tr>
-        <tr className={style.content}>
-          <td className={style.nameTd}>
-            <span className={style.nameInner}>
-              <i className={style.nameIcon}>
-                <IconKimono02 className={style.iconKimono02} />
-              </i>
-              <b className={style.name}>端午の節句</b>
-            </span>
-          </td>
-          <td className={style.dateTd}>
-            <span>
-              <span>2022/5/5</span>
-              <span>（水）</span>
-            </span>
-          </td>
-          <td className={style.descriptionTd}>
-            男の子は5月5日の端午の節句を祝います。
-            <br />
-            無病息災と出世の願いを込めて、鯉のぼり。
-          </td>
-        </tr>
-        <tr className={style.arrowTr}>
-          <td>
-            <FontAwesomeIcon icon={faCaretDown} />
-          </td>
-        </tr>
-        <tr className={style.content}>
-          <td className={style.nameTd}>
-            <span className={style.nameInner}>
-              <i className={style.nameIcon}>
-                <IconKimono01 className={style.iconKimono01} />
-              </i>
-              <b className={style.name}>端午の節句</b>
-            </span>
-          </td>
-          <td className={style.dateTd}>
-            <span>
-              <span>2022/5/5</span>
-              <span>（水）</span>
-            </span>
-          </td>
-          <td className={style.descriptionTd}>
-            男の子は5月5日の端午の節句を祝います。
-            <br />
-            無病息災と出世の願いを込めて、鯉のぼり。
-          </td>
-        </tr>
-        <tr className={style.arrowTr}>
-          <td>
-            <FontAwesomeIcon icon={faCaretDown} />
-          </td>
-        </tr>
-        <tr className={style.content}>
-          <td className={style.nameTd}>
-            <span className={style.nameInner}>
-              <i className={style.nameIcon}>
-                <IconHoleCake className={style.iconHoleCake} />
-              </i>
-              <b className={style.name}>端午の節句</b>
-            </span>
-          </td>
-          <td className={style.dateTd}>
-            <span>
-              <span>2022/5/5</span>
-              <span>（水）</span>
-            </span>
-          </td>
-          <td className={style.descriptionTd}>
-            男の子は5月5日の端午の節句を祝います。
-            <br />
-            無病息災と出世の願いを込めて、鯉のぼり。
-          </td>
-        </tr>
-        <tr className={style.arrowTr}>
-          <td>
-            <FontAwesomeIcon icon={faCaretDown} />
-          </td>
-        </tr>
-        <tr className={style.content}>
-          <td className={style.nameTd}>
-            <span className={style.nameInner}>
-              <i className={style.nameIcon}>
-                <IconGohan className={style.iconGohan} />
-              </i>
-              <b className={style.name}>端午の節句</b>
-            </span>
-          </td>
-          <td className={style.dateTd}>
-            <span>
-              <span>2022/5/5</span>
-              <span>（水）</span>
-            </span>
-          </td>
-          <td className={style.descriptionTd}>
-            男の子は5月5日の端午の節句を祝います。
-            <br />
-            無病息災と出世の願いを込めて、鯉のぼり。
-          </td>
-        </tr>
-        <tr className={style.arrowTr}>
-          <td>
-            <FontAwesomeIcon icon={faCaretDown} />
-          </td>
-        </tr>
-        <tr className={style.content}>
-          <td className={style.nameTd}>
-            <span className={style.nameInner}>
-              <i className={style.nameIcon}>
-                <IconGakuran className={style.iconGakuran} />
-              </i>
-              <b className={style.name}>端午の節句</b>
-            </span>
-          </td>
-          <td className={style.dateTd}>
-            <span>
-              <span>2022/5/5</span>
-              <span>（水）</span>
-            </span>
-          </td>
-          <td className={style.descriptionTd}>
-            男の子は5月5日の端午の節句を祝います。
-            <br />
-            無病息災と出世の願いを込めて、鯉のぼり。
-          </td>
-        </tr>
-        <tr className={style.arrowTr}>
-          <td>
-            <FontAwesomeIcon icon={faCaretDown} />
-          </td>
-        </tr>
-        <tr className={style.content}>
-          <td className={style.nameTd}>
-            <span className={style.nameInner}>
-              <i className={style.nameIcon}>
-                <IconSailor className={style.iconSailor} />
-              </i>
-              <b className={style.name}>端午の節句</b>
-            </span>
-          </td>
-          <td className={style.dateTd}>
-            <span>
-              <span>2022/5/5</span>
-              <span>（水）</span>
-            </span>
-          </td>
-          <td className={style.descriptionTd}>
-            男の子は5月5日の端午の節句を祝います。
-            <br />
-            無病息災と出世の願いを込めて、鯉のぼり。
-          </td>
-        </tr>
-        <tr className={style.arrowTr}>
-          <td>
-            <FontAwesomeIcon icon={faCaretDown} />
-          </td>
-        </tr>
-        <tr className={style.content}>
-          <td className={style.nameTd}>
-            <span className={style.nameInner}>
-              <i className={style.nameIcon}>
-                <IconHakama className={style.iconHakama} />
-              </i>
-              <b className={style.name}>端午の節句</b>
-            </span>
-          </td>
-          <td className={style.dateTd}>
-            <span>
-              <span>2022/5/5</span>
-              <span>（水）</span>
-            </span>
-          </td>
-          <td className={style.descriptionTd}>
-            男の子は5月5日の端午の節句を祝います。
-            <br />
-            無病息災と出世の願いを込めて、鯉のぼり。
-          </td>
-        </tr>
-        <tr className={style.arrowTr}>
-          <td>
-            <FontAwesomeIcon icon={faCaretDown} />
-          </td>
-        </tr>
-      </tbody>
+      {events.map((event, i) => (
+        <tbody key={i}>
+          <tr className={style.content}>
+            <td className={style.nameTd}>
+              <span className={style.nameInner}>
+                <i className={style.nameIcon}>{event.icon}</i>
+                <b className={style.name}>{event.name}</b>
+              </span>
+            </td>
+            <td className={style.dateTd}>
+              <span>
+                <span>2022/3/20</span>
+                <span className="red">（日）</span>
+              </span>
+            </td>
+            <td className={style.descriptionTd}>{event.content}</td>
+          </tr>
+          <tr className={style.arrowTr}>
+            <td>
+              <FontAwesomeIcon icon={faCaretDown} />
+            </td>
+          </tr>
+        </tbody>
+      ))}
     </table>
   );
 };
