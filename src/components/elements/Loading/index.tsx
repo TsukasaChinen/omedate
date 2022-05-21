@@ -1,17 +1,20 @@
 import { useEffect, useState } from "react";
-import { useRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 
 import style from "./style.module.css";
 
 import { loadingState } from "../../commons/keys";
 import { IconBabyNomal, IconBabySmile } from "../../commons/atoms/Icons";
 
-const SmileEffect: React.FC<{ className?: string }> = ({ className }) => {
+const SmileEffect: React.FC<{ className?: string; fill?: string }> = ({
+  className,
+  fill,
+}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 20 8"
-      fill="#fff"
+      fill={fill ? fill : "#fff"}
       className={className}
     >
       <path d="M7.4 7.1c-.2 0-.4-.2-.4-.4V1.2c0-.2.2-.3.3-.3s.3.2.3.3v5.5c.1.2-.1.4-.2.4zm5.4 0c-.2 0-.3-.2-.3-.3V1.3c0-.2.2-.3.3-.3.2 0 .3.2.3.3v5.5c.1.1-.1.3-.3.3z" />
@@ -20,8 +23,11 @@ const SmileEffect: React.FC<{ className?: string }> = ({ className }) => {
   );
 };
 
-export const Loading: React.FC<{ interVal?: number }> = ({ interVal }) => {
-  const [isLoading, setIsLoading] = useRecoilState(loadingState);
+export const Loading: React.FC<{
+  interVal?: number;
+  isLoading: boolean;
+}> = ({ interVal, isLoading }) => {
+  const setIsLoading = useSetRecoilState(loadingState);
 
   const [isShowIconNormal, setIsShowIconNormal] = useState<boolean>(true);
 
@@ -54,23 +60,27 @@ export const Loading: React.FC<{ interVal?: number }> = ({ interVal }) => {
   return (
     <div className={style.wrapper} data-show={isLoading}>
       <div className={style.contents}>
-        <div className={style.iconWrapper}>
-          <i
-            className={`${style.icon} ${style.normal}`}
-            data-show={isShowIconNormal}
-          >
-            <IconBabyNomal className={style.svgNormal} />
-          </i>
-          <i
-            className={`${style.icon} ${style.smile}`}
-            data-show={isShowIconSmile}
-          >
-            <SmileEffect className={`${style.svgEffect} ${style.effect01}`} />
-            <SmileEffect className={`${style.svgEffect} ${style.effect02}`} />
-            <IconBabySmile className={style.svgSmile} />
-          </i>
-          <p className={style.text}>読み込み中・・・</p>
-        </div>
+        <i
+          className={`${style.icon} ${style.normal}`}
+          data-show={isShowIconNormal}
+        >
+          <IconBabyNomal className={style.svgNormal} fill="#fccf00" />
+        </i>
+        <i
+          className={`${style.icon} ${style.smile}`}
+          data-show={isShowIconSmile}
+        >
+          <SmileEffect
+            className={`${style.svgEffect} ${style.effect01}`}
+            fill="#fccf00"
+          />
+          <SmileEffect
+            className={`${style.svgEffect} ${style.effect02}`}
+            fill="#fccf00"
+          />
+          <IconBabySmile className={style.svgSmile} fill="#fccf00" />
+        </i>
+        <p className={style.text}>ちょっと待ってて</p>
       </div>
     </div>
   );

@@ -7,7 +7,6 @@ import { Description } from "../../elements/Description";
 import { Setting } from "../../elements/Setting";
 import { ResultTable } from "../../elements/ResultTable";
 import { Modals } from "../../elements/Modal";
-import { Loading } from "../../elements/Loading";
 
 export const Home: React.FC = () => {
   const location = useLocation().search;
@@ -43,7 +42,6 @@ export const Home: React.FC = () => {
         <>
           <ResultTable />
           <Modals />
-          <Loading interVal={1000} />
         </>
       )}
     </main>

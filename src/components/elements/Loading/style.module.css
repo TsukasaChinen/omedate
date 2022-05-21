@@ -1,16 +1,6 @@
 .wrapper {
-  --iconSize: 180px;
-  --textBottom: 20px;
   display: flex;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: var(--yellow);
-  align-items: center;
   justify-content: center;
-  z-index: 3;
   pointer-events: none;
   transition: opacity 0.4s ease-out;
   opacity: 1;
@@ -18,10 +8,10 @@
 .wrapper[data-show="false"] {
   opacity: 0;
 }
-.iconWrapper {
+.contents {
   position: relative;
-  width: var(--iconSize);
-  height: var(--iconSize);
+  width: 140px;
+  height: 140px;
 }
 .icon {
   display: none;
@@ -35,7 +25,7 @@
 .svgNormal,
 .svgSmile {
   position: absolute;
-  width: 100px;
+  width: 90px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -45,26 +35,20 @@
   width: 44px;
 }
 .svgEffect.effect01 {
-  top: 40px;
-  left: 50px;
+  top: 14px;
+  left: 20px;
   transform: rotate(-32deg);
 }
 .svgEffect.effect02 {
-  top: 30px;
-  left: 105px;
-  transform: rotate(34deg);
+  top: 9px;
+  left: 77px;
+  transform: rotate(32deg);
 }
 .text {
   position: absolute;
-  bottom: var(--textBottom);
+  bottom: 0;
   width: 100%;
   font-size: 14px;
   text-align: center;
-  color: var(--white);
-}
-@media (min-width: 768px) {
-  .wrapper {
-    --iconSize: 200px;
-    --textBottom: 30px;
-  }
+  color: var(--yellow);
 }
