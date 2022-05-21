@@ -43,9 +43,9 @@ export const Home: React.FC = () => {
         <>
           <ResultTable />
           <Modals />
-          <Loading />
         </>
       )}
+      <Loading />
     </main>
   );
 };
