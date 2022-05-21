@@ -70,6 +70,9 @@
 .iconHoleCake {
   width: 24px;
 }
+.iconHakama {
+  width: 26px;
+}
 .iconTokkuri,
 .iconSchoolBag {
   transform: translateX(1px);
@@ -80,6 +83,9 @@
 .iconGakuran,
 .iconSailor {
   transform: translateX(-1px);
+}
+.iconHakama {
+  transform: translateY(1px);
 }
 .dateTd {
   margin-top: 14px;

@@ -16,6 +16,7 @@ import {
   IconGakuran,
   IconGohan,
   IconSailor,
+  IconHakama,
 } from "../../commons/atoms/Icons";
 
 export const Table: React.FC = () => {
@@ -316,6 +317,32 @@ export const Table: React.FC = () => {
             <span className={style.nameInner}>
               <i className={style.nameIcon}>
                 <IconSailor className={style.iconSailor} />
+              </i>
+              <b className={style.name}>端午の節句</b>
+            </span>
+          </td>
+          <td className={style.dateTd}>
+            <span>
+              <span>2022/5/5</span>
+              <span>（水）</span>
+            </span>
+          </td>
+          <td className={style.descriptionTd}>
+            男の子は5月5日の端午の節句を祝います。
+            <br />
+            無病息災と出世の願いを込めて、鯉のぼり。
+          </td>
+        </tr>
+        <tr className={style.arrowTr}>
+          <td>
+            <FontAwesomeIcon icon={faCaretDown} />
+          </td>
+        </tr>
+        <tr className={style.content}>
+          <td className={style.nameTd}>
+            <span className={style.nameInner}>
+              <i className={style.nameIcon}>
+                <IconHakama className={style.iconHakama} />
               </i>
               <b className={style.name}>端午の節句</b>
             </span>
