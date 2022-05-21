@@ -22,8 +22,8 @@ export const ResultText: React.FC<Props> = ({ className, queries }) => {
       <p>
         <span className="green">{birthdayStr}</span>
         生まれの
-        <span className={genderClass}>「{genderStr}」</span>
-        のお祝い事の日付一覧です。
+        <span className={genderClass}>「{genderStr}」</span>の
+        お祝い事の一覧です。
       </p>
     </div>
   );

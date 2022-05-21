@@ -63,7 +63,6 @@ export const Modals: React.FC = () => {
             )}&gender=${gender}`}
             className={style.url}
           />
-
           <CopyButton
             text={copyLabel}
             className={`button ${style.button}`}
