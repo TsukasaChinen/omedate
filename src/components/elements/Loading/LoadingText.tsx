@@ -1,6 +1,8 @@
-export const LoadingText: React.FC<{
+type Props = {
   className?: string;
   text: string;
-}> = ({ className, text }) => {
+};
+
+export const LoadingText: React.FC<Props> = ({ className, text }) => {
   return <p className={className}>{text}</p>;
 };

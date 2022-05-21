@@ -1,10 +1,12 @@
 import { LoadingEffectSmile } from "./LoadingEffectSmile";
 import { IconBabySmile } from "../../commons/atoms/Icons";
 
-export const LoadingIconSmile: React.FC<{
+type Props = {
   className?: string;
   isShow: boolean;
-}> = ({ className, isShow }) => {
+};
+
+export const LoadingIconSmile: React.FC<Props> = ({ className, isShow }) => {
   return (
     <i className={className} data-show={isShow}>
       <LoadingEffectSmile fill="#fccf00" />

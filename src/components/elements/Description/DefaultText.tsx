@@ -1,8 +1,6 @@
-type Props = {
-  className?: string;
-};
-
-export const DefaultText: React.FC<Props> = ({ className }) => {
+export const DefaultText: React.FC<{ className?: string }> = ({
+  className,
+}) => {
   return (
     <div className={className}>
       <p>

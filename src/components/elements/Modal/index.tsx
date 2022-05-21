@@ -43,6 +43,7 @@ export const Modals: React.FC = () => {
   };
 
   const fullUrl = window.location.href.split("?");
+
   return (
     <div className={style.wrapper} data-show={isModal}>
       <ModalClose className={style.close} onClick={handleClickCloseModal} />

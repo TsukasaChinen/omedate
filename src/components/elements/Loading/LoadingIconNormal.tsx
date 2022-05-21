@@ -1,9 +1,11 @@
 import { IconBabyNomal } from "../../commons/atoms/Icons";
 
-export const LoadingIconNormal: React.FC<{
+type Props = {
   className?: string;
   isShow: boolean;
-}> = ({ className, isShow }) => {
+};
+
+export const LoadingIconNormal: React.FC<Props> = ({ className, isShow }) => {
   return (
     <i className={className} data-show={isShow}>
       <IconBabyNomal fill="#fccf00" />
