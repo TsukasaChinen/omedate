@@ -52,7 +52,7 @@ export const Loading: React.FC<{
           className={`${style.icon} ${style.smile}`}
           isShow={isShowIconSmile}
         />
-        <LoadingText className={style.text} text="ちょっと待ってて" />
+        <LoadingText className={style.text} text="読み込んでるよ" />
       </div>
     </div>
   );
