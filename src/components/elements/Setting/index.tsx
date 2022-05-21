@@ -1,23 +1,27 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useRecoilValue, useRecoilState } from "recoil";
+import { useNavigate } from "react-router-dom";
 
 import style from "./style.module.css";
 
 import { birthdayState, genderState, queryState } from "../../commons/keys";
-import { currentDate, joinDateHyphen } from "../../commons/utilities";
+import {
+  currentDate,
+  joinDateHyphen,
+  replaceDateHyphen,
+} from "../../commons/utilities";
+
 import { Spacer } from "../../commons/atoms/Spacer";
 import { SettingBirthday } from "./SettingBirthday";
 import { SettingGender } from "./SettingGender";
 import { SettingButton } from "./SettingButton";
 
 export const Setting: React.FC = () => {
+  const navigate = useNavigate();
+
   const queries = useRecoilValue(queryState);
 
-  const [isQuery, setIsQuery] = useState<boolean>(false);
-
-  useEffect(() => {
-    queries.birthday && queries.gender && setIsQuery(true);
-  }, [queries.birthday, queries.gender]);
+  const isQuery = queries.birthday && queries.gender ? true : false;
 
   const [birthday, setBirthday] = useRecoilState(birthdayState);
 
@@ -34,7 +38,7 @@ export const Setting: React.FC = () => {
   const [gender, setGender] = useRecoilState(genderState);
 
   useEffect(() => {
-    queries.gender ? setGender(queries.gender) : setGender("");
+    queries.gender ? setGender(queries.gender) : setGender("male");
   }, [queries.gender, setGender]);
 
   const genders = [
@@ -51,6 +55,11 @@ export const Setting: React.FC = () => {
   const onChangeGender = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setGender(e.target.value);
   };
+
+  useEffect(() => {
+    if (!isQuery) return;
+    navigate(`/?birthday=${replaceDateHyphen(birthday)}&gender=${gender}`);
+  }, [navigate, isQuery, birthday, gender]);
 
   return (
     <div className={style.wrapper}>

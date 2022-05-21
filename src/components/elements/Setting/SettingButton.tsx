@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
+
 import { replaceDateHyphen } from "../../commons/utilities";
 
-import { LinkButton } from "../../commons/atoms/LinkButton";
 import { IconBabyNomal } from "../../commons/atoms/Icons";
 
 type Props = {
@@ -15,12 +16,12 @@ export const SettingButton: React.FC<Props> = ({
   className,
 }) => {
   return (
-    <LinkButton
-      href={`/?birthday=${replaceDateHyphen(birthday)}&gender=${gender}`}
-      text="お祝い事をみる"
+    <Link
+      to={`/?birthday=${replaceDateHyphen(birthday)}&gender=${gender}`}
       className={`button ${className}`}
     >
       <IconBabyNomal />
-    </LinkButton>
+      お祝い事をみる
+    </Link>
   );
 };
