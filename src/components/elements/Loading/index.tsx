@@ -6,11 +6,7 @@ import style from "./style.module.css";
 import { loadingState } from "../../commons/keys";
 import { IconBabyNomal, IconBabySmile } from "../../commons/atoms/Icons";
 
-type Props = {
-  className?: string;
-};
-
-const SmileEffect: React.FC<Props> = ({ className }) => {
+const SmileEffect: React.FC<{ className?: string }> = ({ className }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -24,25 +20,28 @@ const SmileEffect: React.FC<Props> = ({ className }) => {
   );
 };
 
-export const Loading: React.FC = () => {
-  const [isShow, setIsShow] = useRecoilState(loadingState);
+export const Loading: React.FC<{ interVal?: number }> = ({ interVal }) => {
+  const [isLoading, setIsLoading] = useRecoilState(loadingState);
 
   const [isShowIconNormal, setIsShowIconNormal] = useState<boolean>(true);
 
   const [isShowIconSmile, setIsShowIconSmile] = useState<boolean>(false);
 
   useEffect(() => {
-    if (!isShow) return;
-    const intervalId = setInterval(() => {
-      setIsShow(false);
-    }, 3000);
+    if (!isLoading) return;
+    const intervalId = setInterval(
+      () => {
+        setIsLoading(false);
+      },
+      interVal ? interVal : 1000
+    );
     return () => {
       clearInterval(intervalId);
     };
-  }, [isShow, setIsShow]);
+  }, [isLoading, setIsLoading, interVal]);
 
   useEffect(() => {
-    if (!isShow) return;
+    if (!isLoading) return;
     const intervalId = setInterval(() => {
       setIsShowIconNormal((prev) => !prev);
       setIsShowIconSmile((prev) => !prev);
@@ -50,10 +49,10 @@ export const Loading: React.FC = () => {
     return () => {
       clearInterval(intervalId);
     };
-  }, [isShow]);
+  }, [isLoading]);
 
   return (
-    <div className={style.wrapper} data-show={isShow}>
+    <div className={style.wrapper} data-show={isLoading}>
       <div className={style.contents}>
         <div className={style.iconWrapper}>
           <i

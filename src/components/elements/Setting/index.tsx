@@ -1,10 +1,15 @@
 import { useEffect, useState } from "react";
-import { useRecoilValue, useRecoilState } from "recoil";
+import { useRecoilValue, useRecoilState, useSetRecoilState } from "recoil";
 import { useNavigate } from "react-router-dom";
 
 import style from "./style.module.css";
 
-import { birthdayState, genderState, queryState } from "../../commons/keys";
+import {
+  birthdayState,
+  genderState,
+  queryState,
+  loadingState,
+} from "../../commons/keys";
 import {
   currentDate,
   joinDateHyphen,
@@ -17,6 +22,8 @@ import { SettingGender } from "./SettingGender";
 import { SettingButton } from "./SettingButton";
 
 export const Setting: React.FC = () => {
+  const setIsLoading = useSetRecoilState(loadingState);
+
   const navigate = useNavigate();
 
   const queries = useRecoilValue(queryState);
@@ -37,6 +44,7 @@ export const Setting: React.FC = () => {
 
   const onChangeDate = (e: React.ChangeEvent<HTMLInputElement>) => {
     setBirthday(e.target.value);
+    setIsLoading(true);
   };
 
   const [gender, setGender] = useRecoilState(genderState);
@@ -58,6 +66,7 @@ export const Setting: React.FC = () => {
 
   const onChangeGender = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setGender(e.target.value);
+    setIsLoading(true);
   };
 
   useEffect(() => {

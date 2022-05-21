@@ -23,7 +23,7 @@ export const queryState = atom<{
 
 export const loadingState = atom<boolean>({
   key: "loadingState",
-  default: false,
+  default: true,
 });
 
 export const modalState = atom<boolean>({
