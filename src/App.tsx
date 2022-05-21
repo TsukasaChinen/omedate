@@ -11,7 +11,6 @@ const App: React.FC = () => {
   return (
     <RecoilRoot>
       <div className="wrapper">
-        <p className="fixed"></p>
         <Header />
         <BrowserRouter>
           <Routes>

@@ -66,7 +66,7 @@ export const Modals: React.FC = () => {
 
           <CopyButton
             text={copyLabel}
-            className={`primaryButton ${style.button}`}
+            className={`button ${style.button}`}
             onClick={handleClickCopyUrl}
           />
         </div>

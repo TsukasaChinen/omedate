@@ -5,7 +5,7 @@ import { Spacer } from "../../commons/atoms/Spacer";
 import { Table } from "./Table";
 import { TableShareButton } from "./TableShareButton";
 
-export const Result: React.FC = () => {
+export const ResultTable: React.FC = () => {
   const queries = useRecoilValue(queryState);
   const gender = queries.gender;
 

@@ -4,9 +4,10 @@ import { useLocation } from "react-router-dom";
 
 import { queryState } from "../../commons/keys";
 import { Description } from "../../elements/Description";
-import { Modals } from "../../elements/Modal";
 import { Setting } from "../../elements/Setting";
-import { Result } from "../../elements/Result";
+import { ResultTable } from "../../elements/ResultTable";
+import { Modals } from "../../elements/Modal";
+import { Loading } from "../../elements/Loading";
 
 export const Home: React.FC = () => {
   const location = useLocation().search;
@@ -40,8 +41,9 @@ export const Home: React.FC = () => {
       <Setting />
       {queries.birthday && queries.gender && (
         <>
-          <Result />
+          <ResultTable />
           <Modals />
+          <Loading />
         </>
       )}
     </main>
