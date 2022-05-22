@@ -7,14 +7,6 @@ export const currentDate = () => {
   return `${year}-${("00" + month).slice(-2)}-${day}`;
 };
 
-export const splitDate = (date: string) => {
-  return {
-    year: date.slice(0, 4),
-    month: date.slice(4, 6),
-    day: date.slice(6, 8),
-  };
-};
-
 export const replaceDateHyphen = (date: string) => date.replace(/-/g, "");
 
 export const joinDateHyphen = (date: string) =>

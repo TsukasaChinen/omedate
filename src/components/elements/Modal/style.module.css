@@ -25,7 +25,7 @@
   position: fixed;
   top: 50%;
   left: 50%;
-  width: min(90%, 772px);
+  width: min(90%, 800px);
   background: var(--white);
   z-index: 2;
   padding: var(--innerPadding);

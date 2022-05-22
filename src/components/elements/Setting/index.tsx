@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useRecoilValue, useRecoilState, useSetRecoilState } from "recoil";
-import { useNavigate } from "react-router-dom";
 
 import style from "./style.module.css";
 
@@ -10,6 +9,7 @@ import {
   queryState,
   loadingState,
 } from "../../commons/keys";
+
 import {
   currentDate,
   joinDateHyphen,
@@ -23,8 +23,6 @@ import { SettingButton } from "./SettingButton";
 
 export const Setting: React.FC = () => {
   const setIsLoading = useSetRecoilState(loadingState);
-
-  const navigate = useNavigate();
 
   const queries = useRecoilValue(queryState);
 
@@ -71,8 +69,17 @@ export const Setting: React.FC = () => {
 
   useEffect(() => {
     if (!isQuery) return;
-    navigate(`/?birthday=${replaceDateHyphen(birthday)}&gender=${gender}`);
-  }, [navigate, isQuery, birthday, gender]);
+    if (
+      queries.birthday !== replaceDateHyphen(birthday) ||
+      queries.gender !== gender
+    ) {
+      window.history.replaceState(
+        "",
+        "",
+        `/omedate/?birthday=${replaceDateHyphen(birthday)}&gender=${gender}`
+      );
+    }
+  }, [birthday, gender, isQuery, queries.birthday, queries.gender]);
 
   return (
     <div className={style.wrapper}>

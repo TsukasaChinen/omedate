@@ -1,21 +1,22 @@
-import { splitDate } from "../../commons/utilities";
+import { useRecoilValue } from "recoil";
 
 import { QuiriesTypes } from "../../commons/types";
+
+import { birthdayState, genderState } from "../../commons/keys";
 
 type Props = QuiriesTypes & {
   className?: string;
 };
 
 export const ResultText: React.FC<Props> = ({ className, queries }) => {
-  const birthday = queries.birthday && splitDate(queries.birthday);
+  const birthday = useRecoilValue(birthdayState).split("-");
+  const gender = useRecoilValue(genderState);
   const birthdayStr =
     birthday &&
-    `「${birthday.year}年${Number(birthday.month)}月${Number(
-      birthday.day
-    )}日」`;
+    `「${birthday[0]}年${Number(birthday[1])}月${Number(birthday[2])}日」`;
 
-  const genderStr = queries.gender === "male" ? "男の子" : "女の子";
-  const genderClass = queries.gender === "male" ? "blue" : "red";
+  const genderStr = gender === "male" ? "男の子" : "女の子";
+  const genderClass = gender === "male" ? "blue" : "red";
 
   return (
     <div className={className}>
