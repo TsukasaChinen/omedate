@@ -2,7 +2,7 @@ import { useSetRecoilState } from "recoil";
 
 import { modalState } from "../../commons/keys";
 import { ShareButton } from "../../commons/atoms/ShareButton";
-import { IconBabySmile } from "../../commons/atoms/Icons";
+import { ReactComponent as IconBabySmile } from "../../commons/media/iconBabySmile.svg";
 
 export const TableShareButton: React.FC<{ gender: string | null }> = ({
   gender,

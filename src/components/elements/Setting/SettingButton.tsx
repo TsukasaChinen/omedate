@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import { replaceDateHyphen } from "../../commons/utilities";
 
-import { IconBabyNomal } from "../../commons/atoms/Icons";
+import { ReactComponent as IconBabyNomal } from "../../commons/media/iconBabyNormal.svg";
 
 type Props = {
   birthday: string;

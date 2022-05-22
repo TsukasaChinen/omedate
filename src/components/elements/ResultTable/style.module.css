@@ -57,40 +57,45 @@
   height: var(--iconSize);
   justify-content: center;
 }
-.nameIcon > svg {
-  display: block;
-  width: 30px;
-  height: 30px;
-}
-.iconNoshi,
-.iconKabuto {
-  width: 100%;
-}
 .iconTorii {
-  width: 22px;
-}
-.iconTokkuri,
-.iconKimono01,
-.iconKimono02,
-.iconHoleCake {
   width: 24px;
 }
-.iconHakama {
-  width: 26px;
-}
-.iconTokkuri,
-.iconSchoolBag {
-  transform: translateX(1px);
-}
 .iconGohan {
-  transform: translate(-1px, -2px);
+  height: 30px;
+  transform: translate(0, -1px);
 }
-.iconGakuran,
+.iconHoleCake {
+  height: 26px;
+}
+.iconAge03 {
+  height: 26px;
+  transform: translate(0, 1px);
+}
+.iconAge05 {
+  height: 26px;
+  transform: translate(0.5px, 2px);
+}
+.iconAge07 {
+  height: 25px;
+  transform: translate(0, 2px);
+}
+.iconKabuto {
+  transform: translate(0, 2px);
+}
+.iconSchoolBag {
+  transform: translate(0.5px, 1px);
+}
+.iconTokkuri {
+  height: 26px;
+  transform: translate(0, 1px);
+}
+.iconGakuran {
+  height: 32px;
+  transform: translate(0, -2px);
+}
 .iconSailor {
-  transform: translateX(-1px);
-}
-.iconHakama {
-  transform: translateY(1px);
+  height: 32px;
+  transform: translate(0, -2px);
 }
 .dateTd {
   margin-top: 14px;
@@ -127,25 +132,42 @@
   .table .arrowTr td {
     height: 50px;
   }
-  .iconTorii {
-    width: 25px;
+  .iconGohan {
+    height: 32px;
   }
-  .iconTokkuri {
-    width: 26px;
+  .iconHoleCake {
+    height: 28px;
+    transform: translate(0, 2px);
+  }
+  .iconAge03 {
+    height: 28px;
   }
   .iconSchoolBag {
-    width: 30px;
+    height: 30px;
+    transform: translate(0, 2px);
   }
-  .iconKimono01,
-  .iconKimono02,
-  .iconHoleCake {
-    width: 26px;
+  .iconAge05 {
+    height: 30px;
+  }
+  .iconAge07 {
+    height: 27px;
+    transform: translate(0, 3px);
+  }
+  .iconTokkuri {
+    height: 28px;
+    transform: translate(0, 2px);
+  }
+  .iconGakuran {
+    height: 38px;
+  }
+  .iconSailor {
+    height: 38px;
   }
 }
 @media (min-width: 1000px) {
   .table {
     display: table;
-    width: 860px;
+    width: 880px;
     margin-inline: auto;
     border-spacing: 0;
     border: 1px solid var(--lightYellow);
@@ -189,7 +211,6 @@
   .name {
     white-space: nowrap;
     font-size: 16px;
-    margin-left: 12px;
     padding-top: 0;
   }
   .dateTd {
@@ -201,12 +222,41 @@
     display: flex;
     justify-content: space-between;
   }
+  .iconNoshi {
+    transform: translate(0, -2px);
+  }
+  .iconTorii {
+    transform: translate(1px, -1px);
+  }
   .iconGohan {
-    transform: translate(-2px, -2px);
+    height: 34px;
+    transform: translate(0, -3px);
+  }
+  .iconHoleCake {
+    transform: translate(0, 1px);
+  }
+  .iconSchoolBag {
+    transform: translate(0, 0);
+  }
+  .iconKabuto {
+    transform: translate(0, 0);
+  }
+  .iconAge05 {
+    transform: translate(0, 0);
+  }
+  .iconAge07 {
+    height: 27px;
+    transform: translate(0, 2px);
+  }
+  .iconGakuran {
+    transform: translate(0, -4px);
+  }
+  .iconSailor {
+    transform: translate(0, -4px);
   }
 }
 @media (hover: hover) {
-  .table tbody tr:hover {
+  .table tbody tr:not(.arrowTr):hover {
     background: #fff9e8;
   }
 }

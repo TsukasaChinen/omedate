@@ -1,5 +1,5 @@
 import { LoadingEffectSmile } from "./LoadingEffectSmile";
-import { IconBabySmile } from "../../commons/atoms/Icons";
+import { ReactComponent as IconBabySmile } from "../../commons/media/iconBabySmile.svg";
 
 type Props = {
   className?: string;

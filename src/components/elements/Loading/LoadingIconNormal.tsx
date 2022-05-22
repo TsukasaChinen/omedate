@@ -1,4 +1,4 @@
-import { IconBabyNomal } from "../../commons/atoms/Icons";
+import { ReactComponent as IconBabyNomal } from "../../commons/media/iconBabyNormal.svg";
 
 type Props = {
   className?: string;

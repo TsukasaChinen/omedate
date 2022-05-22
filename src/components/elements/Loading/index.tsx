@@ -17,6 +17,8 @@ export const Loading: React.FC<{
 
   const [isShowIconSmile, setIsShowIconSmile] = useState<boolean>(false);
 
+  const [isShowText, setIsShowText] = useState<boolean>(false);
+
   useEffect(() => {
     if (!isLoading) return;
     const intervalId = setInterval(
@@ -35,7 +37,8 @@ export const Loading: React.FC<{
     const intervalId = setInterval(() => {
       setIsShowIconNormal((prev) => !prev);
       setIsShowIconSmile((prev) => !prev);
-    }, 500);
+      setIsShowText((prev) => !prev);
+    }, 350);
     return () => {
       clearInterval(intervalId);
     };
@@ -52,7 +55,11 @@ export const Loading: React.FC<{
           className={`${style.icon} ${style.smile}`}
           isShow={isShowIconSmile}
         />
-        <LoadingText className={style.text} text="読み込んでるよ" />
+        <LoadingText
+          className={style.text}
+          text="読み込んでるよ"
+          isShow={isShowText}
+        />
       </div>
     </div>
   );
