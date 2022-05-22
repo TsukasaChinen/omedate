@@ -8,9 +8,7 @@ import { LoadingIconNormal } from "./LoadingIconNormal";
 import { LoadingIconSmile } from "./LoadingIconSmile";
 import { LoadingText } from "./LoadingText";
 
-export const Loading: React.FC<{
-  interVal?: number;
-}> = ({ interVal }) => {
+export const Loading: React.FC<{ interVal?: number }> = ({ interVal }) => {
   const [isLoading, setIsLoading] = useRecoilState(loadingState);
 
   const [isShowIconNormal, setIsShowIconNormal] = useState<boolean>(true);
