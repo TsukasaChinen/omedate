@@ -69,17 +69,14 @@ export const Setting: React.FC = () => {
 
   useEffect(() => {
     if (!isQuery) return;
-    if (
-      queries.birthday !== replaceDateHyphen(birthday) ||
-      queries.gender !== gender
-    ) {
-      window.history.replaceState(
-        "",
-        "",
-        `/omedate/?birthday=${replaceDateHyphen(birthday)}&gender=${gender}`
-      );
-    }
-  }, [birthday, gender, isQuery, queries.birthday, queries.gender]);
+    window.history.replaceState(
+      "",
+      "",
+      `${process.env.REACT_APP_ROOT_DIR}?birthday=${replaceDateHyphen(
+        birthday
+      )}&gender=${gender}`
+    );
+  }, [birthday, gender, isQuery]);
 
   return (
     <div className={style.wrapper}>

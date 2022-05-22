@@ -15,7 +15,7 @@ export const SettingButton: React.FC<Props> = ({
 }) => {
   return (
     <a
-      href={`/omedate/?birthday=${replaceDateHyphen(
+      href={`${process.env.REACT_APP_ROOT_DIR}?birthday=${replaceDateHyphen(
         birthday
       )}&gender=${gender}`}
       className={`button ${className}`}

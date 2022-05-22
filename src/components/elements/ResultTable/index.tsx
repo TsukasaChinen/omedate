@@ -2,7 +2,7 @@ import { useRecoilValue } from "recoil";
 
 import style from "./style.module.css";
 
-import { queryState, loadingState } from "../../commons/keys";
+import { genderState, loadingState } from "../../commons/keys";
 import { Spacer } from "../../commons/atoms/Spacer";
 import { Loading } from "../../elements/Loading";
 import { Table } from "./Table";
@@ -10,8 +10,7 @@ import { TableShareButton } from "./TableShareButton";
 
 export const ResultTable: React.FC = () => {
   const isLoading = useRecoilValue(loadingState);
-  const queries = useRecoilValue(queryState);
-  const gender = queries.gender;
+  const gender = useRecoilValue(genderState);
 
   return (
     <>
