@@ -13,7 +13,11 @@ export const Main: React.FC = () => {
   useEffect(() => {
     const query = new URLSearchParams(window.location.search);
     if (!query.get("birthday") && !query.get("gender")) return;
-    if (queries.birthday === "" || query.get("birthday") !== queries.birthday) {
+
+    const birthday = query.get("birthday");
+    const gender = query.get("gender");
+
+    if (birthday !== queries.birthday) {
       setQueries((prev) => {
         return {
           ...prev,
@@ -21,7 +25,7 @@ export const Main: React.FC = () => {
         };
       });
     }
-    if (queries.gender === "" || query.get("gender") !== queries.gender) {
+    if (gender !== queries.gender) {
       setQueries((prev) => {
         return {
           ...prev,
