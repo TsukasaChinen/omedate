@@ -10,10 +10,12 @@ type Props = QuiriesTypes & {
 
 export const ResultText: React.FC<Props> = ({ className, queries }) => {
   const birthday = useRecoilValue(birthdayState).split("-");
-  const gender = useRecoilValue(genderState);
+
   const birthdayStr =
     birthday &&
     `「${birthday[0]}年${Number(birthday[1])}月${Number(birthday[2])}日」`;
+
+  const gender = useRecoilValue(genderState);
 
   const genderStr = gender === "male" ? "男の子" : "女の子";
   const genderClass = gender === "male" ? "blue" : "red";
