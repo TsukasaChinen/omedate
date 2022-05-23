@@ -70,9 +70,6 @@
   letter-spacing: 0.1em;
   border-radius: 4px;
 }
-.button:active {
-  transform: translateY(calc(-50% + 4px));
-}
 @media (min-width: 890px) {
   .wrapper {
     --innerPadding: 40px;
@@ -90,6 +87,9 @@
   }
 }
 @media (hover: hover) {
+  .button:active {
+    transform: translateY(calc(-50% + 4px));
+  }
   .closeButton > svg {
     transition: color 0.1s;
   }

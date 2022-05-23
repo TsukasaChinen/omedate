@@ -176,6 +176,8 @@
   }
   .table thead {
     display: table-header-group;
+  }
+  .table thead th {
     background: #f9e595;
     height: 42px;
   }

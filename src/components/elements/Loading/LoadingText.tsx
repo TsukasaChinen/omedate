@@ -1,13 +1,8 @@
 type Props = {
   className?: string;
   text: string;
-  isShow: boolean;
 };
 
-export const LoadingText: React.FC<Props> = ({ className, text, isShow }) => {
-  return (
-    <p className={className} data-show={isShow}>
-      {text}
-    </p>
-  );
+export const LoadingText: React.FC<Props> = ({ className, text }) => {
+  return <p className={className}>{text}</p>;
 };

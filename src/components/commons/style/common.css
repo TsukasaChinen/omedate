@@ -235,11 +235,6 @@ select {
   border-radius: 50px;
   transition: opacity 0.2s linear;
 }
-
-.button:active {
-  transform: translateY(4px);
-  box-shadow: none;
-}
 .button svg {
   width: var(--iconWidth);
   margin-right: var(--iconMargin);
@@ -288,6 +283,10 @@ select {
 @media (hover: hover) {
   .button {
     transition: opacity 0.2s;
+  }
+  .button:active {
+    transform: translateY(4px);
+    box-shadow: none;
   }
   .button:hover {
     opacity: 0.8;
