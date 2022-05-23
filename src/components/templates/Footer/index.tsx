@@ -1,7 +1,7 @@
 import style from "./style.module.css";
 
-import { Copyright } from "../../commons/atoms/Copyright";
-import { Spacer } from "../../commons/atoms/Spacer";
+import { Copyright } from "../../parts/Copyright";
+import { Spacer } from "../../parts/Spacer";
 
 export const Footer: React.FC = () => {
   return (

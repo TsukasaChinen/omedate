@@ -1,6 +1,6 @@
 import style from "./style.module.css";
 
-import { Logo } from "../../commons/atoms/Logo";
+import { Logo } from "../../parts/Logo";
 
 export const Header: React.FC = () => {
   return (

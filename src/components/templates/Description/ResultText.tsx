@@ -1,6 +1,6 @@
 import { useRecoilValue } from "recoil";
 
-import { birthdayState, genderState, loadingState } from "../../commons/keys";
+import { birthdayState, genderState, loadingState } from "../../inits/keys";
 
 export const ResultText: React.FC<{ className?: string }> = ({ className }) => {
   const isLoading = useRecoilValue(loadingState);

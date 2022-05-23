@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 import { useRecoilState } from "recoil";
 
-import { queryState, resultState } from "../../commons/keys";
-import { Description } from "../../elements/Description";
-import { Setting } from "../../elements/Setting";
-import { ResultTable } from "../../elements/ResultTable";
-import { Modals } from "../../elements/Modal";
+import { queryState, resultState } from "../../inits/keys";
+import { Description } from "../../templates/Description";
+import { Setting } from "../../templates/Setting";
+import { ResultTable } from "../../templates/ResultTable";
+import { Modals } from "../../templates/Modal";
 
 export const Main: React.FC = () => {
   const [isResult, setIsResult] = useRecoilState(resultState);

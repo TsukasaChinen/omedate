@@ -3,7 +3,7 @@ import { useRecoilState } from "recoil";
 
 import style from "./style.module.css";
 
-import { loadingState } from "../../commons/keys";
+import { loadingState } from "../../inits/keys";
 import { LoadingIconNormal } from "./LoadingIconNormal";
 import { LoadingIconSmile } from "./LoadingIconSmile";
 import { LoadingText } from "./LoadingText";

@@ -1,5 +1,5 @@
-import { Label } from "../../commons/atoms/Label";
-import { InputDate } from "../../commons/atoms/InputDate";
+import { Label } from "../../parts/Label";
+import { InputDate } from "../../parts/InputDate";
 
 type Props = React.ComponentPropsWithoutRef<"input"> & {
   text: string;

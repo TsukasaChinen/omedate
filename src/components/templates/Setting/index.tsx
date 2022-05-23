@@ -3,22 +3,22 @@ import { useRecoilValue, useRecoilState, useSetRecoilState } from "recoil";
 
 import style from "./style.module.css";
 
-import { GenderTypes } from "../../commons/types";
+import { GenderTypes } from "../../inits/types";
 
 import {
   birthdayState,
   genderState,
   queryState,
   loadingState,
-} from "../../commons/keys";
+} from "../../inits/keys";
 
 import {
   currentDate,
   joinDateHyphen,
   windowHistoryReplaceState,
-} from "../../commons/utilities";
+} from "../../utilities";
 
-import { Spacer } from "../../commons/atoms/Spacer";
+import { Spacer } from "../../parts/Spacer";
 import { SettingBirthday } from "./SettingBirthday";
 import { SettingGender } from "./SettingGender";
 import { SettingButton } from "./SettingButton";
