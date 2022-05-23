@@ -1,13 +1,15 @@
 import { useEffect } from "react";
 import { useRecoilState } from "recoil";
 
-import { queryState } from "../../commons/keys";
+import { queryState, resultState } from "../../commons/keys";
 import { Description } from "../../elements/Description";
 import { Setting } from "../../elements/Setting";
 import { ResultTable } from "../../elements/ResultTable";
 import { Modals } from "../../elements/Modal";
 
 export const Main: React.FC = () => {
+  const [isResult, setIsResult] = useRecoilState(resultState);
+
   const [queries, setQueries] = useRecoilState(queryState);
 
   useEffect(() => {
@@ -35,11 +37,15 @@ export const Main: React.FC = () => {
     }
   }, [queries.birthday, queries.gender, setQueries]);
 
+  useEffect(() => {
+    queries.birthday && queries.gender ? setIsResult(true) : setIsResult(false);
+  }, [queries.birthday, queries.gender, setIsResult]);
+
   return (
     <main className="main">
-      <Description />
-      <Setting />
-      {queries.birthday && queries.gender && (
+      <Description isResult={isResult} />
+      <Setting isResult={isResult} />
+      {isResult && (
         <>
           <ResultTable />
           <Modals />

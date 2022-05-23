@@ -26,3 +26,13 @@ export const toCamelCase = (str: string) => {
 
 export const toInitialUpperCase = (str: string) =>
   str.charAt(0).toUpperCase() + str.slice(1);
+
+export const windowHistoryReplaceState = (birthday: string, gender: string) => {
+  window.history.replaceState(
+    "",
+    "",
+    `${process.env.REACT_APP_ROOT_DIR}?birthday=${replaceDateHyphen(
+      birthday
+    )}&gender=${gender}`
+  );
+};

@@ -26,6 +26,11 @@ export const loadingState = atom<boolean>({
   default: true,
 });
 
+export const resultState = atom<boolean>({
+  key: "resultState",
+  default: false,
+});
+
 export const modalState = atom<boolean>({
   key: "modalState",
   default: false,

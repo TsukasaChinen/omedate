@@ -13,7 +13,7 @@ import {
 import {
   currentDate,
   joinDateHyphen,
-  replaceDateHyphen,
+  windowHistoryReplaceState,
 } from "../../commons/utilities";
 
 import { Spacer } from "../../commons/atoms/Spacer";
@@ -21,12 +21,10 @@ import { SettingBirthday } from "./SettingBirthday";
 import { SettingGender } from "./SettingGender";
 import { SettingButton } from "./SettingButton";
 
-export const Setting: React.FC = () => {
+export const Setting: React.FC<{ isResult: boolean }> = ({ isResult }) => {
   const setIsLoading = useSetRecoilState(loadingState);
 
   const queries = useRecoilValue(queryState);
-
-  const isQuery: boolean = queries.birthday && queries.gender ? true : false;
 
   const [birthday, setBirthday] = useRecoilState(birthdayState);
 
@@ -37,8 +35,8 @@ export const Setting: React.FC = () => {
   }, [queries.birthday, setBirthday]);
 
   const onChangeDate = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setBirthday(e.target.value);
     setIsLoading(true);
+    setBirthday(e.target.value);
   };
 
   const [gender, setGender] = useRecoilState(genderState);
@@ -59,20 +57,14 @@ export const Setting: React.FC = () => {
   ];
 
   const onChangeGender = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setGender(e.target.value);
     setIsLoading(true);
+    setGender(e.target.value);
   };
 
   useEffect(() => {
-    if (!isQuery) return;
-    window.history.replaceState(
-      "",
-      "",
-      `${process.env.REACT_APP_ROOT_DIR}?birthday=${replaceDateHyphen(
-        birthday
-      )}&gender=${gender}`
-    );
-  }, [birthday, gender, isQuery]);
+    if (!isResult) return;
+    windowHistoryReplaceState(birthday, gender);
+  }, [birthday, gender, isResult]);
 
   return (
     <div className={style.wrapper}>
@@ -91,7 +83,7 @@ export const Setting: React.FC = () => {
         onChange={onChangeGender}
         text="性　　別"
       />
-      {!isQuery && (
+      {!isResult && (
         <>
           <Spacer height={{ s: 40 }} />
           <SettingButton birthday={birthday} gender={gender} />
