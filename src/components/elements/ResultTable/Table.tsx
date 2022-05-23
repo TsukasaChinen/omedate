@@ -3,11 +3,12 @@ import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
 import style from "./style.module.css";
 
+import { GenderTypes } from "../../commons/types";
 import Events from "../../commons/data/events.json";
 
 import { TableIcon } from "./TableIcon";
 
-export const Table: React.FC<{ gender: string | null }> = ({ gender }) => {
+export const Table: React.FC<{ gender: GenderTypes }> = ({ gender }) => {
   const events = [...Events.data];
 
   const filterdEvents = events.filter(

@@ -1,20 +1,17 @@
 import { atom } from "recoil";
+import { GenderTypes, QuiriesTypes } from "../types";
 
 export const birthdayState = atom<string>({
   key: "birthdayState",
   default: "",
 });
 
-export type GenderTypes = "male" | "female" | "";
 export const genderState = atom<GenderTypes>({
   key: "genderState",
   default: "",
 });
 
-export const queryState = atom<{
-  birthday: string | null;
-  gender: string | null;
-}>({
+export const queryState = atom<QuiriesTypes>({
   key: "queryState",
   default: {
     birthday: "",

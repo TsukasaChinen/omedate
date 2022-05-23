@@ -3,7 +3,7 @@ import { useRecoilValue, useRecoilState, useSetRecoilState } from "recoil";
 
 import style from "./style.module.css";
 
-import { GenderTypes } from "../../commons/keys";
+import { GenderTypes } from "../../commons/types";
 
 import {
   birthdayState,
