@@ -1,9 +1,9 @@
 import { useSetRecoilState } from "recoil";
 
-import { windowHistoryReplaceState } from "../../commons/utilities";
+import { windowHistoryReplaceState } from "../../utilities";
 
-import { resultState } from "../../commons/keys";
-import { ReactComponent as IconBabyNomal } from "../../commons/media/iconBabyNormal.svg";
+import { resultState } from "../../inits/keys";
+import { ReactComponent as IconBabyNomal } from "../../../assets/media/iconBabyNormal.svg";
 
 type Props = {
   birthday: string;

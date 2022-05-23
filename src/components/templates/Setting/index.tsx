@@ -1,27 +1,23 @@
 import { useEffect } from "react";
 import { useRecoilValue, useRecoilState, useSetRecoilState } from "recoil";
 
-import style from "./style.module.css";
-
-import { GenderTypes } from "../../commons/types";
-
 import {
   birthdayState,
   genderState,
   queryState,
   loadingState,
-} from "../../commons/keys";
-
+} from "../../inits/keys";
 import {
   currentDate,
   joinDateHyphen,
   windowHistoryReplaceState,
-} from "../../commons/utilities";
-
-import { Spacer } from "../../commons/atoms/Spacer";
+} from "../../utilities";
+import { GenderTypes } from "../../inits/types";
+import { Spacer } from "../../parts/Spacer";
 import { SettingBirthday } from "./SettingBirthday";
 import { SettingGender } from "./SettingGender";
 import { SettingButton } from "./SettingButton";
+import style from "./style.module.css";
 
 export const Setting: React.FC<{ isResult: boolean }> = ({ isResult }) => {
   const setIsLoading = useSetRecoilState(loadingState);

@@ -1,12 +1,11 @@
 import { useRecoilValue } from "recoil";
 
-import style from "./style.module.css";
-
-import { genderState, loadingState } from "../../commons/keys";
-import { Spacer } from "../../commons/atoms/Spacer";
-import { Loading } from "../../elements/Loading";
+import { genderState, loadingState } from "../../inits/keys";
+import { Spacer } from "../../parts/Spacer";
+import { Loading } from "../Loading";
 import { Table } from "./Table";
 import { TableShareButton } from "./TableShareButton";
+import style from "./style.module.css";
 
 export const ResultTable: React.FC = () => {
   const isLoading = useRecoilValue(loadingState);

@@ -1,5 +1,5 @@
-import { Label } from "../../commons/atoms/Label";
-import { Select } from "../../commons/atoms/Select/index";
+import { Label } from "../../parts/Label";
+import { Select } from "../../parts/Select/index";
 
 type Props = React.ComponentPropsWithoutRef<"select"> & {
   values: { [key: string]: string }[];

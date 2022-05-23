@@ -3,8 +3,8 @@ import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
 import style from "./style.module.css";
 
-import { GenderTypes } from "../../commons/types";
-import Events from "../../commons/data/events.json";
+import { GenderTypes } from "../../inits/types";
+import Events from "../../../assets/data/events.json";
 
 import { TableIcon } from "./TableIcon";
 

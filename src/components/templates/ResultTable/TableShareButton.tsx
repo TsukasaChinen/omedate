@@ -1,8 +1,8 @@
 import { useSetRecoilState } from "recoil";
 
-import { modalState } from "../../commons/keys";
-import { ShareButton } from "../../commons/atoms/ShareButton";
-import { ReactComponent as IconBabySmile } from "../../commons/media/iconBabySmile.svg";
+import { modalState } from "../../inits/keys";
+import { ShareButton } from "../../parts/ShareButton";
+import { ReactComponent as IconBabySmile } from "../../../assets/media/iconBabySmile.svg";
 
 export const TableShareButton: React.FC<{ gender: string | null }> = ({
   gender,
