@@ -24,9 +24,6 @@ export const toCamelCase = (str: string) => {
     .join("");
 };
 
-export const toInitialUpperCase = (str: string) =>
-  str.charAt(0).toUpperCase() + str.slice(1);
-
 export const windowHistoryReplaceState = (birthday: string, gender: string) => {
   window.history.replaceState(
     "",
