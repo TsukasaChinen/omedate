@@ -183,6 +183,12 @@ body {
   letter-spacing: 0.05em;
   position: relative;
 }
+@media (orientation: landscape) {
+  body {
+    padding-right: env(safe-area-inset-right);
+    padding-left: env(safe-area-inset-left);
+  }
+}
 a,
 a:link,
 a:visited,

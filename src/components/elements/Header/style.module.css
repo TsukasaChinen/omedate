@@ -1,9 +1,10 @@
 .header {
   --logoSize: 140px;
-  --headerPadding: 14px;
+  --headerPadding: 16px;
   display: flex;
   justify-content: center;
-  padding: var(--headerPadding);
+  padding-top: 6px;
+  padding-bottom: var(--headerPadding);
   border-bottom: 1px solid var(--lightBrown);
   margin-inline: calc(50% - 50vw);
   transition: padding 0.2s;
@@ -15,12 +16,8 @@
 }
 @media (min-width: 768px) {
   .header {
-    --logoSize: 180px;
-  }
-}
-@media (min-width: 1024px) {
-  .header {
     --logoSize: 252px;
     --headerPadding: 24px;
+    padding-top: var(--headerPadding);
   }
 }
