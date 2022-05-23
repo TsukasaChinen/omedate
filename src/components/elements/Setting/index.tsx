@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useRecoilValue, useRecoilState, useSetRecoilState } from "recoil";
 
 import style from "./style.module.css";
@@ -26,11 +26,7 @@ export const Setting: React.FC = () => {
 
   const queries = useRecoilValue(queryState);
 
-  const [isQuery, setIsQuery] = useState<boolean>(false);
-
-  useEffect(() => {
-    queries.birthday && queries.gender ? setIsQuery(true) : setIsQuery(false);
-  }, [queries.birthday, queries.gender]);
+  const isQuery: boolean = queries.birthday && queries.gender ? true : false;
 
   const [birthday, setBirthday] = useRecoilState(birthdayState);
 
