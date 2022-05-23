@@ -2,13 +2,14 @@ import { useRecoilValue } from "recoil";
 
 import { QuiriesTypes } from "../../commons/types";
 
-import { birthdayState, genderState } from "../../commons/keys";
+import { birthdayState, genderState, loadingState } from "../../commons/keys";
 
 type Props = QuiriesTypes & {
   className?: string;
 };
 
 export const ResultText: React.FC<Props> = ({ className, queries }) => {
+  const isLoading = useRecoilValue(loadingState);
   const birthday = useRecoilValue(birthdayState).split("-");
 
   const birthdayStr =
@@ -22,12 +23,18 @@ export const ResultText: React.FC<Props> = ({ className, queries }) => {
 
   return (
     <div className={className}>
-      <p>
-        <span className="green">{birthdayStr}</span>
-        生まれの
-        <span className={genderClass}>「{genderStr}」</span>の
-        お祝い事の一覧です。
-      </p>
+      {isLoading ? (
+        <p className="alignCenter">
+          <span className="gray">・・・</span>
+        </p>
+      ) : (
+        <p>
+          <span className="green">{birthdayStr}</span>
+          生まれの
+          <span className={genderClass}>「{genderStr}」</span>の
+          お祝い事の一覧です。
+        </p>
+      )}
     </div>
   );
 };

@@ -260,6 +260,9 @@ select {
 .blue {
   color: var(--blue);
 }
+.alignCenter {
+  text-align: center;
+}
 @media (min-width: 550px) {
   :root {
     --iconWidth: 32px;
