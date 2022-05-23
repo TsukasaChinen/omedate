@@ -61,7 +61,7 @@
   line-height: 1.4;
   padding: var(--urlPadding);
 }
-.button {
+.copy .button {
   margin: 14px auto 0;
   width: 90px;
   height: auto;
@@ -77,7 +77,7 @@
     --urlPadding: 16px 8px;
     --closeButtonSize: 32px;
   }
-  .button {
+  .copy .button {
     position: absolute;
     right: 8px;
     top: 50%;
@@ -87,7 +87,7 @@
   }
 }
 @media (hover: hover) {
-  .button:active {
+  .copy .button:active {
     transform: translateY(calc(-50% + 4px));
   }
   .closeButton > svg {

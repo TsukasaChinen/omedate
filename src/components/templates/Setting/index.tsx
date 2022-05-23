@@ -7,11 +7,7 @@ import {
   queryState,
   loadingState,
 } from "../../inits/keys";
-import {
-  currentDate,
-  joinDateHyphen,
-  windowHistoryReplaceState,
-} from "../../utilities";
+import { joinDateHyphen, windowHistoryReplaceState } from "../../utilities";
 import { GenderTypes } from "../../inits/types";
 import { Spacer } from "../../parts/Spacer";
 import { SettingBirthday } from "./SettingBirthday";
@@ -26,10 +22,18 @@ export const Setting: React.FC<{ isResult: boolean }> = ({ isResult }) => {
 
   const [birthday, setBirthday] = useRecoilState(birthdayState);
 
+  const today = () => {
+    const currentDate = new Date();
+    const y = currentDate.getFullYear();
+    const m = currentDate.getMonth() + 1;
+    const d = currentDate.getDate();
+    return `${y}-${("00" + m).slice(-2)}-${d}`;
+  };
+
   useEffect(() => {
     queries.birthday
       ? setBirthday(joinDateHyphen(queries.birthday))
-      : setBirthday(String(currentDate()));
+      : setBirthday(today);
   }, [queries.birthday, setBirthday]);
 
   const onChangeDate = (e: React.ChangeEvent<HTMLInputElement>) => {
