@@ -4,3 +4,5 @@ export type QuiriesTypes = {
     gender: string | null;
   };
 };
+
+export type GenderTypes = "male" | "female" | "";

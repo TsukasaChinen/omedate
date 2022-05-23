@@ -3,6 +3,8 @@ import { useRecoilValue, useRecoilState, useSetRecoilState } from "recoil";
 
 import style from "./style.module.css";
 
+import { GenderTypes } from "../../commons/keys";
+
 import {
   birthdayState,
   genderState,
@@ -42,7 +44,9 @@ export const Setting: React.FC<{ isResult: boolean }> = ({ isResult }) => {
   const [gender, setGender] = useRecoilState(genderState);
 
   useEffect(() => {
-    queries.gender ? setGender(queries.gender) : setGender("male");
+    queries.gender
+      ? setGender(queries.gender as GenderTypes)
+      : setGender("male");
   }, [queries.gender, setGender]);
 
   const genders = [
@@ -58,7 +62,7 @@ export const Setting: React.FC<{ isResult: boolean }> = ({ isResult }) => {
 
   const onChangeGender = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setIsLoading(true);
-    setGender(e.target.value);
+    setGender(e.target.value as GenderTypes);
   };
 
   useEffect(() => {

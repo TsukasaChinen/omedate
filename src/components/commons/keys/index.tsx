@@ -5,7 +5,8 @@ export const birthdayState = atom<string>({
   default: "",
 });
 
-export const genderState = atom<string>({
+export type GenderTypes = "male" | "female" | "";
+export const genderState = atom<GenderTypes>({
   key: "genderState",
   default: "",
 });
