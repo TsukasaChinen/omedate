@@ -1,7 +1,7 @@
 import { RecoilRoot } from "recoil";
 
 import { Home } from "./components/pages/Home";
-import "./common.css";
+import "./assets/css/common.css";
 
 const App: React.FC = () => {
   return (

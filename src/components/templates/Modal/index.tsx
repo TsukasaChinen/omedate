@@ -3,8 +3,6 @@ import { useRecoilValue, useRecoilState } from "recoil";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 
-import style from "./style.module.css";
-
 import { birthdayState, genderState, modalState } from "../../inits/keys";
 import { replaceDateHyphen } from "../../utilities";
 import { Spacer } from "../../parts/Spacer";
@@ -13,6 +11,7 @@ import { CopyButton } from "../../parts/CopyButton";
 import { CopyUrl } from "../../parts/CopyUrl";
 import { ModalClose } from "./ModalClose";
 import { ModalContent } from "./ModalContent";
+import style from "./style.module.css";
 
 export const Modals: React.FC = () => {
   const birthday = useRecoilValue(birthdayState);
