@@ -1,6 +1,6 @@
-import { Logo } from "../../commons/atoms/Logo";
-
 import style from "./style.module.css";
+
+import { Logo } from "../../commons/atoms/Logo";
 
 export const Header: React.FC = () => {
   return (
