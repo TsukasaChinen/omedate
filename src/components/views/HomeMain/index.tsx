@@ -9,6 +9,7 @@ import {
 } from "../../inits/keys";
 import { GenderTypes } from "../../inits/types";
 import { joinDateHyphen } from "../../utilities";
+import { Error } from "../../parts/Error";
 import { Description } from "../../parts/Description";
 import { Setting } from "../../parts/Setting";
 import { ResultTable } from "../../parts/ResultTable";
@@ -70,14 +71,15 @@ export const HomeMain: React.FC = () => {
 
   return (
     <main className="main">
-      <Description />
+      <Error />
+      {/* <Description />
       <Setting />
       {isResult && (
         <>
           <ResultTable />
           <Modals />
         </>
-      )}
+      )} */}
     </main>
   );
 };
