@@ -18,7 +18,9 @@ export const ResultTable: React.FC = () => {
       <div className={style.wrapper} data-show={isLoading}>
         <Table gender={gender} />
         <Spacer height={{ s: 0, m: 20 }} />
-        <TableShareButton gender={gender} />
+        <TableShareButton
+          className={`${style.shareButton} ${gender === "male" ? "-blue" : ""}`}
+        />
       </div>
     </>
   );

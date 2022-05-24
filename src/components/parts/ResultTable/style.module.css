@@ -227,6 +227,9 @@
     display: flex;
     justify-content: space-between;
   }
+  .shareButton {
+    margin-top: 40px;
+  }
   .iconNoshi {
     transform: translate(0, -2px);
   }
