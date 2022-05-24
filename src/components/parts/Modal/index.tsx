@@ -6,7 +6,7 @@ import { replaceDateHyphen } from "../../utilities";
 import { Spacer } from "../../elements/Spacer";
 import { CloseButton } from "../../elements/CloseButton";
 import { CopyButton } from "../../elements/CopyButton";
-import { CopyUrl } from "../../elements/CopyUrl";
+import { CopyTarget } from "../../elements/CopyTarget";
 import { ModalClose } from "./ModalClose";
 import { ModalContent } from "./ModalContent";
 import style from "./style.module.css";
@@ -20,23 +20,25 @@ export const Modals: React.FC = () => {
 
   const [copyLabel, setCopyLabel] = useState<string>("copy");
 
+  const copyTarget = useRef<HTMLDivElement>(null);
+
+  const copyButton = useRef<HTMLButtonElement>(null);
+
   useEffect(() => {
-    if (isModal) return;
-    const timer = setTimeout(() => {
+    if (isModal) {
+      copyButton.current?.focus();
       setCopyLabel("copy");
-    }, 500);
-    return () => clearTimeout(timer);
+      return;
+    }
   }, [isModal]);
 
   const handleClickCloseModal = () => {
     setIsModal(false);
   };
 
-  const copyUrlEle = useRef<HTMLDivElement>(null);
-
   const handleClickCopyUrl = () => {
     if (!navigator.clipboard) return;
-    const copyEle = copyUrlEle.current;
+    const copyEle = copyTarget.current;
     copyEle &&
       navigator.clipboard
         .writeText(copyEle.innerText)
@@ -48,7 +50,7 @@ export const Modals: React.FC = () => {
         });
   };
 
-  const copyUrl = `${
+  const copyText: string = `${
     window.location.href.split("?")[0]
   }?birthday=${replaceDateHyphen(birthday)}&gender=${gender}`;
 
@@ -63,11 +65,17 @@ export const Modals: React.FC = () => {
         <p>下記のURLをコピーしてメールやLINEで送ってください。</p>
         <Spacer height={{ s: 10 }} />
         <div className={style.copy}>
-          <CopyUrl ref={copyUrlEle} url={copyUrl} className={style.url} />
+          <CopyTarget
+            ref={copyTarget}
+            copyText={copyText}
+            className={style.url}
+          />
           <CopyButton
+            ref={copyButton}
             text={copyLabel}
             className={`button ${style.button}`}
             onClick={handleClickCopyUrl}
+            isFocus={isModal}
           />
         </div>
       </ModalContent>
