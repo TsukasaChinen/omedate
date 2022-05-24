@@ -5,10 +5,10 @@ import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 
 import { birthdayState, genderState, modalState } from "../../inits/keys";
 import { replaceDateHyphen } from "../../utilities";
-import { Spacer } from "../../parts/Spacer";
-import { CloseButton } from "../../parts/CloseButton";
-import { CopyButton } from "../../parts/CopyButton";
-import { CopyUrl } from "../../parts/CopyUrl";
+import { Spacer } from "../../elements/Spacer";
+import { CloseButton } from "../../elements/CloseButton";
+import { CopyButton } from "../../elements/CopyButton";
+import { CopyUrl } from "../../elements/CopyUrl";
 import { ModalClose } from "./ModalClose";
 import { ModalContent } from "./ModalContent";
 import style from "./style.module.css";

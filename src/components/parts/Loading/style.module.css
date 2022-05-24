@@ -1,6 +1,7 @@
 .wrapper {
+  --iconSize: 140px;
   display: flex;
-  height: 140px;
+  height: var(--iconSize);
   justify-content: center;
   pointer-events: none;
   transition: height 0.28s linear, opacity 0.28s linear;
@@ -12,8 +13,8 @@
 }
 .contents {
   position: relative;
-  width: 140px;
-  height: 140px;
+  width: var(--iconSize);
+  height: var(--iconSize);
 }
 .icon {
   display: none;

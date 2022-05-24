@@ -6,7 +6,9 @@ import "./assets/css/common.css";
 const App: React.FC = () => {
   return (
     <RecoilRoot>
-      <Home />
+      <div className="wrapper">
+        <Home />
+      </div>
     </RecoilRoot>
   );
 };
