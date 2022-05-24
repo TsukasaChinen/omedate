@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useRecoilValue, useRecoilState } from "recoil";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
@@ -15,17 +15,26 @@ import style from "./style.module.css";
 
 export const Modals: React.FC = () => {
   const birthday = useRecoilValue(birthdayState);
+
   const gender = useRecoilValue(genderState);
 
   const [isModal, setIsModal] = useRecoilState(modalState);
+
+  const [copyLabel, setCopyLabel] = useState<string>("copy");
+
+  useEffect(() => {
+    if (isModal) return;
+    const timer = setTimeout(() => {
+      setCopyLabel("copy");
+    }, 500);
+    return () => clearTimeout(timer);
+  }, [isModal]);
 
   const handleClickCloseModal = () => {
     setIsModal(false);
   };
 
   const copyUrlEle = useRef<HTMLDivElement>(null);
-
-  const [copyLabel, setCopyLabel] = useState<string>("copy");
 
   const handleClickCopyUrl = () => {
     if (!navigator.clipboard) return;

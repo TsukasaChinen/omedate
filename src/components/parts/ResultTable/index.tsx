@@ -17,7 +17,7 @@ export const ResultTable: React.FC = () => {
       <Loading interVal={1000} />
       <div className={style.wrapper} data-show={isLoading}>
         <Table gender={gender} />
-        <Spacer height={{ s: 0, m: 40 }} />
+        <Spacer height={{ s: 0, m: 20 }} />
         <TableShareButton gender={gender} />
       </div>
     </>
