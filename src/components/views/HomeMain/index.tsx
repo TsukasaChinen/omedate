@@ -16,8 +16,6 @@ import { ResultTable } from "../../parts/ResultTable";
 import { Modals } from "../../parts/Modal";
 
 export const HomeMain: React.FC = () => {
-  const [search] = useState(new URLSearchParams(window.location.search));
-
   const [isError, setIsError] = useState<boolean>(false);
 
   const [isResult, setIsResult] = useRecoilState(resultState);
@@ -30,6 +28,7 @@ export const HomeMain: React.FC = () => {
 
   useEffect(
     (birthday = query.birthday, gender = query.gender) => {
+      const search = new URLSearchParams(window.location.search);
       if (!search.get("birthday") && !search.get("gender")) return;
 
       const getBirthday = search.get("birthday");
@@ -56,6 +55,7 @@ export const HomeMain: React.FC = () => {
           };
         });
       }
+
       if (getGender !== gender) {
         setQuery((prev) => {
           return {
@@ -65,7 +65,7 @@ export const HomeMain: React.FC = () => {
         });
       }
     },
-    [search, query.birthday, query.gender, setQuery]
+    [query.birthday, query.gender, setQuery]
   );
 
   const today = () => {
