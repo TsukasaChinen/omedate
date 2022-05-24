@@ -50,6 +50,10 @@
   color: #555;
   border-radius: 100%;
   border: 2px solid var(--white);
+  transition: color 0.1s;
+}
+.closeButton:focus-visible > svg {
+  color: #777;
 }
 .copy {
   position: relative;
@@ -70,6 +74,9 @@
   letter-spacing: 0.1em;
   border-radius: 4px;
 }
+.copy .button:focus-visible {
+  transform: translateY(calc(-50% + 2.5px));
+}
 @media (min-width: 890px) {
   .wrapper {
     --innerPadding: 40px;
@@ -88,10 +95,7 @@
 }
 @media (hover: hover) {
   .copy .button:active {
-    transform: translateY(calc(-50% + 4px));
-  }
-  .closeButton > svg {
-    transition: color 0.1s;
+    transform: translateY(calc(-50% + 2.5px));
   }
   .closeButton:hover > svg {
     color: #777;

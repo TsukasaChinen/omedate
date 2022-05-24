@@ -204,16 +204,11 @@ select {
   -webkit-appearance: none;
   color: inherit;
 }
-.fixed {
-  display: none;
-  position: fixed;
-  top: 348px;
-  left: 420px;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  height: 1px;
-  background: cyan;
+*:focus {
+  outline: none;
+}
+*:focus-visible {
+  outline: 3px solid var(--blue);
 }
 .wrapper {
   display: flex;
@@ -249,10 +244,18 @@ select {
 .button {
   background: var(--red);
   box-shadow: 0 4px 0 0 #c4686d;
+  transition: opacity 0.2s;
 }
 .button.-blue {
   background: var(--blue);
   box-shadow: 0 4px 0 0 #128cbc;
+}
+.button:focus-visible {
+  opacity: 0.8;
+  box-shadow: none;
+}
+.button.-blue:focus-visible {
+  outline: 3px solid var(--red);
 }
 .red {
   color: var(--red);
@@ -290,9 +293,6 @@ select {
   }
 }
 @media (hover: hover) {
-  .button {
-    transition: opacity 0.2s;
-  }
   .button:active {
     transform: translateY(4px);
     box-shadow: none;

@@ -3,8 +3,7 @@
   --headerPadding: 16px;
   display: flex;
   justify-content: center;
-  padding-top: 6px;
-  padding-bottom: var(--headerPadding);
+  padding: var(--headerPadding) 0;
   border-bottom: 1px solid var(--lightBrown);
   margin-inline: calc(50% - 50vw);
   transition: padding 0.2s;

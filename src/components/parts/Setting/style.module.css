@@ -18,6 +18,7 @@
   border: 1px solid #ddd;
   padding: 0 10px;
   border-radius: 5px;
+  box-shadow: none;
 }
 .label input,
 .label input::-webkit-date-and-time-value {
