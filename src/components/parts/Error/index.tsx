@@ -8,6 +8,9 @@ export const Error: React.FC = () => {
         <IconBabyCry />
       </i>
       <p className={style.text}>URLが間違ってるよ</p>
+      <p className={style.link}>
+        <a href={process.env.REACT_APP_ROOT_DIR}>TOPページへ</a>
+      </p>
     </div>
   );
 };

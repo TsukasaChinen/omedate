@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRecoilState, useSetRecoilState } from "recoil";
 
 import {
@@ -16,6 +16,8 @@ import { ResultTable } from "../../parts/ResultTable";
 import { Modals } from "../../parts/Modal";
 
 export const HomeMain: React.FC = () => {
+  const [isError, setIsError] = useState<boolean>(true);
+
   const [isResult, setIsResult] = useRecoilState(resultState);
 
   const [query, setQuery] = useRecoilState(queryState);
@@ -71,15 +73,20 @@ export const HomeMain: React.FC = () => {
 
   return (
     <main className="main">
-      <Error />
-      {/* <Description />
-      <Setting />
-      {isResult && (
+      {isError ? (
+        <Error />
+      ) : (
         <>
-          <ResultTable />
-          <Modals />
+          <Description />
+          <Setting />
+          {isResult && (
+            <>
+              <ResultTable />
+              <Modals />
+            </>
+          )}
         </>
-      )} */}
+      )}
     </main>
   );
 };
