@@ -1,12 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
-import style from "./style.module.css";
-
 import { GenderTypes } from "../../inits/types";
 import Events from "../../../assets/data/events.json";
 
 import { TableIcon } from "./TableIcon";
+import style from "./resultTable.module.css";
 
 export const Table: React.FC<{ gender: GenderTypes }> = ({ gender }) => {
   const events = [...Events.data];

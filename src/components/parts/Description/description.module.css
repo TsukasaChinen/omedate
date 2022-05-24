@@ -1,14 +1,14 @@
-.description {
+.wrapper {
   line-height: 1.8;
 }
-.description br {
+.wrapper br {
   display: none;
 }
 @media (min-width: 584px) {
-  .description {
+  .wrapper {
     text-align: center;
   }
-  .description br {
+  .wrapper br {
     display: block;
   }
 }

@@ -13,7 +13,7 @@ import { Spacer } from "../../elements/Spacer";
 import { SettingBirthday } from "./SettingBirthday";
 import { SettingGender } from "./SettingGender";
 import { SettingButton } from "./SettingButton";
-import style from "./style.module.css";
+import style from "./setting.module.css";
 
 export const Setting: React.FC = () => {
   const isResult = useRecoilValue(resultState);

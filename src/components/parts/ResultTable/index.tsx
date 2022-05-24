@@ -5,7 +5,7 @@ import { Spacer } from "../../elements/Spacer";
 import { Loading } from "../Loading";
 import { Table } from "./Table";
 import { TableShareButton } from "./TableShareButton";
-import style from "./style.module.css";
+import style from "./resultTable.module.css";
 
 export const ResultTable: React.FC = () => {
   const isLoading = useRecoilValue(loadingState);

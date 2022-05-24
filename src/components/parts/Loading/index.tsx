@@ -5,7 +5,7 @@ import { loadingState } from "../../inits/keys";
 import { LoadingIconNormal } from "./LoadingIconNormal";
 import { LoadingIconSmile } from "./LoadingIconSmile";
 import { LoadingText } from "./LoadingText";
-import style from "./style.module.css";
+import style from "./loading.module.css";
 
 export const Loading: React.FC<{ interVal?: number }> = ({ interVal }) => {
   const [isLoading, setIsLoading] = useRecoilState(loadingState);
