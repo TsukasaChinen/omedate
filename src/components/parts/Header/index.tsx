@@ -1,4 +1,4 @@
-import { Logo } from "../../parts/Logo";
+import { Logo } from "../../elements/Logo";
 import style from "./style.module.css";
 
 export const Header: React.FC = () => {

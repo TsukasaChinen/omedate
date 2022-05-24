@@ -1,7 +1,7 @@
 import { useRecoilValue } from "recoil";
 
 import { genderState, loadingState } from "../../inits/keys";
-import { Spacer } from "../../parts/Spacer";
+import { Spacer } from "../../elements/Spacer";
 import { Loading } from "../Loading";
 import { Table } from "./Table";
 import { TableShareButton } from "./TableShareButton";
