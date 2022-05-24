@@ -8,7 +8,7 @@ import {
   resultState,
 } from "../../inits/keys";
 import { GenderTypes } from "../../inits/types";
-import { joinDateHyphen } from "../../utilities";
+import { joinDateHyphen, getToday } from "../../utilities";
 import { Error } from "../../parts/Error";
 import { Description } from "../../parts/Description";
 import { Setting } from "../../parts/Setting";
@@ -68,17 +68,11 @@ export const HomeMain: React.FC = () => {
     [query.birthday, query.gender, setQuery]
   );
 
-  const today = () => {
-    const currentDate = new Date();
-    const y = currentDate.getFullYear();
-    const m = currentDate.getMonth() + 1;
-    const d = currentDate.getDate();
-    return `${y}-${("00" + m).slice(-2)}-${d}`;
-  };
-
   useEffect(
     (birthday = query.birthday, gender = query.gender) => {
-      birthday ? setBirthday(joinDateHyphen(birthday)) : setBirthday(today);
+      birthday
+        ? setBirthday(joinDateHyphen(birthday))
+        : setBirthday(getToday());
       gender ? setGender(gender as GenderTypes) : setGender("male");
       birthday && gender ? setIsResult(true) : setIsResult(false);
     },

@@ -8,7 +8,7 @@ import {
   loadingState,
 } from "../../inits/keys";
 import { GenderTypes } from "../../inits/types";
-import { windowHistoryReplaceState } from "../../utilities";
+import { windowHistoryReplaceState, getToday } from "../../utilities";
 import { Spacer } from "../../elements/Spacer";
 import { SettingBirthday } from "./SettingBirthday";
 import { SettingGender } from "./SettingGender";
@@ -23,8 +23,12 @@ export const Setting: React.FC = () => {
   const [birthday, setBirthday] = useRecoilState(birthdayState);
 
   const onChangeDate = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setIsLoading(true);
-    setBirthday(e.target.value);
+    if (!e.target.value) {
+      setBirthday(getToday());
+    } else {
+      setIsLoading(true);
+      setBirthday(e.target.value);
+    }
   };
 
   const [gender, setGender] = useRecoilState(genderState);
