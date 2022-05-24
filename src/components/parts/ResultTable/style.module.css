@@ -110,6 +110,9 @@
   }
 }
 @media (min-width: 768px) {
+  .wrapper {
+    padding: 0 20px;
+  }
   .table {
     --iconSize: 32px;
   }
