@@ -23,9 +23,10 @@
 .label input,
 .label input::-webkit-date-and-time-value {
   appearance: textfield;
+  -webkit-appearance: none;
   text-align: left;
+  padding-top: 1px;
 }
-
 .labelSelect {
   position: relative;
 }
@@ -36,7 +37,7 @@
   height: 8px;
   position: absolute;
   top: 50%;
-  right: 18px;
+  right: 22px;
   border-right: 1px solid #000;
   border-bottom: 1px solid #000;
   margin-top: -3px;
