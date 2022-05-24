@@ -1,8 +1,8 @@
 .wrapper {
-  --innerPadding: 20px;
-  --innerRadius: 4px;
+  --innerPadding: 14px;
+  --innerRadius: 6px;
   --urlPadding: 8px 6px;
-  --closeButtonSize: 28px;
+  --closeButtonSize: 32px;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.4s ease-in;
@@ -35,8 +35,8 @@
 }
 .closeButton {
   position: absolute;
-  top: -18px;
-  right: -18px;
+  top: -14px;
+  right: -14px;
   width: 40px;
   height: 40px;
   border: none;
@@ -74,12 +74,21 @@
   letter-spacing: 0.1em;
   border-radius: 4px;
 }
+@media (min-width: 600px) {
+  .wrapper {
+    --innerPadding: 20px;
+    --closeButtonSize: 36px;
+  }
+  .closeButton {
+    top: -18px;
+    right: -18px;
+  }
+}
 @media (min-width: 890px) {
   .wrapper {
-    --innerPadding: 40px;
+    --innerPadding: 28px;
     --innerRadius: 10px;
     --urlPadding: 16px 8px;
-    --closeButtonSize: 32px;
   }
   .copy .button {
     position: absolute;
