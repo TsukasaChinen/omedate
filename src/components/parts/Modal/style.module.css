@@ -74,9 +74,6 @@
   letter-spacing: 0.1em;
   border-radius: 4px;
 }
-.copy .button:focus-visible {
-  transform: translateY(calc(-50% + 2.5px));
-}
 @media (min-width: 890px) {
   .wrapper {
     --innerPadding: 40px;
@@ -93,8 +90,11 @@
     margin-top: -2px;
   }
 }
-@media (hover: hover) {
+@media (hover: hover) and (min-width: 890px) {
   .copy .button:active {
+    transform: translateY(calc(-50% + 2.5px));
+  }
+  .copy .button:focus-visible {
     transform: translateY(calc(-50% + 2.5px));
   }
   .closeButton:hover > svg {
