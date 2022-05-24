@@ -13,7 +13,7 @@ import { Error } from "../../parts/Error";
 import { Description } from "../../parts/Description";
 import { Setting } from "../../parts/Setting";
 import { ResultTable } from "../../parts/ResultTable";
-import { Modals } from "../../parts/Modal";
+import { Modal } from "../../parts/Modal";
 
 export const HomeMain: React.FC = () => {
   const [isError, setIsError] = useState<boolean>(false);
@@ -90,7 +90,7 @@ export const HomeMain: React.FC = () => {
           {isResult && (
             <>
               <ResultTable />
-              <Modals />
+              <Modal />
             </>
           )}
         </>

@@ -9,9 +9,9 @@ import { CopyButton } from "../../elements/CopyButton";
 import { CopyTarget } from "../../elements/CopyTarget";
 import { ModalClose } from "./ModalClose";
 import { ModalContent } from "./ModalContent";
-import style from "./style.module.css";
+import style from "./modal.module.css";
 
-export const Modals: React.FC = () => {
+export const Modal: React.FC = () => {
   const birthday = useRecoilValue(birthdayState);
 
   const gender = useRecoilValue(genderState);
