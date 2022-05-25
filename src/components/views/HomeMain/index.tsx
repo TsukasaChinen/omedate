@@ -45,7 +45,7 @@ export const HomeMain: React.FC = () => {
       return;
     }
 
-    if (getGender !== "male" && getGender !== "female") {
+    if (getGender && getGender !== "male" && getGender !== "female") {
       setIsError(true);
       return;
     }
