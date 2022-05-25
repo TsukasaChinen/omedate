@@ -5,7 +5,7 @@ import { HomeMain } from "../../views/HomeMain";
 export const Home: React.FC = () => {
   return (
     <>
-      <div className="content">
+      <div className="contents">
         <Header />
         <HomeMain />
       </div>
