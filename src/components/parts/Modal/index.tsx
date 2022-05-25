@@ -18,6 +18,8 @@ export const Modal: React.FC = () => {
 
   const [isModal, setIsModal] = useRecoilState(modalState);
 
+  const [isShow, setIsShow] = useState<boolean>(false);
+
   const [copyLabel, setCopyLabel] = useState<string>("copy");
 
   const copyTarget = useRef<HTMLDivElement>(null);
@@ -25,18 +27,21 @@ export const Modal: React.FC = () => {
   const copyButton = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    if (isModal) {
-      copyButton.current?.focus();
-      document.body.style.overflow = "hidden";
-      document.documentElement.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-      document.documentElement.style.overflow = "auto";
-    }
+    if (!isModal) return;
+    setIsShow(true);
+    copyButton.current?.focus();
   }, [isModal]);
 
+  useEffect(() => {
+    if (isShow) return;
+    const timer = setTimeout(() => {
+      setIsModal(false);
+    }, 500);
+    return () => clearTimeout(timer);
+  }, [isShow, setIsModal]);
+
   const handleClickCloseModal = () => {
-    setIsModal(false);
+    setIsShow(false);
   };
 
   const handleClickCopyUrl = () => {
@@ -58,7 +63,7 @@ export const Modal: React.FC = () => {
   }?birthday=${replaceDateHyphen(birthday)}&gender=${gender}`;
 
   return (
-    <div className={style.wrapper} data-show={isModal}>
+    <div className={style.wrapper} data-show={isShow}>
       <ModalClose className={style.close} onClick={handleClickCloseModal} />
       <ModalContent className={style.content}>
         <CloseButton

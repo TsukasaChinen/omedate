@@ -20,3 +20,13 @@ export const windowHistoryReplaceState = (birthday: string, gender: string) => {
     )}&gender=${gender}`
   );
 };
+
+export const noScrollBodyAndHtml = (bool: boolean) => {
+  if (bool) {
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+    document.documentElement.style.overflow = "auto";
+  }
+};
