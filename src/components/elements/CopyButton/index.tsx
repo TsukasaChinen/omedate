@@ -13,7 +13,7 @@ export const CopyButton = forwardRef<HTMLButtonElement, Props>((props, ref) => {
       className={className}
       onClick={onClick}
       ref={ref}
-      data-action="false"
+      data-focus="false"
     >
       <span>{text}</span>
     </button>
