@@ -38,17 +38,13 @@ export const HomeMain: React.FC = () => {
 
   useEffect(() => {
     const search = new URLSearchParams(window.location.search);
-    if (!search.get("birthday") && !search.get("gender")) return;
+
+    if (!search.get("birthday") || !search.get("gender")) return;
 
     const getBirthday = search.get("birthday");
     const getGender = search.get("gender");
 
-    if (getBirthday && !validateBirthday(getBirthday)) {
-      setIsError(true);
-      return;
-    }
-
-    if (getGender && !validateGender(getGender)) {
+    if (!validateBirthday(getBirthday) || !validateGender(getGender)) {
       setIsError(true);
       return;
     }

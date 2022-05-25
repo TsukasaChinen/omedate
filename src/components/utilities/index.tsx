@@ -31,7 +31,9 @@ export const noScrollBodyAndHtml = (bool: boolean) => {
   }
 };
 
-export const validateBirthday = (birthday: string): boolean => {
+export const validateBirthday = (birthday: string | null): boolean => {
+  if (!birthday) return false;
+
   const m = Number(birthday.slice(4, 6));
   const d = Number(birthday.slice(6, 8));
 
@@ -48,7 +50,8 @@ export const validateBirthday = (birthday: string): boolean => {
   }
 };
 
-export const validateGender = (gender: string): boolean => {
+export const validateGender = (gender: string | null): boolean => {
+  if (!gender) return false;
   if (gender !== "male" && gender !== "female") {
     return false;
   } else {
