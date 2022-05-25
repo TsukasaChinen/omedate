@@ -104,9 +104,6 @@
   .copy .button:active {
     transform: translateY(calc(-50% + 2.5px));
   }
-  .copy .button:focus-visible {
-    transform: translateY(calc(-50% + 2.5px));
-  }
   .closeButton:hover > svg {
     color: #777;
   }

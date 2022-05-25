@@ -79,7 +79,6 @@ export const Modal: React.FC = () => {
             text={copyLabel}
             className={`button ${style.button}`}
             onClick={handleClickCopyUrl}
-            isFocus={isModal}
           />
         </div>
       </ModalContent>

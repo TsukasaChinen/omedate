@@ -207,7 +207,7 @@ select {
 *:focus {
   outline: none;
 }
-*:focus-visible {
+*:not([data-action="false"]):focus-visible {
   outline: 3px solid var(--blue);
 }
 .wrapper {
@@ -253,11 +253,11 @@ select {
   background: var(--blue);
   box-shadow: 0 4px 0 0 #128cbc;
 }
-.button:focus-visible {
+.button:not([data-action="false"]):focus-visible {
   opacity: 0.8;
   box-shadow: none;
 }
-.button.-blue:focus-visible {
+.button.-blue:not([data-action="false"]):focus-visible {
   outline: 3px solid var(--red);
 }
 .red {
