@@ -5,10 +5,10 @@ import {
   birthdayState,
   genderState,
   queryState,
-  resultState,
+  homeState,
   modalState,
-} from "../../inits/keys";
-import { GenderTypes } from "../../inits/types";
+} from "../../config/keys";
+import { GenderTypes } from "../../config/types";
 import { joinDateHyphen, getToday, noScrollBodyAndHtml } from "../../utilities";
 import { Error } from "../../parts/Error";
 import { Description } from "../../parts/Description";
@@ -19,7 +19,7 @@ import { Modal } from "../../parts/Modal";
 export const HomeMain: React.FC = () => {
   const [isError, setIsError] = useState<boolean>(false);
 
-  const [isResult, setIsResult] = useRecoilState(resultState);
+  const [isHome, setIsHome] = useRecoilState(homeState);
 
   const isModal = useRecoilValue(modalState);
 
@@ -74,13 +74,13 @@ export const HomeMain: React.FC = () => {
       ? setBirthday(joinDateHyphen(qBirthday))
       : setBirthday(getToday());
     qGender ? setGender(qGender as GenderTypes) : setGender("male");
-    qBirthday && qGender ? setIsResult(true) : setIsResult(false);
-  }, [qBirthday, qGender, setBirthday, setGender, setIsResult]);
+    qBirthday && qGender ? setIsHome(false) : setIsHome(true);
+  }, [qBirthday, qGender, setBirthday, setGender, setIsHome]);
 
   useEffect(() => {
-    if (!isResult) return;
+    if (isHome) return;
     noScrollBodyAndHtml(isModal);
-  }, [isModal, isResult]);
+  }, [isModal, isHome]);
 
   return (
     <main className="main">
@@ -90,7 +90,7 @@ export const HomeMain: React.FC = () => {
         <>
           <Description />
           <Setting />
-          {isResult && (
+          {!isHome && (
             <>
               <ResultTable />
               {isModal && <Modal />}

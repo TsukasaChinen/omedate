@@ -24,8 +24,8 @@ export const loadingState = atom<boolean>({
   default: true,
 });
 
-export const resultState = atom<boolean>({
-  key: "resultState",
+export const homeState = atom<boolean>({
+  key: "homeState",
   default: false,
 });
 

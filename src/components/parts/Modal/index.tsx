@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { useRecoilValue, useRecoilState } from "recoil";
 
-import { birthdayState, genderState, modalState } from "../../inits/keys";
+import { birthdayState, genderState, modalState } from "../../config/keys";
 import { replaceDateHyphen } from "../../utilities";
 import { Spacer } from "../../elements/Spacer";
 import { CloseButton } from "../../elements/CloseButton";

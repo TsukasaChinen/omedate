@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
-import { GenderTypes } from "../../inits/types";
+import { GenderTypes } from "../../config/types";
 import Events from "../../../assets/data/events.json";
 
 import { TableIcon } from "./TableIcon";

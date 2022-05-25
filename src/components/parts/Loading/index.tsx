@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 
-import { loadingState } from "../../inits/keys";
+import { loadingState } from "../../config/keys";
 import { LoadingIconNormal } from "./LoadingIconNormal";
 import { LoadingIconSmile } from "./LoadingIconSmile";
 import { LoadingText } from "./LoadingText";

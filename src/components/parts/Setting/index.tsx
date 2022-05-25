@@ -4,10 +4,10 @@ import { useRecoilValue, useRecoilState, useSetRecoilState } from "recoil";
 import {
   birthdayState,
   genderState,
-  resultState,
+  homeState,
   loadingState,
-} from "../../inits/keys";
-import { GenderTypes } from "../../inits/types";
+} from "../../config/keys";
+import { GenderTypes } from "../../config/types";
 import { windowHistoryReplaceState, getToday } from "../../utilities";
 import { Spacer } from "../../elements/Spacer";
 import { SettingBirthday } from "./SettingBirthday";
@@ -16,7 +16,7 @@ import { SettingButton } from "./SettingButton";
 import style from "./setting.module.css";
 
 export const Setting: React.FC = () => {
-  const isResult = useRecoilValue(resultState);
+  const isHome = useRecoilValue(homeState);
 
   const setIsLoading = useSetRecoilState(loadingState);
 
@@ -50,9 +50,9 @@ export const Setting: React.FC = () => {
   };
 
   useEffect(() => {
-    if (!isResult) return;
+    if (isHome) return;
     windowHistoryReplaceState(birthday, gender);
-  }, [birthday, gender, isResult]);
+  }, [birthday, gender, isHome]);
 
   return (
     <div className={style.wrapper}>
@@ -71,7 +71,7 @@ export const Setting: React.FC = () => {
         onChange={onChangeGender}
         text="性　　別"
       />
-      {!isResult && (
+      {isHome && (
         <>
           <Spacer height={{ s: 40 }} />
           <SettingButton birthday={birthday} gender={gender} />

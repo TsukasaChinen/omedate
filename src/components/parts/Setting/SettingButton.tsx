@@ -2,7 +2,7 @@ import { useSetRecoilState } from "recoil";
 
 import { windowHistoryReplaceState } from "../../utilities";
 
-import { resultState } from "../../inits/keys";
+import { homeState } from "../../config/keys";
 import { ReactComponent as IconBabyNomal } from "../../../assets/media/iconBabyNormal.svg";
 
 type Props = {
@@ -16,10 +16,10 @@ export const SettingButton: React.FC<Props> = ({
   gender,
   className,
 }) => {
-  const setResult = useSetRecoilState(resultState);
+  const setHome = useSetRecoilState(homeState);
 
   const handleClickIsResult = () => {
-    setResult(true);
+    setHome(false);
     windowHistoryReplaceState(birthday, gender);
   };
 
