@@ -3,6 +3,7 @@
   --innerRadius: 6px;
   --urlPadding: 8px 6px;
   --closeButtonSize: 32px;
+  --copyButtonHeight: 38px;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.4s ease-in;
@@ -69,11 +70,13 @@
 .copy .button {
   margin: 14px auto 0;
   width: 90px;
-  height: auto;
+  height: var(--copyButtonHeight);
   font-size: 16px;
-  padding: 8px 0 12px;
-  letter-spacing: 0.1em;
   border-radius: 4px;
+}
+.copy .button > span {
+  display: inline-block;
+  transform: translateY(-1px);
 }
 @media (min-width: 600px) {
   .wrapper {
@@ -81,8 +84,8 @@
     --closeButtonSize: 36px;
   }
   .closeButton {
-    top: -18px;
-    right: -18px;
+    top: -20px;
+    right: -20px;
   }
 }
 @media (min-width: 890px) {

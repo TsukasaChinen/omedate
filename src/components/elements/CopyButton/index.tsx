@@ -16,7 +16,7 @@ export const CopyButton = React.forwardRef<HTMLButtonElement, Props>(
         ref={ref}
         data-action="false"
       >
-        {text}
+        <span>{text}</span>
       </button>
     );
   }
