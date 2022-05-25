@@ -5,8 +5,10 @@ import { HomeMain } from "../../views/HomeMain";
 export const Home: React.FC = () => {
   return (
     <>
-      <Header />
-      <HomeMain />
+      <div className="content">
+        <Header />
+        <HomeMain />
+      </div>
       <Footer />
     </>
   );
