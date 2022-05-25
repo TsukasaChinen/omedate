@@ -37,7 +37,14 @@ export const TableIcon: React.FC<{ iconName: string; className?: string }> = ({
   return (
     <>
       {icons.has(iconName) ? (
-        <img src={icons.get(iconName)} className={className} alt={iconName} />
+        <img
+          src={icons.get(iconName)}
+          className={className}
+          alt={iconName}
+          width="32"
+          height="32"
+          loading="lazy"
+        />
       ) : null}
     </>
   );
