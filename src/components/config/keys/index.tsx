@@ -26,7 +26,7 @@ export const loadingState = atom<boolean>({
 
 export const homeState = atom<boolean>({
   key: "homeState",
-  default: false,
+  default: true,
 });
 
 export const modalState = atom<boolean>({
