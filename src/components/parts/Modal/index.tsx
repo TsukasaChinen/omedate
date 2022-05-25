@@ -27,7 +27,6 @@ export const Modal: React.FC = () => {
   useEffect(() => {
     if (isModal) {
       copyButton.current?.focus();
-      setCopyLabel("copy");
       document.body.style.overflow = "hidden";
       document.documentElement.style.overflow = "hidden";
     } else {
