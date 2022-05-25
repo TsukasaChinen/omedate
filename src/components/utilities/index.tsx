@@ -30,3 +30,28 @@ export const noScrollBodyAndHtml = (bool: boolean) => {
     document.documentElement.style.overflow = "auto";
   }
 };
+
+export const validateBirthday = (birthday: string): boolean => {
+  const m = Number(birthday.slice(4, 6));
+  const d = Number(birthday.slice(6, 8));
+
+  if (birthday.length !== 8) {
+    return false;
+  } else if (isNaN(Number(birthday))) {
+    return false;
+  } else if (m < 1 || m > 12) {
+    return false;
+  } else if (d < 1 || d > 31) {
+    return false;
+  } else {
+    return true;
+  }
+};
+
+export const validateGender = (gender: string): boolean => {
+  if (gender !== "male" && gender !== "female") {
+    return false;
+  } else {
+    return true;
+  }
+};

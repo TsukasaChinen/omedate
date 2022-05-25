@@ -9,7 +9,13 @@ import {
   modalState,
 } from "../../config/keys";
 import { GenderTypes } from "../../config/types";
-import { joinDateHyphen, getToday, noScrollBodyAndHtml } from "../../utilities";
+import {
+  joinDateHyphen,
+  getToday,
+  noScrollBodyAndHtml,
+  validateBirthday,
+  validateGender,
+} from "../../utilities";
 import { Error } from "../../parts/Error";
 import { Description } from "../../parts/Description";
 import { Setting } from "../../parts/Setting";
@@ -37,15 +43,12 @@ export const HomeMain: React.FC = () => {
     const getBirthday = search.get("birthday");
     const getGender = search.get("gender");
 
-    if (
-      (getBirthday && getBirthday.length !== 8) ||
-      isNaN(Number(getBirthday))
-    ) {
+    if (getBirthday && !validateBirthday(getBirthday)) {
       setIsError(true);
       return;
     }
 
-    if (getGender && getGender !== "male" && getGender !== "female") {
+    if (getGender && !validateGender(getGender)) {
       setIsError(true);
       return;
     }
