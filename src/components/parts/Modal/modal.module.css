@@ -2,8 +2,13 @@
   --innerPadding: 14px;
   --innerRadius: 6px;
   --urlPadding: 8px 6px;
-  --closeButtonSize: 32px;
+  --closeButtonSize: 40px;
+  --closeButtonIconSize: 32px;
+  --closeButtonPosition: 14px;
   --copyButtonHeight: 38px;
+  --closeContentPosition: calc(
+    (var(--closeButtonSize) - var(--closeButtonPosition)) * -1
+  );
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.4s ease-in;
@@ -34,20 +39,21 @@
   line-height: 1.6;
   border-radius: var(--innerRadius);
   transform: translate(-50%, -50%);
+  transform: translate(-50%, calc(-50% + var(--closeContentPosition)));
 }
 .closeButton {
   position: absolute;
-  top: -14px;
-  right: -14px;
-  width: 40px;
-  height: 40px;
+  top: calc(var(--closeButtonPosition) * -1);
+  right: calc(var(--closeButtonPosition) * -1);
+  width: var(--closeButtonSize);
+  height: var(--closeButtonSize);
   border: none;
   background: none;
   cursor: pointer;
 }
 .closeButton > svg {
-  width: var(--closeButtonSize);
-  height: var(--closeButtonSize);
+  width: var(--closeButtonIconSize);
+  height: var(--closeButtonIconSize);
   background: var(--white);
   color: #555;
   border-radius: 100%;
@@ -81,11 +87,8 @@
 @media (min-width: 600px) {
   .wrapper {
     --innerPadding: 20px;
-    --closeButtonSize: 36px;
-  }
-  .closeButton {
-    top: -20px;
-    right: -20px;
+    --closeButtonIconSize: 36px;
+    --closeButtonPosition: 20px;
   }
 }
 @media (min-width: 890px) {
