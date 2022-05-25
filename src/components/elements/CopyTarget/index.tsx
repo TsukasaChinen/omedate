@@ -8,7 +8,7 @@ type Props = {
 export const CopyTarget = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const { className, copyText } = props;
   return (
-    <div id="copyUrl" className={className} ref={ref}>
+    <div className={className} ref={ref}>
       {copyText}
     </div>
   );
