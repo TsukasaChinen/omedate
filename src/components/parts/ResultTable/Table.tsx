@@ -2,18 +2,32 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
 import { GenderTypes } from "../../config/types";
-import Events from "../../../assets/data/events.json";
+import { calcEventDate } from "../../utilities";
 
 import { TableIcon } from "./TableIcon";
+import Events from "../../../assets/data/events.json";
 import style from "./resultTable.module.css";
 
-export const Table: React.FC<{ gender: GenderTypes }> = ({ gender }) => {
+type Props = {
+  birthday: string;
+  gender: GenderTypes;
+};
+export const Table: React.FC<Props> = ({ birthday, gender }) => {
   const events = [...Events.data];
 
   const filterdEvents = events.filter(
     (event) => event.gender === "common" || event.gender === gender
   );
 
+  filterdEvents.forEach((obj, index, array) => {
+    const values = Object.values(obj);
+    const getDate = calcEventDate(birthday, gender, values[0]);
+    if (getDate) {
+      array[index]["date"] = getDate;
+    }
+  });
+
+  // console.log(filterdEvents);
   return (
     <table className={style.table}>
       <thead>
@@ -38,10 +52,7 @@ export const Table: React.FC<{ gender: GenderTypes }> = ({ gender }) => {
               </span>
             </td>
             <td className={style.dateTd}>
-              <span>
-                <span>2022/3/20</span>
-                <span className="red">（日）</span>
-              </span>
+              <span dangerouslySetInnerHTML={{ __html: event.date }} />
             </td>
             <td
               className={style.descriptionTd}

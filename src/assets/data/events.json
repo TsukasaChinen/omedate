@@ -1,79 +1,90 @@
 {
   "data": [
     {
-      "id": "Noshi",
+      "id": "oshichiya",
       "name": "お七夜",
       "gender": "common",
+      "date": "",
       "icon": "iconNoshi",
       "content": "生まれて7日目のお祝い。赤ちゃんの名前を決め、お披露目する「命名式」を行ないます。"
     },
     {
-      "id": "Torii",
+      "id": "omiyamairi",
       "name": "お宮参り",
       "gender": "common",
+      "date": "",
       "icon": "iconTorii",
       "content": "自分の生まれた土地の守り神に初めてお参りすること。"
     },
     {
-      "id": "Gohan",
+      "id": "okuizome",
       "name": "お食い初め",
       "gender": "common",
+      "date": "",
       "icon": "iconGohan",
       "content": "生後100日目のお祝いのおくいぞめ。「こどもが一生食べ物に困らないように」という願いを込めて行うお祝いの儀式"
     },
     {
-      "id": "kabuto",
+      "id": "sekkuTango",
       "name": "端午の節句",
       "gender": "male",
+      "date": "",
       "icon": "iconKabuto",
       "content": "男の子は5月5日の端午の節句を祝います。<br />無病息災と出世の願いを込めて、兜や五月人形を飾り、鯉のぼりを上げてお祝いします。"
     },
     {
-      "id": "hinamatsuri",
+      "id": "sekkuMomo",
       "name": "桃の節句",
       "gender": "female",
+      "date": "",
       "icon": "iconHina",
       "content": "女の子は3月3日の桃の節句を祝います。無病息災と美しく成長することを願いひな人形を飾ります。"
     },
     {
-      "id": "Cake",
+      "id": "halfBirthday",
       "name": "ハーフバースデイ",
       "gender": "common",
+      "date": "",
       "icon": "iconCake",
       "content": "生まれて6ヶ月の誕生日。"
     },
     {
-      "id": "HoleCake",
+      "id": "birthday",
       "name": "初誕生日",
       "gender": "common",
+      "date": "",
       "icon": "iconHoleCake",
       "content": "初めてのお誕生日。おめでとうございます。"
     },
     {
-      "id": "age03",
+      "id": "shichigosan03",
       "name": "七五三（3歳）",
       "gender": "common",
+      "date": "",
       "icon": "iconAge03",
       "content": "以前は女の子だけのお祝いでしたが、最近は男の子もお祝いします。近くの神社に家族でお参りし、これまでの成長を感謝し将来の幸せを祈ります。"
     },
     {
-      "id": "age05",
+      "id": "shichigosan05",
       "name": "七五三（5歳）",
       "gender": "male",
+      "date": "",
       "icon": "iconAge05",
       "content": "5歳の七五三は男の子だけのお祝い。袴着（はかまぎ）を着て近くの神社への参拝したり、写真撮や影食事会を行います。"
     },
     {
-      "id": "age07",
+      "id": "shichigosan07",
       "name": "七五三（7歳）",
       "gender": "female",
+      "date": "",
       "icon": "iconAge07",
       "content": "7歳の七五三は女の子だけのお祝い。着物を着て近くの神社への参拝したり、写真撮影や食事会を行います。"
     },
     {
-      "id": "primary-school",
+      "id": "primarySchool",
       "name": "小学校入学",
       "gender": "common",
+      "date": "",
       "icon": "iconSchoolBag",
       "content": "祝！小学一年生！初めてのランドセル。<br />お友達がいっぱいできるといいね。"
     },
@@ -81,6 +92,7 @@
       "id": "jyusanmairiMale",
       "name": "十三参り",
       "gender": "male",
+      "date": "",
       "icon": "iconGakuran",
       "content": "男女ともに数え年で13歳になった4月13日に、空蔵菩薩を本尊とする寺社へお詣りする行事です。関西地方を中心に伝わるならわしのため、地方によっては行わない場合もあります。"
     },
@@ -88,6 +100,7 @@
       "id": "jyusanmairiFemale",
       "name": "十三参り",
       "gender": "female",
+      "date": "",
       "icon": "iconSailor",
       "content": "男女ともに数え年で13歳になった4月13日に、空蔵菩薩を本尊とする寺社へお詣りする行事です。関西地方を中心に伝わるならわしのため、地方によっては行わない場合もあります。"
     },
@@ -95,6 +108,7 @@
       "id": "seijin",
       "name": "成人の日",
       "gender": "common",
+      "date": "",
       "icon": "iconTokkuri",
       "content": "祝！ご成人！"
     }
