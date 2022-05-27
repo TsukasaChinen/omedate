@@ -25,7 +25,7 @@
       "date": "",
       "dateHTML": "",
       "icon": "iconGohan",
-      "content": "生後100日目のお祝いの<span class=\"orange\">おくいぞめ。</span>「こどもが一生食べ物に困らないように」という願いを込めて行うお祝いの儀式です。"
+      "content": "生後100日目のお祝いの<span class=\"red\">おくいぞめ。</span>「こどもが一生食べ物に困らないように」という願いを込めて行うお祝いの儀式です。"
     },
     {
       "id": "sekkuTango",
@@ -52,7 +52,7 @@
       "date": "",
       "dateHTML": "",
       "icon": "iconCake",
-      "content": "<span class=\"yellow\">生まれて6ヶ月の誕生日。</span>おめでとうございます。"
+      "content": "<span class=\"blue\">生まれて6ヶ月の誕生日。</span>おめでとうございます。"
     },
     {
       "id": "birthday",
@@ -70,7 +70,7 @@
       "date": "",
       "dateHTML": "",
       "icon": "iconAge03",
-      "content": "以前は女の子だけのお祝いでしたが、最近は男の子もお祝いします。<span class=\"green\">近くの神社に家族でお参りし、</span>これまでの成長を感謝し将来の幸せを祈ります。"
+      "content": "以前は女の子だけのお祝いでしたが、最近は男の子もお祝いします。<span class=\"blue\">近くの神社に家族でお参りし、</span>これまでの成長を感謝し将来の幸せを祈ります。"
     },
     {
       "id": "shichigosan05",
@@ -97,7 +97,7 @@
       "date": "",
       "dateHTML": "",
       "icon": "iconSchoolBag",
-      "content": "<span class=\"orange\">小学校ご入学</span>。おめでとうございます。<br />はじめてのランドセル。友達いっぱいできるといいね。"
+      "content": "<span class=\"red\">小学校ご入学</span>。おめでとうございます。<br />はじめてのランドセル。友達いっぱいできるといいね。"
     },
     {
       "id": "jyusanmairiMale",
@@ -124,7 +124,7 @@
       "date": "",
       "dateHTML": "",
       "icon": "iconTokkuri",
-      "content": "<span class=\"yellow\">祝！ご成人！</span>いよいよ大人の仲間入りですね。"
+      "content": "<span class=\"red\">祝！ご成人！</span>いよいよ大人の仲間入りですね。"
     }
   ]
 }
