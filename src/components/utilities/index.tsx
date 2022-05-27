@@ -94,21 +94,21 @@ export const calcSekku = (
 ) => {
   const omiya = calcOmiya(y, m, d, gender);
   const omiyaStr = new Date(
-    `${omiya.getFullYear()}-${omiya.getMonth() + 1}-${omiya.getDate()}`
+    `${omiya.getFullYear()}/${omiya.getMonth() + 1}/${omiya.getDate()}`
   );
 
-  const sekkuMale = "5-5";
-  const sekkuFemale = "3-3";
+  const sekkuMale = "5/5";
+  const sekkuFemale = "3/3";
 
   const sekkuStr =
     gender === "male"
-      ? new Date(`${y}-${sekkuMale}`)
-      : new Date(`${y}-${sekkuFemale}`);
+      ? new Date(`${y}/${sekkuMale}`)
+      : new Date(`${y}/${sekkuFemale}`);
 
   const sekkuNextStr =
     gender === "male"
-      ? new Date(`${y + 1}-${sekkuMale}`)
-      : new Date(`${y + 1}-${sekkuFemale}`);
+      ? new Date(`${y + 1}/${sekkuMale}`)
+      : new Date(`${y + 1}/${sekkuFemale}`);
 
   const result = sekkuStr >= omiyaStr ? sekkuStr : sekkuNextStr;
 
@@ -143,9 +143,9 @@ export const calcEventDate = (
   const d = Number(newBirthday[2]);
 
   const earlies = {
-    base: new Date(`${y}-${m + 1}-${d}`),
-    start: new Date(`${y}-1-1`),
-    end: new Date(`${y}-4-1`),
+    base: new Date(`${y}/${m + 1}/${d}`),
+    start: new Date(`${y}/1/1`),
+    end: new Date(`${y}/4/1`),
   };
 
   const isEarly =
@@ -206,7 +206,7 @@ export const calcEventDate = (
     newD
   )}`;
 
-  const date = `${newY}-${newM}-${newD}`;
+  const date = `${newY}/${newM}/${newD}`;
 
   return {
     html,

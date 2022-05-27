@@ -13,9 +13,7 @@ type Props = {
   gender: GenderTypes;
 };
 export const Table: React.FC<Props> = ({ birthday, gender }) => {
-  const events = [...Events.data];
-
-  const filterdEvents = events.filter(
+  const filterdEvents = [...Events.data].filter(
     (event) => event.gender === "common" || event.gender === gender
   );
 
