@@ -1,6 +1,7 @@
-export type QuiriesTypes = {
-  birthday: string | null;
-  gender: string | null;
-};
-
+export type BirthdayTypes = string | null;
 export type GenderTypes = "male" | "female" | "";
+
+export type QuiriesTypes = {
+  birthday: BirthdayTypes;
+  gender: GenderTypes;
+};

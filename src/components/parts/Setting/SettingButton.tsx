@@ -1,13 +1,13 @@
 import { useSetRecoilState } from "recoil";
 
-import { GenderTypes } from "../../config/types";
+import { BirthdayTypes, GenderTypes } from "../../config/types";
 import { windowHistoryReplaceState } from "../../utilities";
 
 import { homeState } from "../../config/keys";
 import { ReactComponent as IconBabyNomal } from "../../../assets/media/iconBabyNormal.svg";
 
 type Props = {
-  birthday: string;
+  birthday: BirthdayTypes;
   gender: GenderTypes;
   className?: string;
 };

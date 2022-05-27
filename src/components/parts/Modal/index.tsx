@@ -58,9 +58,9 @@ export const Modal: React.FC = () => {
         });
   };
 
-  const copyText: string = `${
-    window.location.href.split("?")[0]
-  }?birthday=${replaceDateHyphen(birthday)}&gender=${gender}`;
+  const copyText: string = `${window.location.href.split("?")[0]}?birthday=${
+    birthday && replaceDateHyphen(birthday)
+  }&gender=${gender}`;
 
   return (
     <div className={style.wrapper} data-show={isShow}>

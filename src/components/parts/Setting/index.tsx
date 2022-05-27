@@ -31,7 +31,7 @@ export const Setting: React.FC = () => {
     }
   };
 
-  const [gender, seGenderTypes] = useRecoilState(genderState);
+  const [gender, setGender] = useRecoilState(genderState);
 
   const genders = [
     {
@@ -46,7 +46,7 @@ export const Setting: React.FC = () => {
 
   const onChangeGender = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setIsLoading(true);
-    seGenderTypes(e.target.value as GenderTypes);
+    setGender(e.target.value as GenderTypes);
   };
 
   useEffect(() => {
@@ -58,7 +58,7 @@ export const Setting: React.FC = () => {
     <div className={style.wrapper}>
       <Spacer height={{ s: 20, m: 40 }} />
       <SettingBirthday
-        value={birthday}
+        value={String(birthday)}
         onChange={onChangeDate}
         text="生年月日"
         className={style.label}

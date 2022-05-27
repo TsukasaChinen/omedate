@@ -8,7 +8,7 @@ import {
   homeState,
   modalState,
 } from "../../config/keys";
-import { GenderTypes } from "../../config/types";
+import { BirthdayTypes, GenderTypes } from "../../config/types";
 import {
   joinDateHyphen,
   getToday,
@@ -41,13 +41,10 @@ export const HomeMain: React.FC = () => {
 
     if (!search.get("birthday") || !search.get("gender")) return;
 
-    const getBirthday = search.get("birthday");
-    const getGenderTypes = search.get("gender");
+    const getBirthday = search.get("birthday") as BirthdayTypes;
+    const getGender = search.get("gender") as GenderTypes;
 
-    if (
-      !validateBirthday(getBirthday) ||
-      !validateGender(getGenderTypes as GenderTypes)
-    ) {
+    if (!validateBirthday(getBirthday) || !validateGender(getGender)) {
       setIsError(true);
       return;
     }
@@ -61,11 +58,11 @@ export const HomeMain: React.FC = () => {
       });
     }
 
-    if (getGenderTypes !== qGender) {
+    if (getGender !== qGender) {
       setQuery((prev) => {
         return {
           ...prev,
-          gender: getGenderTypes,
+          gender: getGender,
         };
       });
     }

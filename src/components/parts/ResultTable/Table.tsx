@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
-import { GenderTypes } from "../../config/types";
+import { BirthdayTypes, GenderTypes } from "../../config/types";
 import { calcEventDate } from "../../utilities";
 
 import { TableIcon } from "./TableIcon";
@@ -9,7 +9,7 @@ import Events from "../../../assets/data/events.json";
 import style from "./resultTable.module.css";
 
 type Props = {
-  birthday: string;
+  birthday: BirthdayTypes;
   gender: GenderTypes;
 };
 export const Table: React.FC<Props> = ({ birthday, gender }) => {

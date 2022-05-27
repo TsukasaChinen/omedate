@@ -1,4 +1,4 @@
-import { GenderTypes } from "../config/types";
+import { BirthdayTypes, GenderTypes } from "../config/types";
 
 export const replaceDateHyphen = (date: string) => date.replaceAll("-", "");
 
@@ -14,9 +14,11 @@ export const getToday = (): string => {
 };
 
 export const windowHistoryReplaceState = (
-  birthday: string,
+  birthday: BirthdayTypes,
   gender: GenderTypes
 ) => {
+  if (!birthday || !gender) return;
+
   window.history.replaceState(
     "",
     "",
@@ -36,7 +38,7 @@ export const noScrollBodyAndHtml = (bool: boolean) => {
   }
 };
 
-export const validateBirthday = (birthday: string | null) => {
+export const validateBirthday = (birthday: BirthdayTypes) => {
   if (!birthday) return false;
 
   const m = Number(birthday.slice(4, 6));
@@ -131,7 +133,7 @@ export const calcSeijin = (y: number) => {
 };
 
 export const calcEventDate = (
-  birthday: string | null,
+  birthday: BirthdayTypes,
   gender: GenderTypes,
   id: string
 ) => {

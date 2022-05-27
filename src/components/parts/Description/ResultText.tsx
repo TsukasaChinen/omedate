@@ -4,7 +4,8 @@ import { birthdayState, genderState, loadingState } from "../../config/keys";
 
 export const ResultText: React.FC<{ className?: string }> = ({ className }) => {
   const isLoading = useRecoilValue(loadingState);
-  const birthday = useRecoilValue(birthdayState).split("-");
+  const birthday = useRecoilValue(birthdayState);
+  const birthdayDate = birthday && birthday.split("-");
   const gender = useRecoilValue(genderState);
 
   return (
@@ -16,9 +17,9 @@ export const ResultText: React.FC<{ className?: string }> = ({ className }) => {
       ) : (
         <p>
           <span className="green">
-            {birthday &&
-              `「${birthday[0]}年${Number(birthday[1])}月${Number(
-                birthday[2]
+            {birthdayDate &&
+              `「${birthdayDate[0]}年${Number(birthdayDate[1])}月${Number(
+                birthdayDate[2]
               )}日」`}
           </span>
           生まれの
