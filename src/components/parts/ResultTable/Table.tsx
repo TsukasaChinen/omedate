@@ -21,12 +21,24 @@ export const Table: React.FC<Props> = ({ birthday, gender }) => {
 
   filterdEvents.forEach((obj, index, array) => {
     const values = Object.values(obj);
-    const getDate = calcEventDate(birthday, gender, values[0]);
-    if (getDate) {
-      array[index]["date"] = getDate;
+    const calcEvent = calcEventDate(birthday, gender, values[0]);
+    if (calcEvent) {
+      array[index]["date"] = calcEvent.date;
+      array[index]["dateHTML"] = calcEvent.html;
     }
   });
-  // console.log(filterdEvents);
+
+  filterdEvents.sort(function (x, y) {
+    const firstDate = new Date(x.date);
+
+    const secondDate = new Date(y.date);
+
+    if (firstDate < secondDate) return -1;
+    if (firstDate > secondDate) return 1;
+
+    return 0;
+  });
+
   return (
     <table className={style.table}>
       <thead>
@@ -51,7 +63,7 @@ export const Table: React.FC<Props> = ({ birthday, gender }) => {
               </span>
             </td>
             <td className={style.dateTd}>
-              <span dangerouslySetInnerHTML={{ __html: event.date }} />
+              <span dangerouslySetInnerHTML={{ __html: event.dateHTML }} />
             </td>
             <td
               className={style.descriptionTd}

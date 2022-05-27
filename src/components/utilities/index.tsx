@@ -137,10 +137,10 @@ export const calcEventDate = (
 ) => {
   if (!birthday || !gender || !id) return;
 
-  const date = birthday.split("-");
-  const y = Number(date[0]);
-  const m = Number(date[1]) - 1;
-  const d = Number(date[2]);
+  const newBirthday = birthday.split("-");
+  const y = Number(newBirthday[0]);
+  const m = Number(newBirthday[1]) - 1;
+  const d = Number(newBirthday[2]);
 
   const earlies = {
     base: new Date(`${y}-${m + 1}-${d}`),
@@ -200,9 +200,16 @@ export const calcEventDate = (
   const newM = result.getMonth() + 1;
   const newD = result.getDate();
 
-  return `<span>${newY}年${newM}月${newD}日</span>${calcWeek(
+  const html = `<span>${newY}年${newM}月${newD}日</span>${calcWeek(
     newY,
     newM,
     newD
   )}`;
+
+  const date = `${newY}-${newM}-${newD}`;
+
+  return {
+    html,
+    date,
+  };
 };

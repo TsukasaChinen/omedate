@@ -5,6 +5,7 @@
       "name": "お七夜",
       "gender": "common",
       "date": "",
+      "dateHTML": "",
       "icon": "iconNoshi",
       "content": "生まれて7日目のお祝い。赤ちゃんの名前を決め、お披露目する<span class=\"red\">「命名式」</span>を行ないます。"
     },
@@ -13,6 +14,7 @@
       "name": "お宮参り",
       "gender": "common",
       "date": "",
+      "dateHTML": "",
       "icon": "iconTorii",
       "content": "自分の生まれた土地の守り神に初めてお参りすること。男の子は生まれてから<span class=\"blue\">30〜31日目</span>に、女の子は<span class=\"red\">31〜32日目</span>に行います。"
     },
@@ -21,6 +23,7 @@
       "name": "お食い初め",
       "gender": "common",
       "date": "",
+      "dateHTML": "",
       "icon": "iconGohan",
       "content": "生後100日目のお祝いのおくいぞめ。<span class=\"green\">「こどもが一生食べ物に困らないように」</span>という願いを込めて行うお祝いの儀式です。"
     },
@@ -29,6 +32,7 @@
       "name": "端午の節句",
       "gender": "male",
       "date": "",
+      "dateHTML": "",
       "icon": "iconKabuto",
       "content": "<span class=\"blue\">男の子は5月5日の端午の節句をお祝いします。</span><br />無病息災と出世の願いを込めて、兜や五月人形を飾り、鯉のぼりを上げてお祝いします。"
     },
@@ -37,6 +41,7 @@
       "name": "桃の節句",
       "gender": "female",
       "date": "",
+      "dateHTML": "",
       "icon": "iconHina",
       "content": "<span class=\"red\">女の子は3月3日の桃の節句を祝います。</span><br />ひな人形を飾り、無病息災と美しく成長することを願いお祝いします。"
     },
@@ -45,6 +50,7 @@
       "name": "ハーフバースデイ",
       "gender": "common",
       "date": "",
+      "dateHTML": "",
       "icon": "iconCake",
       "content": "生まれて<span class=\"green\">6ヶ月の誕生日。</span>おめでとうございます。"
     },
@@ -53,6 +59,7 @@
       "name": "初誕生日",
       "gender": "common",
       "date": "",
+      "dateHTML": "",
       "icon": "iconHoleCake",
       "content": "<span class=\"red\">初めてのお誕生日。</span>ハッピーバースデー。"
     },
@@ -61,6 +68,7 @@
       "name": "七五三（3歳）",
       "gender": "common",
       "date": "",
+      "dateHTML": "",
       "icon": "iconAge03",
       "content": "以前は女の子だけのお祝いでしたが、最近は男の子もお祝いします。<span class=\"green\">近くの神社に家族でお参りし、これまでの成長を感謝し将来の幸せを祈ります。</span>"
     },
@@ -69,6 +77,7 @@
       "name": "七五三（5歳）",
       "gender": "male",
       "date": "",
+      "dateHTML": "",
       "icon": "iconAge05",
       "content": "<span class=\"blue\">5歳の七五三は男の子だけのお祝い。</span><br />袴着（はかまぎ）を着て近くの神社への参拝したり、写真撮影や食事会を行います。"
     },
@@ -77,6 +86,7 @@
       "name": "七五三（7歳）",
       "gender": "female",
       "date": "",
+      "dateHTML": "",
       "icon": "iconAge07",
       "content": "<span class=\"red\">7歳の七五三は女の子だけのお祝い。</span><br />着物を着て近くの神社への参拝したり、写真撮影や食事会を行います。"
     },
@@ -85,6 +95,7 @@
       "name": "小学校入学",
       "gender": "common",
       "date": "",
+      "dateHTML": "",
       "icon": "iconSchoolBag",
       "content": "<span class=\"green\">小学校ご入学おめでとうございます。</span><br />はじめてのランドセル。友達いっぱいできるといいね。"
     },
@@ -93,6 +104,7 @@
       "name": "十三参り",
       "gender": "male",
       "date": "",
+      "dateHTML": "",
       "icon": "iconGakuran",
       "content": "男女ともに数え年で13歳になった時に<span class=\"blue\">知恵と福徳が授かるよう、空蔵菩薩を本尊とする寺社へお参りします。</span><br />関西地方を中心に伝わるならわしのため、地方によっては行わないことも。"
     },
@@ -101,6 +113,7 @@
       "name": "十三参り",
       "gender": "female",
       "date": "",
+      "dateHTML": "",
       "icon": "iconSailor",
       "content": "男女ともに数え年で13歳になった時に<span class=\"red\">知恵と福徳が授かるよう、空蔵菩薩を本尊とする寺社へお参りします。</span><br />関西地方を中心に伝わるならわしのため、地方によっては行わないことも。"
     },
@@ -109,6 +122,7 @@
       "name": "成人の日",
       "gender": "common",
       "date": "",
+      "dateHTML": "",
       "icon": "iconTokkuri",
       "content": "<span class=\"red\">祝！ご成人！</span>いよいよ大人の仲間入りですね。"
     }
