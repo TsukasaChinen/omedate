@@ -65,8 +65,8 @@ export const validateGender = (gender: GenderTypes) => {
 };
 
 export const calcWeek = (y: number, m: number, d: number) => {
-  const newDate = new Date(y, m - 1, d);
-  const index = newDate.getDay();
+  const date = new Date(y, m - 1, d);
+  const index = date.getDay();
   const weeks = ["日", "月", "火", "水", "木", "金", "土"];
 
   const weekClass: string =
