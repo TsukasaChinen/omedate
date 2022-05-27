@@ -115,18 +115,17 @@ export const calcSekku = (
   return new Date(result.getFullYear(), result.getMonth(), result.getDate());
 };
 
-export const calcSeijin = (year: number) => {
-  const y = year + 19;
+export const calcSeijin = (y: number) => {
+  const date = new Date(`${y}/1/1`);
 
-  const newDate = new Date(`${y}/1/1`);
-  const firstDay = newDate.getDay();
-
-  let d = 1 - firstDay + 1;
-  if (d <= 0) d += 7;
+  let d = 1 - date.getDay() + 1;
+  if (d <= 0) {
+    d += 7;
+  }
 
   d += 7 * (2 - 1);
 
-  const result = new Date(y, 1, d - 1);
+  const result = new Date(y, 0, d);
 
   return result;
 };
@@ -142,6 +141,15 @@ export const calcEventDate = (
   const y = Number(date[0]);
   const m = Number(date[1]) - 1;
   const d = Number(date[2]);
+
+  const earlies = {
+    base: new Date(`${y}-${m + 1}-${d}`),
+    start: new Date(`${y}-1-1`),
+    end: new Date(`${y}-4-1`),
+  };
+
+  const isEarly =
+    earlies.base >= earlies.start && earlies.base <= earlies.end ? true : false;
 
   let result;
 
@@ -175,15 +183,15 @@ export const calcEventDate = (
       result = new Date(y + 7, 10, 15);
       break;
     case "primarySchool":
-      result = new Date(y + 6, 3, 1);
+      result = isEarly ? new Date(y + 6, 3, 1) : new Date(y + 7, 3, 1);
       break;
     case "jyusanmairiMale":
     case "jyusanmairiFemale":
       result = new Date(y + 12, 3, 13);
       break;
-    // case "seijin":
-    //   result = calcSeijin(y);
-    //   break;
+    case "seijin":
+      result = isEarly ? calcSeijin(y + 18) : calcSeijin(y + 19);
+      break;
     default:
       return;
   }
