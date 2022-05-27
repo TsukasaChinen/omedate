@@ -34,7 +34,7 @@ export const HomeMain: React.FC = () => {
 
   const setBirthday = useSetRecoilState(birthdayState);
 
-  const setGender = useSetRecoilState(genderState);
+  const seGenderTypes = useSetRecoilState(genderState);
 
   useEffect(() => {
     const search = new URLSearchParams(window.location.search);
@@ -42,9 +42,12 @@ export const HomeMain: React.FC = () => {
     if (!search.get("birthday") || !search.get("gender")) return;
 
     const getBirthday = search.get("birthday");
-    const getGender = search.get("gender");
+    const getGenderTypes = search.get("gender");
 
-    if (!validateBirthday(getBirthday) || !validateGender(getGender)) {
+    if (
+      !validateBirthday(getBirthday) ||
+      !validateGender(getGenderTypes as GenderTypes)
+    ) {
       setIsError(true);
       return;
     }
@@ -58,11 +61,11 @@ export const HomeMain: React.FC = () => {
       });
     }
 
-    if (getGender !== qGender) {
+    if (getGenderTypes !== qGender) {
       setQuery((prev) => {
         return {
           ...prev,
-          gender: getGender,
+          gender: getGenderTypes,
         };
       });
     }
@@ -72,9 +75,9 @@ export const HomeMain: React.FC = () => {
     qBirthday
       ? setBirthday(joinDateHyphen(qBirthday))
       : setBirthday(getToday());
-    qGender ? setGender(qGender as GenderTypes) : setGender("male");
+    qGender ? seGenderTypes(qGender as GenderTypes) : seGenderTypes("male");
     qBirthday && qGender ? setIsHome(false) : setIsHome(true);
-  }, [qBirthday, qGender, setBirthday, setGender, setIsHome]);
+  }, [qBirthday, qGender, setBirthday, seGenderTypes, setIsHome]);
 
   useEffect(() => {
     if (isHome) return;

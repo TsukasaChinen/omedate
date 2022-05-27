@@ -1,3 +1,5 @@
+import { GenderTypes } from "../config/types";
+
 export const replaceDateHyphen = (date: string) => date.replaceAll("-", "");
 
 export const joinDateHyphen = (date: string) =>
@@ -11,7 +13,10 @@ export const getToday = (): string => {
   return `${y}-${("00" + m).slice(-2)}-${d}`;
 };
 
-export const windowHistoryReplaceState = (birthday: string, gender: string) => {
+export const windowHistoryReplaceState = (
+  birthday: string,
+  gender: GenderTypes
+) => {
   window.history.replaceState(
     "",
     "",
@@ -50,7 +55,7 @@ export const validateBirthday = (birthday: string | null) => {
   }
 };
 
-export const validateGender = (gender: string | null) => {
+export const validateGender = (gender: GenderTypes) => {
   if (!gender) return false;
   if (gender !== "male" && gender !== "female") {
     return false;
@@ -59,27 +64,54 @@ export const validateGender = (gender: string | null) => {
   }
 };
 
-export const calcWeek = (y: number, m: number, d: number, color?: string) => {
+export const calcWeek = (y: number, m: number, d: number) => {
   const newDate = new Date(y, m - 1, d);
   const index = newDate.getDay();
   const weeks = ["日", "月", "火", "水", "木", "金", "土"];
 
-  let weekClass: string = "";
+  const weekClass: string =
+    index === 0 ? `class="red"` : index === 6 ? `class="blue"` : "";
 
-  if (color) {
-    weekClass = `className="${color}"`;
-  } else {
-    if (index === 0) {
-      weekClass = `class="red"`;
-    } else if (index === 6) {
-      weekClass = `class="blue"`;
-    }
-  }
   return `<span ${weekClass && weekClass}>（${weeks[index]}）</span>`;
 };
 
+export const calcOmiya = (
+  y: number,
+  m: number,
+  d: number,
+  gender: GenderTypes
+) => {
+  const result =
+    gender === "male" ? new Date(y, m, d + 30) : new Date(y, m, d + 31);
+  return result;
+};
+
+export const calcSekku = (
+  y: number,
+  m: number,
+  d: number,
+  gender: GenderTypes
+) => {
+  const omiya = calcOmiya(y, m, d, gender);
+  const omiyaStr = new Date(
+    `${omiya.getFullYear()}-${omiya.getMonth() + 1}-${omiya.getDate()}`
+  );
+
+  const sekku = gender === "male" ? new Date(y, 4, 5) : new Date(y, 2, 3);
+  const sekkuStr = new Date(
+    `${sekku.getFullYear()}-${sekku.getMonth() + 1}-${sekku.getDate()}`
+  );
+  const sekkuNextStr = new Date(
+    `${sekku.getFullYear() + 1}-${sekku.getMonth() + 1}-${sekku.getDate()}`
+  );
+
+  const result = sekkuStr >= omiyaStr ? sekkuStr : sekkuNextStr;
+
+  return new Date(result.getFullYear(), result.getMonth(), result.getDate());
+};
+
 export const calcSeijin = (year: number) => {
-  const y = year + 18;
+  const y = year + 19;
 
   const newDate = new Date(`${y}/1/1`);
   const firstDay = newDate.getDay();
@@ -96,33 +128,31 @@ export const calcSeijin = (year: number) => {
 
 export const calcEventDate = (
   birthday: string | null,
-  gender: string,
+  gender: GenderTypes,
   id: string
 ) => {
   if (!birthday || !gender || !id) return;
 
   const date = birthday.split("-");
   const y = Number(date[0]);
-  const m = Number(date[1]);
+  const m = Number(date[1]) - 1;
   const d = Number(date[2]);
 
   let result;
 
   switch (id) {
     case "oshichiya":
-      result = new Date(y, m, d + 7);
+      result = new Date(y, m, d + 6);
       break;
-    // case "omiyamairi":
-    //   result = new Date(y, m, d + 100);
-    //   break;
-    // case "sekkuTango":
-    //   result = new Date(y, m, d + 100);
-    //   break;
-    // case "sekkuMomo":
-    //   result = new Date(y, m, d + 100);
-    //   break;
+    case "omiyamairi":
+      result = calcOmiya(y, m, d, gender);
+      break;
+    case "sekkuTango":
+    case "sekkuMomo":
+      result = calcSekku(y, m, d, gender);
+      break;
     case "okuizome":
-      result = new Date(y, m, d + 100);
+      result = new Date(y, m, d + 99);
       break;
     case "halfBirthday":
       result = new Date(y, m + 6, d);
@@ -131,30 +161,30 @@ export const calcEventDate = (
       result = new Date(y + 1, m, d);
       break;
     case "shichigosan03":
-      result = new Date(y + 3, 11, 15);
+      result = new Date(y + 3, 10, 15);
       break;
     case "shichigosan05":
-      result = new Date(y + 5, 11, 15);
+      result = new Date(y + 5, 10, 15);
       break;
     case "shichigosan07":
-      result = new Date(y + 7, 11, 15);
+      result = new Date(y + 7, 10, 15);
       break;
     case "primarySchool":
-      result = new Date(y + 6, 4, 1);
+      result = new Date(y + 6, 3, 1);
       break;
     case "jyusanmairiMale":
     case "jyusanmairiFemale":
-      result = new Date(y + 12, 4, 13);
+      result = new Date(y + 12, 3, 13);
       break;
-    case "seijin":
-      result = calcSeijin(y);
-      break;
+    // case "seijin":
+    //   result = calcSeijin(y);
+    //   break;
     default:
       return;
   }
 
   const newY = result.getFullYear();
-  const newM = result.getMonth();
+  const newM = result.getMonth() + 1;
   const newD = result.getDate();
 
   return `<span>${newY}年${newM}月${newD}日</span>${calcWeek(

@@ -31,7 +31,7 @@ export const Setting: React.FC = () => {
     }
   };
 
-  const [gender, setGender] = useRecoilState(genderState);
+  const [gender, seGenderTypes] = useRecoilState(genderState);
 
   const genders = [
     {
@@ -46,7 +46,7 @@ export const Setting: React.FC = () => {
 
   const onChangeGender = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setIsLoading(true);
-    setGender(e.target.value as GenderTypes);
+    seGenderTypes(e.target.value as GenderTypes);
   };
 
   useEffect(() => {

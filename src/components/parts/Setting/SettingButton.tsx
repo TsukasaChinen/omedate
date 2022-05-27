@@ -1,5 +1,6 @@
 import { useSetRecoilState } from "recoil";
 
+import { GenderTypes } from "../../config/types";
 import { windowHistoryReplaceState } from "../../utilities";
 
 import { homeState } from "../../config/keys";
@@ -7,7 +8,7 @@ import { ReactComponent as IconBabyNomal } from "../../../assets/media/iconBabyN
 
 type Props = {
   birthday: string;
-  gender: string;
+  gender: GenderTypes;
   className?: string;
 };
 
