@@ -161,6 +161,7 @@ input[type="number"] {
   --blue: #1dade5;
   --white: #fff;
   --yellow: #fccf00;
+  --orange: #eebb8d;
   --gray: #aaa;
   --black: #000;
   --lightBrown: #f9e1cd;
@@ -271,6 +272,12 @@ select {
 }
 .blue {
   color: var(--blue);
+}
+.yellow {
+  color: var(--yellow);
+}
+.orange {
+  color: var(--orange);
 }
 .alignCenter {
   text-align: center;
