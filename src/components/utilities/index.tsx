@@ -97,13 +97,18 @@ export const calcSekku = (
     `${omiya.getFullYear()}-${omiya.getMonth() + 1}-${omiya.getDate()}`
   );
 
-  const sekku = gender === "male" ? new Date(y, 4, 5) : new Date(y, 2, 3);
-  const sekkuStr = new Date(
-    `${sekku.getFullYear()}-${sekku.getMonth() + 1}-${sekku.getDate()}`
-  );
-  const sekkuNextStr = new Date(
-    `${sekku.getFullYear() + 1}-${sekku.getMonth() + 1}-${sekku.getDate()}`
-  );
+  const sekkuMale = "5-5";
+  const sekkuFemale = "3-3";
+
+  const sekkuStr =
+    gender === "male"
+      ? new Date(`${y}-${sekkuMale}`)
+      : new Date(`${y}-${sekkuFemale}`);
+
+  const sekkuNextStr =
+    gender === "male"
+      ? new Date(`${y + 1}-${sekkuMale}`)
+      : new Date(`${y + 1}-${sekkuFemale}`);
 
   const result = sekkuStr >= omiyaStr ? sekkuStr : sekkuNextStr;
 
