@@ -1,10 +1,10 @@
+![メインイメージ](https://trylight.net/omedate/ogp.png)
+
 # OMEDATE
 
 電子レンジのワット数ごとの温め時間を簡単に計算するサービス。
 
 :link: [https://trylight.net/omedate/](https://trylight.net/omedate/)
-
-![メインイメージ](https://trylight.net/omedate/ogp.png)
 
 ## Requirement
 
