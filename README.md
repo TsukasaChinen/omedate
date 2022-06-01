@@ -2,7 +2,7 @@
 
 # OMEDATE
 
-電子レンジのワット数ごとの温め時間を簡単に計算するサービス。
+子供の生年月日と性別から子供の行事の日付を計算するサービス
 
 :link: [https://trylight.net/omedate/](https://trylight.net/omedate/)
 
@@ -11,7 +11,7 @@
 - Node v14.15.0 ~
 - React v17.0~
 
-## Install.
+## Install
 
 package.json に記載されているライブラリなどを下記コマンドでインストール。
 
