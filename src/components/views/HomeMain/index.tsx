@@ -18,6 +18,7 @@ import {
 } from "../../utilities";
 import { Error } from "../../parts/Error";
 import { Description } from "../../parts/Description";
+import { Portal } from "../../parts/Portal";
 import { Setting } from "../../parts/Setting";
 import { ResultTable } from "../../parts/ResultTable";
 import { Modal } from "../../parts/Modal";
@@ -92,7 +93,11 @@ export const HomeMain: React.FC = () => {
           {!isHome && (
             <>
               <ResultTable />
-              {isModal && <Modal />}
+              {isModal && (
+                <Portal>
+                  <Modal />
+                </Portal>
+              )}
             </>
           )}
         </>
